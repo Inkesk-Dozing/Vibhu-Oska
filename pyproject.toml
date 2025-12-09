@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Vibhu-OSKA"
+version = "0.1.0"
+description = "Modular AI Core System"
+authors = [{name = "Harsh Dev Jha (Inkesk-Dozing)", email = "inkeskdozing@gmail.com"}]
+requires-python = ">=3.10"
+dependencies = [
+    # "openai",
+    "flask",
+    # "protobuf"
+    # Add other libraries from requirements.txt here if you want
+]
+
+[tool.setuptools.packages.find]
+where = ["."]  # Look for packages in the root directory
+include = ["Backend*", "Frontend*", "Shared*"]  # explicitly include your main folders

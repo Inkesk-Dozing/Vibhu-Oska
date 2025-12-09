@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: Vibhu-OSKA
+Version: 0.1.0
+Summary: Modular AI Core System
+Author-email: "Harsh Dev Jha (Inkesk-Dozing)" <inkeskdozing@gmail.com>
+Requires-Python: >=3.10
+License-File: LICENCE.md
+Requires-Dist: flask
+Dynamic: license-file

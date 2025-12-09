@@ -1,0 +1,55 @@
+{
+//==================================================================================================
+    // --- 1. THE ENGINE ---
+    // Forces VS Code to look at your local venv on Windows.
+//==================================================================================================
+    "python.defaultInterpreterPath": ".venv\\python\\Scripts\\python.exe",
+
+    // Automatically activates the environment in the terminal.
+    "python.terminal.activateEnvironment": true,
+
+    "python.analysis.typeCheckingMode": "standard",
+
+//==================================================================================================
+    // --- 2. THE BRAIN (Intellisense) ---
+    // Helps VS Code understand imports from your specific folders.
+//==================================================================================================
+    "python.analysis.extraPaths": [
+        "./",
+        "./Backend",
+        "./Frontend",
+        "./Shared"
+    ],
+    
+//==================================================================================================
+    // --- 3. THE AESTHETIC (Hide the ugly files) ---
+    // These files still exist, but VS Code won't show them in the sidebar.
+//==================================================================================================
+    "files.exclude": {
+        "**/__pycache__": false,       // Hides compiled python cache
+        "**/*.egg-info": false,         // Hides the egg link folder
+        "**/*.pyc": false,             // Hides compiled files
+        "**/.git": false,              // Hides git internals
+        "**/.gitignore": false,        // Hides gitignore
+        ".venv": false ,               // Keep this FALSE so you can see your env if needed
+
+//==================================================================================================
+    // --- 4. Hiding Un-neccessary folder while coding ---
+    // They too still eixst just hideen them to focus on certain files , can toggle.
+//==================================================================================================
+        "**Backend/": false,            
+        "**Frontend/": false,
+        "**Log/": false,
+        "**Scripts/": false,
+        "**Shared/": false,
+    },
+
+//==================================================================================================
+    // --- 5. FORMATTING ---
+    // Optional: Format your code automatically when you save.
+//==================================================================================================
+    "[python]": {
+        "editor.formatOnSave": true
+    }
+}
+
