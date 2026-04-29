@@ -3,7 +3,7 @@
     // --- 1. THE ENGINE ---
     // Forces VS Code to look at your local venv on Windows.
 //==================================================================================================
-    "python.defaultInterpreterPath": ".venv\\python\\Scripts\\python.exe",
+    "python.defaultInterpreterPath": ".venv\\Scripts\\python.exe",
 
     // Automatically activates the environment in the terminal.
     "python.terminal.activateEnvironment": true,

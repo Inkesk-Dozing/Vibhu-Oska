@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Vibhu-Oska: AI-OS Gateway",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "Backend.EntryPoint",
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/.venv/Scripts/python",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Vibhu-Oska: MCP Server",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "Backend.Gateway.mcp_server",
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/.venv/Scripts/python",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Vibhu-Oska: Run Pytests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/.venv/Scripts/python",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    }
+  ]
+}
