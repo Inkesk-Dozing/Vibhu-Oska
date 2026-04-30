@@ -1,0 +1,80 @@
+// ============================================================================
+// Vibhu-Oska AI-OS — Common Types
+// Shared message types used across all protocol definitions
+// ============================================================================
+
+syntax = "proto3";
+package vibhu_oska.common;
+
+option python_package = "Shared.generated.common_pb2";
+
+// ── Temporal ──
+
+message Timestamp {
+    int64 seconds = 1;      // Unix epoch seconds
+    int32 nanos = 2;        // Nanosecond offset
+}
+
+// ── Identity ──
+
+message UUID {
+    string value = 1;       // UUID v4 string
+}
+
+// ── Status ──
+
+enum StatusCode {
+    STATUS_UNKNOWN = 0;
+    STATUS_OK = 1;
+    STATUS_ERROR = 2;
+    STATUS_PENDING = 3;
+    STATUS_IN_PROGRESS = 4;
+    STATUS_COMPLETED = 5;
+    STATUS_FAILED = 6;
+    STATUS_TIMEOUT = 7;
+    STATUS_CANCELLED = 8;
+}
+
+message Status {
+    StatusCode code = 1;
+    string message = 2;
+    string details = 3;     // Optional extended error info (JSON)
+}
+
+// ── Hardware Targets ──
+
+enum ExecutionTarget {
+    TARGET_AUTO = 0;        // Let the router decide
+    TARGET_CPU = 1;
+    TARGET_GPU = 2;
+    TARGET_NPU = 3;
+}
+
+// ── Priority Levels ──
+
+enum Priority {
+    PRIORITY_LOW = 0;
+    PRIORITY_NORMAL = 1;
+    PRIORITY_HIGH = 2;
+    PRIORITY_CRITICAL = 3;
+}
+
+// ── Metadata ──
+
+message RequestMetadata {
+    UUID request_id = 1;
+    UUID session_id = 2;
+    string user_id = 3;
+    Timestamp created_at = 4;
+    Priority priority = 5;
+    ExecutionTarget target = 6;
+    map<string, string> labels = 7;  // Arbitrary key-value tags
+}
+
+message ResponseMetadata {
+    UUID request_id = 1;            // Correlates to the original request
+    Timestamp completed_at = 2;
+    int64 processing_time_ms = 3;
+    ExecutionTarget executed_on = 4;
+    Status status = 5;
+}

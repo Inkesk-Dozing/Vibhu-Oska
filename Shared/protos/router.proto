@@ -1,0 +1,119 @@
+// ============================================================================
+// Vibhu-Oska AI-OS — Router Protocol
+// Defines the event routing, classification, and inter-core messaging
+// ============================================================================
+
+syntax = "proto3";
+package vibhu_oska.router;
+
+import "common.proto";
+import "brain.proto";
+
+option python_package = "Shared.generated.router_pb2";
+
+// ── Event System ──
+
+enum EventType {
+    EVENT_UNKNOWN = 0;
+    EVENT_USER_INPUT = 1;           // User sent a message
+    EVENT_SYSTEM_TELEMETRY = 2;     // System health/metrics update
+    EVENT_TASK_CREATED = 3;         // New task spawned
+    EVENT_TASK_COMPLETED = 4;       // Task finished execution
+    EVENT_TASK_FAILED = 5;          // Task encountered an error
+    EVENT_TOOL_REQUEST = 6;         // Agent wants to invoke a tool
+    EVENT_TOOL_RESULT = 7;          // Tool returned a result
+    EVENT_MODEL_LOADED = 8;         // An AI model was loaded/unloaded
+    EVENT_MEMORY_UPDATED = 9;       // Memory store was modified
+    EVENT_HEALTH_CHECK = 10;        // Health check ping
+    EVENT_ALERT = 11;               // System alert
+    EVENT_SCHEDULE_TRIGGER = 12;    // Scheduled task fired
+    EVENT_SELF_REPAIR = 13;         // Self-improvement cycle triggered
+}
+
+message EventEnvelope {
+    vibhu_oska.common.UUID event_id = 1;
+    EventType type = 2;
+    string topic = 3;              // ZeroMQ topic string (e.g., "task.created", "tool.request.search")
+    string source = 4;             // Origin core/plugin (e.g., "orchestrator", "cognition", "npu_router")
+    string destination = 5;        // Target core/plugin (empty = broadcast)
+    vibhu_oska.common.Timestamp timestamp = 6;
+    vibhu_oska.common.Priority priority = 7;
+    bytes payload = 8;             // Serialized inner message (TaskRequest, ToolCall, etc.)
+    string payload_type = 9;       // Fully qualified proto type name for deserialization
+}
+
+// ── Route Decision ──
+
+enum RouteAction {
+    ROUTE_UNKNOWN = 0;
+    ROUTE_TO_GPU = 1;             // Heavy reasoning — activate GPU engine
+    ROUTE_TO_NPU = 2;             // Lightweight classification — stay on NPU
+    ROUTE_TO_CPU = 3;             // CPU-only fallback
+    ROUTE_TO_PLUGIN = 4;          // Direct to a specific plugin
+    ROUTE_TO_CACHE = 5;           // Response available from cache
+    ROUTE_REJECT = 6;             // Invalid/unsafe request — reject
+    ROUTE_QUEUE = 7;              // GPU busy — queue for later
+}
+
+message RouteDecision {
+    vibhu_oska.common.UUID request_id = 1;
+    RouteAction action = 2;
+    vibhu_oska.common.ExecutionTarget target = 3;
+    string plugin_name = 4;        // If action == ROUTE_TO_PLUGIN
+    float confidence = 5;          // Router model confidence (0.0 to 1.0)
+    string reasoning = 6;          // Why this route was chosen
+    vibhu_oska.brain.ModelConfig suggested_model = 7;  // Which model to use
+    vibhu_oska.common.Timestamp decided_at = 8;
+}
+
+// ── System Health ──
+
+enum CoreStatus {
+    CORE_UNKNOWN = 0;
+    CORE_HEALTHY = 1;
+    CORE_DEGRADED = 2;
+    CORE_OFFLINE = 3;
+    CORE_OVERLOADED = 4;
+}
+
+message SystemHealth {
+    vibhu_oska.common.Timestamp checked_at = 1;
+    bool internet_available = 2;
+    bool gpu_available = 3;
+    bool npu_available = 4;
+    CoreStatus orchestrator_status = 5;
+    CoreStatus cognition_status = 6;
+    CoreStatus data_status = 7;
+    CoreStatus validation_status = 8;
+    ResourceUsage resources = 9;
+    string active_mode = 10;       // "main", "backup", "cpu_only"
+}
+
+message ResourceUsage {
+    float cpu_percent = 1;
+    float ram_used_gb = 2;
+    float ram_total_gb = 3;
+    float gpu_vram_used_gb = 4;
+    float gpu_vram_total_gb = 5;
+    float gpu_temp_celsius = 6;
+    float cpu_temp_celsius = 7;
+    float disk_used_gb = 8;
+    float disk_total_gb = 9;
+}
+
+// ── Plugin Registration ──
+
+message PluginInfo {
+    string name = 1;
+    string version = 2;
+    string description = 3;
+    repeated string capabilities = 4;   // What this plugin can do
+    CoreStatus status = 5;
+    vibhu_oska.common.Timestamp registered_at = 6;
+    vibhu_oska.common.ExecutionTarget preferred_target = 7;
+}
+
+message PluginRegistry {
+    repeated PluginInfo plugins = 1;
+    vibhu_oska.common.Timestamp last_updated = 2;
+}
