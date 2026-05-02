@@ -1,0 +1,89 @@
+// ============================================================================
+// Vibhu-Oska AI-OS — Telemetry Protocol
+// Defines monitoring, metrics, alerts, and system observability messages
+// ============================================================================
+
+syntax = "proto3";
+package vibhu_oska.telemetry;
+
+import "common.proto";
+
+option python_package = "Shared.generated.telemetry_pb2";
+
+// ── Heartbeat ──
+
+message Heartbeat {
+    string source = 1;             // Which core/plugin is reporting
+    vibhu_oska.common.Timestamp timestamp = 2;
+    bool alive = 3;
+    int64 uptime_seconds = 4;
+    int32 pending_tasks = 5;
+    float load_factor = 6;         // 0.0 (idle) to 1.0 (saturated)
+}
+
+// ── Metrics ──
+
+enum MetricType {
+    METRIC_UNKNOWN = 0;
+    METRIC_COUNTER = 1;        // Monotonically increasing count
+    METRIC_GAUGE = 2;          // Point-in-time value
+    METRIC_HISTOGRAM = 3;      // Distribution of values
+    METRIC_TIMER = 4;          // Duration measurement
+}
+
+message MetricPoint {
+    string name = 1;           // e.g., "inference.tokens_per_second"
+    MetricType type = 2;
+    double value = 3;
+    vibhu_oska.common.Timestamp timestamp = 4;
+    map<string, string> labels = 5;  // e.g., {"model": "qwen2.5-3b", "target": "gpu"}
+}
+
+message MetricsReport {
+    string source = 1;
+    vibhu_oska.common.Timestamp period_start = 2;
+    vibhu_oska.common.Timestamp period_end = 3;
+    repeated MetricPoint metrics = 4;
+}
+
+// ── Alerts ──
+
+enum AlertSeverity {
+    ALERT_INFO = 0;
+    ALERT_WARNING = 1;
+    ALERT_ERROR = 2;
+    ALERT_CRITICAL = 3;
+}
+
+message Alert {
+    vibhu_oska.common.UUID alert_id = 1;
+    AlertSeverity severity = 2;
+    string source = 3;
+    string title = 4;
+    string description = 5;
+    vibhu_oska.common.Timestamp fired_at = 6;
+    bool acknowledged = 7;
+    map<string, string> context = 8;
+}
+
+// ── Execution Log ──
+
+message ExecutionLog {
+    vibhu_oska.common.UUID request_id = 1;
+    string phase = 2;            // e.g., "validation", "cognition", "tool_execution"
+    string action = 3;           // e.g., "input_validated", "model_inference_start"
+    vibhu_oska.common.Timestamp timestamp = 4;
+    int64 duration_ms = 5;
+    vibhu_oska.common.Status result = 6;
+    string details = 7;          // Human-readable log message
+}
+
+// ── Replay Record ──
+
+message ReplayRecord {
+    vibhu_oska.common.UUID session_id = 1;
+    repeated ExecutionLog events = 2;
+    vibhu_oska.common.Timestamp session_start = 3;
+    vibhu_oska.common.Timestamp session_end = 4;
+    string summary = 5;
+}
