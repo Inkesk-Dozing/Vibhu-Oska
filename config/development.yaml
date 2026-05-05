@@ -1,0 +1,23 @@
+# ============================================================================
+# Vibhu-Oska AI-OS — Development Configuration
+# Overrides for local development environment
+# ============================================================================
+
+system:
+  codename: "The Skeleton (Dev)"
+
+gateway:
+  host: "127.0.0.1"
+
+logging:
+  level: "DEBUG"
+  format: "console"      # Pretty-print in dev, JSON in production
+
+security:
+  auth_enabled: false
+
+sandbox:
+  enabled: false          # Skip Docker in dev for faster iteration
+
+plugins:
+  auto_discover: true

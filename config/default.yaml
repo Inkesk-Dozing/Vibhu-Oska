@@ -1,0 +1,130 @@
+# ============================================================================
+# Vibhu-Oska AI-OS — Default Configuration
+# This is the base configuration. Environment-specific files override these.
+# ============================================================================
+
+# ── System Identity ──
+system:
+  name: "Vibhu-Oska"
+  version: "0.2.0"
+  codename: "The Skeleton"
+  description: "Autonomous AI Operating Layer"
+  tier: "private"  # "private" or "public"
+
+# ── API Gateway ──
+gateway:
+  host: "0.0.0.0"
+  port: 8000
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://localhost:5173"
+    - "http://127.0.0.1:3000"
+  max_request_size_mb: 50
+  rate_limit:
+    enabled: false
+    requests_per_minute: 60
+
+# ── Event Bus (ZeroMQ) ──
+event_bus:
+  publisher_port: 5555
+  subscriber_port: 5556
+  push_port: 5557
+  pull_port: 5558
+  heartbeat_interval_seconds: 10
+  dead_letter_queue_enabled: true
+
+# ── Logging ──
+logging:
+  level: "DEBUG"
+  format: "json"          # "json" or "console"
+  output_dir: "Log"
+  file_enabled: true
+  console_enabled: true
+  max_file_size_mb: 50
+  max_files: 10
+
+# ── Models ──
+models:
+  router:
+    name: "vibhu-router-150m"
+    parameters: 150_000_000
+    layers: 12
+    hidden_dim: 768
+    attention_heads: 12
+    context_window: 1024
+    target: "npu"                  # Runs on NPU for low-power ambient routing
+  reasoning:
+    name: "qwen2.5-coder-3b-qlora"
+    base_model: "Qwen/Qwen2.5-Coder-3B"
+    quantization: "nf4"
+    lora_rank: 16
+    lora_alpha: 32
+    target: "gpu"                  # Runs on GPU for heavy reasoning
+  fallback:
+    name: "cpu-fallback"
+    model_id: "Qwen/Qwen2.5-0.5B"
+    target: "cpu"
+
+# ── Memory ──
+memory:
+  vector:
+    engine: "chromadb"
+    persist_directory: "Data/chromadb"
+    default_collection: "vibhu_oska_memory"
+    embedding_model: "all-MiniLM-L6-v2"
+  relational:
+    engine: "sqlite"
+    database_path: "Data/vibhu_oska.db"
+  cache:
+    engine: "memory"             # "memory" or "redis"
+    redis_url: "redis://localhost:6379/0"
+    ttl_seconds: 3600
+
+# ── Hardware ──
+hardware:
+  gpu:
+    vram_limit_gb: 8.0
+    reserved_vram_gb: 0.5        # Keep 0.5GB free for system
+    thermal_limit_celsius: 85
+    cuda_device: 0
+  npu:
+    enabled: true
+    lemonade_port: 8080
+    model_format: "onnx"
+  cpu:
+    max_threads: 12
+    inference_threads: 4
+  storage:
+    external_drive_path: ""      # Set to external drive mount point
+    use_mmap: true
+
+# ── Docker / Sandbox ──
+sandbox:
+  enabled: true
+  docker_image: "vibhu-oska-sandbox:latest"
+  memory_limit: "4g"
+  cpu_limit: "2.0"
+  network_mode: "none"           # No network access for sandboxed execution
+  timeout_seconds: 300
+
+# ── Security ──
+security:
+  auth_enabled: false            # Disabled in development
+  jwt_secret: ""                 # Set via environment variable
+  allowed_origins:
+    - "localhost"
+  input_validation:
+    max_prompt_length: 100000
+    block_patterns:
+      - "DROP TABLE"
+      - "<script>"
+      - "rm -rf /"
+
+# ── Plugins ──
+plugins:
+  auto_discover: true
+  plugin_dir: "Backend/Plugins"
+  enabled:
+    - "ConfigLoader"
+    - "Logger"
+    - "ToolRegistry"
