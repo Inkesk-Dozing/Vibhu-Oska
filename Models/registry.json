@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-06-05",
+  "models": {
+    "router": {
+      "name": "Vibhu-Oska Router 150M",
+      "type": "classifier",
+      "parameters": 150000000,
+      "checkpoint": null,
+      "onnx_path": null,
+      "status": "untrained",
+      "target": "NPU",
+      "config": {
+        "vocab_size": 32000,
+        "hidden_size": 768,
+        "num_layers": 12,
+        "num_heads": 12,
+        "max_seq_len": 128,
+        "num_target_classes": 3,
+        "num_task_classes": 5
+      },
+      "best_val_accuracy": null,
+      "training_notes": "Run: python -m Models.router.dataset_generator && python -m Models.router.train --export-onnx"
+    },
+    "reasoning": {
+      "name": "Qwen2.5-Coder-3B QLoRA",
+      "type": "causal_lm",
+      "base_model": "Qwen/Qwen2.5-Coder-3B-Instruct",
+      "lora_adapters": null,
+      "status": "not_finetuned",
+      "target": "GPU",
+      "quantization": "4bit_nf4",
+      "context_window": 16384,
+      "config": {
+        "lora_r": 16,
+        "lora_alpha": 32,
+        "lora_dropout": 0.05,
+        "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+      },
+      "training_notes": "Run: python -m Models.reasoning.finetune --model qwen2.5-coder --epochs 1"
+    },
+    "backup": {
+      "name": "Phi-3-mini CPU Fallback",
+      "type": "causal_lm",
+      "base_model": "microsoft/Phi-3-mini-4k-instruct",
+      "status": "not_loaded",
+      "target": "CPU",
+      "quantization": "8bit",
+      "context_window": 4096,
+      "training_notes": "Loads in-process via transformers on CPU"
+    }
+  },
+  "active_models": {
+    "router":    null,
+    "reasoning": "sovereign-gpt",
+    "backup":    "direct-transformers"
+  },
+  "version_history": []
+}

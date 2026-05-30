@@ -1,0 +1,9634 @@
+{
+  "vocab": {
+    "<pad>": 0,
+    "<unk>": 1,
+    "<s>": 2,
+    "</s>": 3,
+    "\n": 4,
+    "#": 5,
+    "'": 6,
+    "(": 7,
+    ")": 8,
+    "*": 9,
+    "+": 10,
+    ",": 11,
+    "-": 12,
+    ".": 13,
+    "/": 14,
+    "0": 15,
+    "1": 16,
+    "2": 17,
+    "3": 18,
+    "4": 19,
+    "5": 20,
+    "6": 21,
+    "7": 22,
+    "8": 23,
+    "9": 24,
+    ":": 25,
+    ";": 26,
+    "<": 27,
+    "=": 28,
+    ">": 29,
+    "?": 30,
+    "@": 31,
+    "A": 32,
+    "B": 33,
+    "C": 34,
+    "D": 35,
+    "E": 36,
+    "F": 37,
+    "G": 38,
+    "H": 39,
+    "I": 40,
+    "J": 41,
+    "K": 42,
+    "L": 43,
+    "M": 44,
+    "N": 45,
+    "O": 46,
+    "P": 47,
+    "Q": 48,
+    "R": 49,
+    "S": 50,
+    "T": 51,
+    "U": 52,
+    "V": 53,
+    "W": 54,
+    "X": 55,
+    "Y": 56,
+    "Z": 57,
+    "[": 58,
+    "\\": 59,
+    "]": 60,
+    "_": 61,
+    "`": 62,
+    "a": 63,
+    "b": 64,
+    "c": 65,
+    "d": 66,
+    "e": 67,
+    "f": 68,
+    "g": 69,
+    "h": 70,
+    "i": 71,
+    "j": 72,
+    "k": 73,
+    "l": 74,
+    "m": 75,
+    "n": 76,
+    "o": 77,
+    "p": 78,
+    "q": 79,
+    "r": 80,
+    "s": 81,
+    "t": 82,
+    "u": 83,
+    "v": 84,
+    "w": 85,
+    "x": 86,
+    "y": 87,
+    "z": 88,
+    "{": 89,
+    "|": 90,
+    "}": 91,
+    "\u0120": 92,
+    "\u0120\u0120": 93,
+    "on": 94,
+    "er": 95,
+    "e\u0120": 96,
+    "s\u0120": 97,
+    "se": 98,
+    "es": 99,
+    "t\u0120": 100,
+    "\u0120\u0120\u0120\u0120": 101,
+    "in": 102,
+    "th": 103,
+    "uer": 104,
+    "uery": 105,
+    "pon": 106,
+    "espon": 107,
+    "Query": 108,
+    "esponse": 109,
+    "Response": 110,
+    "or": 111,
+    "re": 112,
+    "is\u0120": 113,
+    "an": 114,
+    "at": 115,
+    "d\u0120": 116,
+    "a\u0120": 117,
+    "en": 118,
+    "al": 119,
+    "it": 120,
+    "ar": 121,
+    "co": 122,
+    "st": 123,
+    "ion": 124,
+    "ha": 125,
+    "ro": 126,
+    "f\u0120": 127,
+    "ct": 128,
+    "m\u0120": 129,
+    "t\u0120is\u0120": 130,
+    "de": 131,
+    "ing": 132,
+    "o\u0120": 133,
+    "un": 134,
+    "y\u0120": 135,
+    "the\u0120": 136,
+    "in\u0120": 137,
+    "le": 138,
+    "yth": 139,
+    "ython": 140,
+    "lo": 141,
+    "es\u0120": 142,
+    "wha": 143,
+    "and\u0120": 144,
+    "el": 145,
+    "python": 146,
+    "\u0120\u0120\u0120\u0120\u0120\u0120\u0120\u0120": 147,
+    "ite\u0120": 148,
+    "ur": 149,
+    "ent": 150,
+    "I\u0120": 151,
+    "ing\u0120": 152,
+    "di": 153,
+    "n\u0120": 154,
+    "op": 155,
+    "us": 156,
+    "ac": 157,
+    "what\u0120is\u0120": 158,
+    "ic": 159,
+    "\u0120c": 160,
+    "im": 161,
+    "id": 162,
+    "il": 163,
+    "me": 164,
+    "ap": 165,
+    "con": 166,
+    "po": 167,
+    "er\u0120": 168,
+    "of\u0120": 169,
+    "do": 170,
+    "ere\u0120": 171,
+    "is": 172,
+    "ut": 173,
+    "ly": 174,
+    "as": 175,
+    "ex": 176,
+    "\u0120t": 177,
+    "ret": 178,
+    "retur": 179,
+    "return\u0120": 180,
+    "wr": 181,
+    "loc": 182,
+    "Th": 183,
+    "et": 184,
+    "ow": 185,
+    "pos": 186,
+    "sp": 187,
+    "ction": 188,
+    "for": 189,
+    "e\u0120t": 190,
+    "ch": 191,
+    "ell": 192,
+    "def\u0120": 193,
+    "um": 194,
+    "al\u0120": 195,
+    "\u0120s": 196,
+    "com": 197,
+    "em": 198,
+    "pr": 199,
+    "ad": 200,
+    "qu": 201,
+    "an\u0120": 202,
+    "I\u0120se": 203,
+    "e\u0120ty": 204,
+    "are\u0120": 205,
+    "write\u0120": 206,
+    "\u0120p": 207,
+    "ig": 208,
+    "The\u0120": 209,
+    "ev": 210,
+    "us\u0120": 211,
+    "10": 212,
+    "Aha": 213,
+    "I\u0120see\u0120ty": 214,
+    "I\u0120see\u0120typ": 215,
+    "I\u0120see\u0120typo\u0120": 216,
+    "I\u0120see\u0120typo\u0120th": 217,
+    "I\u0120see\u0120typo\u0120there\u0120": 218,
+    "cor": 219,
+    "rec": 220,
+    "fro": 221,
+    "ort\u0120": 222,
+    "ast": 223,
+    "what\u0120is\u0120the\u0120": 224,
+    "and\u0120cor": 225,
+    "and\u0120correc": 226,
+    "and\u0120correct\u0120is\u0120": 227,
+    "ke": 228,
+    "spell": 229,
+    "act": 230,
+    "def": 231,
+    "from\u0120": 232,
+    "col": 233,
+    "sk": 234,
+    "is\u0120a\u0120": 235,
+    "erat": 236,
+    "ly\u0120": 237,
+    "sy": 238,
+    "ste": 239,
+    "reat": 240,
+    "at\u0120": 241,
+    "ext": 242,
+    "to\u0120": 243,
+    "ul": 244,
+    "s\u0120in\u0120": 245,
+    "port\u0120": 246,
+    "A\u0120": 247,
+    "equ": 248,
+    "oppos": 249,
+    "opposite\u0120": 250,
+    "opposite\u0120of\u0120": 251,
+    "ib": 252,
+    "ibh": 253,
+    "ibhu": 254,
+    "run": 255,
+    "ation": 256,
+    "local": 257,
+    "what\u0120": 258,
+    "ag": 259,
+    "ec": 260,
+    "ant": 261,
+    "ra": 262,
+    "pro": 263,
+    "comp": 264,
+    "\u0120m": 265,
+    "write\u0120a\u0120": 266,
+    "ub": 267,
+    "num": 268,
+    "numb": 269,
+    "number": 270,
+    "ine\u0120": 271,
+    "\u0120in\u0120": 272,
+    "dict": 273,
+    "ith": 274,
+    "cont": 275,
+    "sion": 276,
+    "app": 277,
+    "coun": 278,
+    "ab": 279,
+    "25": 280,
+    "\u0120equ": 281,
+    "\u0120equal": 282,
+    "\u0120equals\u0120": 283,
+    "S\u0120": 284,
+    "how": 285,
+    "text": 286,
+    "is\u0120the\u0120": 287,
+    "per": 288,
+    "na": 289,
+    "int": 290,
+    "fun": 291,
+    "function": 292,
+    "dat": 293,
+    "id\u0120": 294,
+    "user": 295,
+    "_id": 296,
+    "cs": 297,
+    "spell\u0120": 298,
+    "la": 299,
+    "stem\u0120": 300,
+    "and": 301,
+    "bo": 302,
+    "does\u0120": 303,
+    "bac": 304,
+    "back": 305,
+    "up": 306,
+    "ore\u0120": 307,
+    "igh": 308,
+    "ma": 309,
+    "ed\u0120": 310,
+    "gn": 311,
+    "ition": 312,
+    "using\u0120": 313,
+    "define\u0120": 314,
+    "ge": 315,
+    "las": 316,
+    "fil": 317,
+    "get": 318,
+    "\u0120\u0120\u0120\u0120\u0120\u0120\u0120\u0120\u0120\u0120\u0120\u0120": 319,
+    "ter": 320,
+    "act\u0120": 321,
+    "ubm": 322,
+    "T\u0120": 323,
+    "en\u0120": 324,
+    "Vibhu": 325,
+    "Osk": 326,
+    "runn": 327,
+    "running\u0120": 328,
+    "system\u0120": 329,
+    "ou": 330,
+    "ran": 331,
+    "ce": 332,
+    "si": 333,
+    "Core\u0120": 334,
+    "it\u0120": 335,
+    "k\u0120": 336,
+    "ts": 337,
+    "Co": 338,
+    "le\u0120": 339,
+    "div": 340,
+    "if\u0120": 341,
+    "lf": 342,
+    "name": 343,
+    "ist\u0120": 344,
+    "ari": 345,
+    "with": 346,
+    "with\u0120": 347,
+    "ath": 348,
+    "content": 349,
+    "fast": 350,
+    "Fast": 351,
+    "FastA": 352,
+    "FastAP": 353,
+    "import\u0120": 354,
+    "12": 355,
+    "Re": 356,
+    "St": 357,
+    "cons": 358,
+    "gr": 359,
+    "255": 360,
+    "ol": 361,
+    "sq": 362,
+    "sql": 363,
+    "query": 364,
+    "\u0120pl": 365,
+    "\u0120plus\u0120": 366,
+    "\u0120tim": 367,
+    "\u0120times\u0120": 368,
+    "non": 369,
+    "nony": 370,
+    "nonym\u0120": 371,
+    "nonym\u0120for": 372,
+    "ver": 373,
+    "operat": 374,
+    "lay": 375,
+    "on\u0120": 376,
+    "ent\u0120": 377,
+    "mor": 378,
+    "ate": 379,
+    "creat": 380,
+    "od": 381,
+    "how\u0120": 382,
+    "wor": 383,
+    "that\u0120": 384,
+    "ode": 385,
+    "ir": 386,
+    "we": 387,
+    "\u0120to\u0120": 388,
+    "iev": 389,
+    "ces": 390,
+    "Yes": 391,
+    "s\u0120are\u0120": 392,
+    "iz": 393,
+    "cogn": 394,
+    "Here\u0120": 395,
+    "return\u0120a\u0120": 396,
+    "by\u0120": 397,
+    "self": 398,
+    "list\u0120": 399,
+    "key\u0120": 400,
+    "e\u0120in\u0120": 401,
+    "path": 402,
+    "cod": 403,
+    "ary": 404,
+    "high": 405,
+    "fastap": 406,
+    "fastapi": 407,
+    "item": 408,
+    "use": 409,
+    "useSt": 410,
+    "count\u0120": 411,
+    "val": 412,
+    "enter": 413,
+    "\u0120ch": 414,
+    "prim": 415,
+    "ses": 416,
+    "session": 417,
+    "O\u0120": 418,
+    "vow": 419,
+    "vowel": 420,
+    "what\u0120is\u0120the\u0120opposite\u0120of\u0120": 421,
+    "The\u0120opposite\u0120of\u0120": 422,
+    "Oska\u0120": 423,
+    "PU": 424,
+    "memor": 425,
+    "I\u0120a": 426,
+    "I\u0120am\u0120": 427,
+    "locally": 428,
+    "all": 429,
+    "form\u0120": 430,
+    "Con": 431,
+    "is\u0120is\u0120the\u0120": 432,
+    "tem": 433,
+    "up\u0120": 434,
+    "ment": 435,
+    "orm": 436,
+    "chec": 437,
+    "To\u0120": 438,
+    "tra": 439,
+    "epr": 440,
+    "eprly": 441,
+    "proper": 442,
+    "res": 443,
+    "ne": 444,
+    "rea": 445,
+    "pu": 446,
+    "put\u0120": 447,
+    "gro": 448,
+    "groun": 449,
+    "e\u0120the\u0120": 450,
+    "ser": 451,
+    "python\u0120c": 452,
+    "Here\u0120is\u0120a\u0120": 453,
+    "ion\u0120": 454,
+    "Python": 455,
+    "lass\u0120": 456,
+    "diction": 457,
+    "key": 458,
+    "a\u0120fil": 459,
+    "a\u0120file\u0120in\u0120": 460,
+    "e\u0120a\u0120": 461,
+    "writ": 462,
+    "dict_": 463,
+    "ist": 464,
+    "2\u0120": 465,
+    "ary\u0120": 466,
+    "sear": 467,
+    "search": 468,
+    "arr": 469,
+    "tar": 470,
+    "target": 471,
+    "low": 472,
+    "fastapi\u0120": 473,
+    "ic\u0120": 474,
+    "FastAPI": 475,
+    "ument": 476,
+    "user_id": 477,
+    "react\u0120": 478,
+    "compon": 479,
+    "js": 480,
+    "jsx": 481,
+    "aul": 482,
+    "function\u0120": 483,
+    "count": 484,
+    "Coun": 485,
+    "set": 486,
+    "but": 487,
+    "butt": 488,
+    "Subm": 489,
+    "Ch": 490,
+    "css\u0120": 491,
+    "css": 492,
+    "px": 493,
+    "vari": 494,
+    "variab": 495,
+    "color": 496,
+    "E\u0120": 497,
+    "DB": 498,
+    "doc": 499,
+    "colle": 500,
+    "collection": 501,
+    "or\u0120": 502,
+    "count\u0120from\u0120": 503,
+    "\u0120min": 504,
+    "\u0120minus\u0120": 505,
+    "even\u0120": 506,
+    "even\u0120number": 507,
+    "L\u0120": 508,
+    "onant": 509,
+    "ru": 510,
+    "\u0120sy": 511,
+    "what\u0120does\u0120": 512,
+    "what\u0120does\u0120a\u0120": 513,
+    "so": 514,
+    "operating\u0120": 515,
+    "ly\u0120on\u0120": 516,
+    "local\u0120": 517,
+    "\u0120and\u0120": 518,
+    "ord": 519,
+    "rout": 520,
+    "SQ": 521,
+    "SQL": 522,
+    "rel": 523,
+    "relation": 524,
+    "relational\u0120": 525,
+    "memory\u0120": 526,
+    "Gre": 527,
+    "Greet": 528,
+    "Greeting": 529,
+    "pe": 530,
+    "all\u0120": 531,
+    "how\u0120d": 532,
+    "how\u0120do\u0120": 533,
+    "how\u0120do\u0120y": 534,
+    "how\u0120do\u0120you": 535,
+    "how\u0120do\u0120you\u0120": 536,
+    "work": 537,
+    "Context": 538,
+    "is\u0120is\u0120the\u0120c": 539,
+    "apit": 540,
+    "apital\u0120": 541,
+    "apital\u0120of\u0120": 542,
+    "apital\u0120of\u0120F": 543,
+    "apital\u0120of\u0120Fran": 544,
+    "apital\u0120of\u0120France": 545,
+    "ater\u0120": 546,
+    "ater\u0120bo": 547,
+    "ater\u0120boil": 548,
+    "norm": 549,
+    "normal": 550,
+    "wn": 551,
+    "check\u0120": 552,
+    "this": 553,
+    "if": 554,
+    "be": 555,
+    "ieve\u0120": 556,
+    "ach": 557,
+    "ust": 558,
+    "train": 559,
+    "ip": 560,
+    "ware\u0120": 561,
+    "\u0120cor": 562,
+    "cogniz": 563,
+    "s\u0120and\u0120": 564,
+    "the": 565,
+    "ical": 566,
+    "e\u0120is\u0120": 567,
+    "sor": 568,
+    "out": 569,
+    "log": 570,
+    "ground": 571,
+    "int\u0120": 572,
+    "add": 573,
+    "divi": 574,
+    "divide": 575,
+    "b\u0120": 576,
+    "add\u0120": 577,
+    "wo\u0120": 578,
+    "You": 579,
+    "You\u0120c": 580,
+    "loop": 581,
+    "lass": 582,
+    "stat": 583,
+    "read": 584,
+    "open": 585,
+    "mer": 586,
+    "bin": 587,
+    "alg": 588,
+    "algor": 589,
+    "algorith": 590,
+    "low\u0120": 591,
+    "mid\u0120": 592,
+    "mid": 593,
+    "app\u0120": 594,
+    "end": 595,
+    "odel": 596,
+    "antic\u0120": 597,
+    "ase": 598,
+    "ess": 599,
+    "essag": 600,
+    "uments": 601,
+    "uv": 602,
+    "uvic": 603,
+    "uvicor": 604,
+    "ho": 605,
+    "00": 606,
+    "component": 607,
+    "React\u0120": 608,
+    "react": 609,
+    "export\u0120": 610,
+    "export\u0120def": 611,
+    "export\u0120defaul": 612,
+    "export\u0120default\u0120": 613,
+    "export\u0120default\u0120function\u0120": 614,
+    "tit": 615,
+    "useState": 616,
+    "React": 617,
+    "const\u0120": 618,
+    "Count": 619,
+    "In": 620,
+    "button": 621,
+    "subm": 622,
+    "hand": 623,
+    "handle": 624,
+    "Submit": 625,
+    "valu": 626,
+    "form": 627,
+    "cond": 628,
+    "condition": 629,
+    "ele": 630,
+    "grid": 631,
+    "16": 632,
+    "center": 633,
+    "ark": 634,
+    "ph": 635,
+    "sqlite\u0120": 636,
+    "atch": 637,
+    "SE": 638,
+    "M\u0120": 639,
+    "iv": 640,
+    "ta": 641,
+    "IN": 642,
+    "Chro": 643,
+    "Chroma": 644,
+    "ChromaDB": 645,
+    "idation": 646,
+    "e\u0120that\u0120": 647,
+    "datab": 648,
+    "4\u0120equals\u0120": 649,
+    "vibhu": 650,
+    "H\u0120": 651,
+    "osk": 652,
+    "oska": 653,
+    "C\u0120": 654,
+    "let": 655,
+    "er\u0120th": 656,
+    "er\u0120than\u0120": 657,
+    "ellig": 658,
+    "what\u0120is\u0120a\u0120": 659,
+    "what\u0120is\u0120a\u0120sy": 660,
+    "what\u0120is\u0120a\u0120synonym\u0120for": 661,
+    "A\u0120sy": 662,
+    "A\u0120synonym\u0120for": 663,
+    "\u0120cle": 664,
+    "bir": 665,
+    "bird\u0120": 666,
+    "15": 667,
+    "AI": 668,
+    "OS\u0120": 669,
+    "n\u0120operating\u0120": 670,
+    "ire": 671,
+    "ly\u0120on\u0120local\u0120": 672,
+    "CPU": 673,
+    "GPU": 674,
+    "ates\u0120": 675,
+    "SQLite\u0120": 676,
+    "hel": 677,
+    "hello": 678,
+    "Greetings": 679,
+    "creator": 680,
+    "I\u0120am\u0120Vibhu": 681,
+    "Oska": 682,
+    "running\u0120locally": 683,
+    "ak": 684,
+    "we\u0120": 685,
+    "ay": 686,
+    "perat": 687,
+    "routes\u0120": 688,
+    "ask": 689,
+    "man": 690,
+    "manag": 691,
+    "manages\u0120": 692,
+    "exec": 693,
+    "execut": 694,
+    "Par": 695,
+    "Paris\u0120is\u0120the\u0120c": 696,
+    "Paris\u0120is\u0120the\u0120capital\u0120of\u0120France": 697,
+    "Water\u0120boil": 698,
+    "Water\u0120boils\u0120": 699,
+    "Water\u0120boils\u0120at\u0120": 700,
+    "Water\u0120boils\u0120at\u012010": 701,
+    "Water\u0120boils\u0120at\u0120100": 702,
+    "Water\u0120boils\u0120at\u0120100\u0120": 703,
+    "Water\u0120boils\u0120at\u0120100\u0120de": 704,
+    "Water\u0120boils\u0120at\u0120100\u0120deg": 705,
+    "Water\u0120boils\u0120at\u0120100\u0120degre": 706,
+    "Water\u0120boils\u0120at\u0120100\u0120degrees\u0120": 707,
+    "Water\u0120boils\u0120at\u0120100\u0120degrees\u0120C": 708,
+    "Water\u0120boils\u0120at\u0120100\u0120degrees\u0120Cel": 709,
+    "Water\u0120boils\u0120at\u0120100\u0120degrees\u0120Celsi": 710,
+    "Water\u0120boils\u0120at\u0120100\u0120degrees\u0120Celsius": 711,
+    "ure\u0120": 712,
+    "Oska\u0120is\u0120": 713,
+    "Oska\u0120is\u0120running\u0120": 714,
+    "Oska\u0120is\u0120running\u0120in\u0120": 715,
+    "Oska\u0120is\u0120running\u0120in\u0120back": 716,
+    "Oska\u0120is\u0120running\u0120in\u0120backup\u0120": 717,
+    "Oska\u0120is\u0120running\u0120in\u0120backup\u0120Core\u0120": 718,
+    "Oska\u0120is\u0120running\u0120in\u0120backup\u0120Core\u0120m": 719,
+    "Oska\u0120is\u0120running\u0120in\u0120backup\u0120Core\u0120mode": 720,
+    "mod": 721,
+    "e\u0120is\u0120the\u0120": 722,
+    "wt": 723,
+    "this\u0120": 724,
+    "now": 725,
+    "hg": 726,
+    "env": 727,
+    "am": 728,
+    "tal": 729,
+    "ill": 730,
+    "respon": 731,
+    "ly\u0120and\u0120": 732,
+    "conc": 733,
+    "to\u0120check\u0120": 734,
+    "Let": 735,
+    "s\u0120ver": 736,
+    "the\u0120system\u0120": 737,
+    "weloc": 738,
+    "welocme": 739,
+    "ieve": 740,
+    "run\u0120": 741,
+    "cust": 742,
+    "custo": 743,
+    "custom\u0120": 744,
+    "cr": 745,
+    "crip": 746,
+    "cripts": 747,
+    "proeprly": 748,
+    "properly": 749,
+    "trained\u0120": 750,
+    "har": 751,
+    "hard": 752,
+    "hardware\u0120": 753,
+    "reso": 754,
+    "resour": 755,
+    "resources": 756,
+    "roeprly": 757,
+    "how\u0120does\u0120": 758,
+    "reacogniz": 759,
+    "Cogn": 760,
+    "Cognition": 761,
+    "CognitionCore\u0120": 762,
+    "te": 763,
+    "them\u0120": 764,
+    "nam": 765,
+    "ically": 766,
+    "repos": 767,
+    "reposn": 768,
+    "reposnse": 769,
+    "response": 770,
+    "comput": 771,
+    "seme": 772,
+    "semeing": 773,
+    "gen": 774,
+    "generat": 775,
+    "generates\u0120": 776,
+    "output\u0120": 777,
+    "wh": 778,
+    "s\u0120di": 779,
+    "ic\u0120t": 780,
+    "write\u0120a\u0120python\u0120c": 781,
+    "alc": 782,
+    "alcul": 783,
+    "alculat": 784,
+    "alculator": 785,
+    "Here\u0120is\u0120a\u0120s": 786,
+    "Here\u0120is\u0120a\u0120sim": 787,
+    "Here\u0120is\u0120a\u0120simp": 788,
+    "Here\u0120is\u0120a\u0120simple\u0120": 789,
+    "def\u0120add": 790,
+    "ult": 791,
+    "s\u0120in\u0120python": 792,
+    "You\u0120can\u0120": 793,
+    "\u0120in\u0120Python": 794,
+    "for\u0120": 795,
+    "\u0120in\u0120ran": 796,
+    "\u0120in\u0120range": 797,
+    "print": 798,
+    "class\u0120": 799,
+    "Creat": 800,
+    "__": 801,
+    "return\u0120f": 802,
+    "ort\u0120a\u0120": 803,
+    "ort\u0120a\u0120list\u0120": 804,
+    "ort\u0120a\u0120list\u0120of\u0120": 805,
+    "by\u0120key\u0120": 806,
+    "dictionari": 807,
+    "dictionaries\u0120": 808,
+    "using\u0120a\u0120": 809,
+    "lam": 810,
+    "lamb": 811,
+    "lambd": 812,
+    "lambda\u0120": 813,
+    "_dict": 814,
+    "_dicts": 815,
+    "data": 816,
+    "read\u0120": 817,
+    "read\u0120a\u0120file\u0120in\u0120": 818,
+    "def\u0120read": 819,
+    "def\u0120read_": 820,
+    "fi": 821,
+    "file": 822,
+    "with\u0120open": 823,
+    "encod": 824,
+    "encoding": 825,
+    "utf": 826,
+    "as\u0120": 827,
+    "as\u0120f": 828,
+    "to\u0120a\u0120file\u0120in\u0120": 829,
+    "write": 830,
+    "merg": 831,
+    "merge\u0120t": 832,
+    "merge\u0120two\u0120": 833,
+    "operator": 834,
+    "dict_b": 835,
+    "if\u0120key\u0120": 836,
+    "exist": 837,
+    "pre": 838,
+    "dictionary": 839,
+    "compre": 840,
+    "compreh": 841,
+    "comprehen": 842,
+    "comprehension": 843,
+    "\u0120in\u0120python": 844,
+    "y\u0120to\u0120": 845,
+    "binary\u0120": 846,
+    "binary\u0120search": 847,
+    "algorithm": 848,
+    "high\u0120": 849,
+    "if\u0120arr": 850,
+    "bas": 851,
+    "FastAPI\u0120": 852,
+    "lic": 853,
+    "from\u0120fastapi\u0120": 854,
+    "from\u0120fastapi\u0120import\u0120": 855,
+    "from\u0120fastapi\u0120import\u0120FastAPI": 856,
+    "roo": 857,
+    "post\u0120": 858,
+    "ON": 859,
+    "De": 860,
+    "Def": 861,
+    "endpo": 862,
+    "endpoint\u0120": 863,
+    "yd": 864,
+    "Base": 865,
+    "BaseM": 866,
+    "BaseModel": 867,
+    "Item": 868,
+    "items": 869,
+    "create": 870,
+    "messag": 871,
+    "message": 872,
+    "\u0120par": 873,
+    "\u0120para": 874,
+    "\u0120parame": 875,
+    "\u0120parameter": 876,
+    "arg": 877,
+    "uvicorn\u0120": 878,
+    "Run": 879,
+    "Run\u0120": 880,
+    "ly\u0120using\u0120": 881,
+    "h1": 882,
+    "title": 883,
+    "counter\u0120": 884,
+    "import\u0120React": 885,
+    "useStat": 886,
+    "useState\u0120": 887,
+    "setCount": 888,
+    "form\u0120subm": 889,
+    "form\u0120submis": 890,
+    "form\u0120submission": 891,
+    "setT": 892,
+    "setText": 893,
+    "vent": 894,
+    "input\u0120": 895,
+    "value": 896,
+    "ange": 897,
+    "element": 898,
+    "Lo": 899,
+    "Log": 900,
+    "grid\u0120": 901,
+    "conta": 902,
+    "contain": 903,
+    "container\u0120": 904,
+    "colum": 905,
+    "column": 906,
+    "columns": 907,
+    "disp": 908,
+    "display": 909,
+    "write\u0120css\u0120": 910,
+    "fle": 911,
+    "flex": 912,
+    "box": 913,
+    "variabl": 914,
+    "variables": 915,
+    "primary": 916,
+    "0f": 917,
+    "bg": 918,
+    "dark": 919,
+    "0a": 920,
+    "background": 921,
+    "var": 922,
+    "glass": 923,
+    "sty": 924,
+    "style": 925,
+    "backd": 926,
+    "backdro": 927,
+    "backdrop": 928,
+    "rg": 929,
+    "rgb": 930,
+    "rgba": 931,
+    "bord": 932,
+    "border": 933,
+    "Query\u0120": 934,
+    "row": 935,
+    "SEL": 936,
+    "SELE": 937,
+    "SELEC": 938,
+    "FR": 939,
+    "FRO": 940,
+    "FROM\u0120": 941,
+    "WH": 942,
+    "WHE": 943,
+    "WHER": 944,
+    "activ": 945,
+    "tail": 946,
+    "role": 947,
+    "\u0120chat": 948,
+    "\u0120chats\u0120": 949,
+    "_id\u0120": 950,
+    "session_id": 951,
+    "sert\u0120": 952,
+    "new": 953,
+    "e\u0120in": 954,
+    "e\u0120into\u0120": 955,
+    "chro": 956,
+    "chrom": 957,
+    "chromad": 958,
+    "chromadb\u0120": 959,
+    "sist": 960,
+    "documents": 961,
+    "sem": 962,
+    "semantic\u0120": 963,
+    "query_": 964,
+    "query_text": 965,
+    "validation": 966,
+    "\u0120core": 967,
+    "perform": 968,
+    "performs\u0120": 969,
+    "li": 970,
+    "data\u0120": 971,
+    "databas": 972,
+    "database\u0120": 973,
+    "enc": 974,
+    "evol": 975,
+    "code\u0120": 976,
+    "tes": 977,
+    "test": 978,
+    "es\u0120the\u0120": 979,
+    "\u0120tes": 980,
+    "\u0120tests": 981,
+    "count\u0120from\u01201": 982,
+    "count\u0120from\u01201\u0120to\u0120": 983,
+    "2\u0120plus\u0120": 984,
+    "2\u0120plus\u01203": 985,
+    "1\u0120plus\u0120": 986,
+    "1\u0120plus\u01201": 987,
+    "\u0120equals\u01202": 988,
+    "10\u0120minus\u0120": 989,
+    "5\u0120times\u0120": 990,
+    "5\u0120times\u01205": 991,
+    "3\u0120times\u0120": 992,
+    "s\u0120b": 993,
+    "s\u0120bet": 994,
+    "s\u0120betwe": 995,
+    "s\u0120between\u0120": 996,
+    "s\u0120between\u01201": 997,
+    "s\u0120between\u01201\u0120and\u0120": 998,
+    "s\u0120between\u01201\u0120and\u012010": 999,
+    "odd\u0120": 1000,
+    "odd\u0120number": 1001,
+    "7\u0120": 1002,
+    "prime\u0120": 1003,
+    "prime\u0120number": 1004,
+    "V\u0120": 1005,
+    "Y\u0120": 1006,
+    "G\u0120": 1007,
+    "what\u0120are\u0120": 1008,
+    "what\u0120are\u0120the\u0120": 1009,
+    "consonant": 1010,
+    "sonant": 1011,
+    "s\u0120in\u0120the\u0120": 1012,
+    "step": 1013,
+    "\u0120pro": 1014,
+    "compil": 1015,
+    "stor": 1016,
+    "intellig": 1017,
+    "\u0120sm": 1018,
+    "\u0120smar": 1019,
+    "tru": 1020,
+    "complet": 1021,
+    "complete\u0120the\u0120": 1022,
+    "complete\u0120the\u0120ph": 1023,
+    "complete\u0120the\u0120phra": 1024,
+    "complete\u0120the\u0120phrase": 1025,
+    "catch": 1026,
+    "pract": 1027,
+    "practic": 1028,
+    "practice\u0120": 1029,
+    "practice\u0120ma": 1030,
+    "practice\u0120mak": 1031,
+    "pur": 1032,
+    "dog": 1033,
+    "dog\u0120": 1034,
+    "fis": 1035,
+    "fish": 1036,
+    "stem": 1037,
+    "20": 1038,
+    "7\u0120plus\u0120": 1039,
+    "7\u0120plus\u01208": 1040,
+    "12\u0120minus\u0120": 1041,
+    "12\u0120minus\u01205": 1042,
+    "9\u0120times\u0120": 1043,
+    "9\u0120times\u01203": 1044,
+    "16\u0120": 1045,
+    "16\u0120divide": 1046,
+    "16\u0120divided\u0120": 1047,
+    "16\u0120divided\u0120by\u0120": 1048,
+    "9\u0120": 1049,
+    "great": 1050,
+    "greater\u0120than\u0120": 1051,
+    "greater\u0120than\u01204": 1052,
+    "an\u0120even\u0120number": 1053,
+    "how\u0120m": 1054,
+    "how\u0120man": 1055,
+    "how\u0120many\u0120": 1056,
+    "vowels\u0120in\u0120": 1057,
+    "vowels\u0120in\u0120vibhu": 1058,
+    "There\u0120": 1059,
+    "There\u0120are\u0120": 1060,
+    "s\u0120in\u0120oska": 1061,
+    "Oska\u0120AI": 1062,
+    "OS\u0120is\u0120a\u0120": 1063,
+    "OS\u0120is\u0120a\u0120so": 1064,
+    "OS\u0120is\u0120a\u0120sover": 1065,
+    "OS\u0120is\u0120a\u0120sovere": 1066,
+    "OS\u0120is\u0120a\u0120sovereig": 1067,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120": 1068,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120lay": 1069,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120": 1070,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120": 1071,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120ent": 1072,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entire": 1073,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120": 1074,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120CPU": 1075,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120CPU\u0120and\u0120": 1076,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120CPU\u0120and\u0120GPU": 1077,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120CPU\u0120and\u0120GPU\u0120s": 1078,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120CPU\u0120and\u0120GPU\u0120sil": 1079,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120CPU\u0120and\u0120GPU\u0120silic": 1080,
+    "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120CPU\u0120and\u0120GPU\u0120silicon": 1081,
+    "The\u0120system\u0120": 1082,
+    "The\u0120system\u0120co": 1083,
+    "The\u0120system\u0120coord": 1084,
+    "The\u0120system\u0120coordin": 1085,
+    "The\u0120system\u0120coordinates\u0120": 1086,
+    "The\u0120system\u0120coordinates\u0120Z": 1087,
+    "The\u0120system\u0120coordinates\u0120ZM": 1088,
+    "The\u0120system\u0120coordinates\u0120ZMQ": 1089,
+    "The\u0120system\u0120coordinates\u0120ZMQ\u0120": 1090,
+    "The\u0120system\u0120coordinates\u0120ZMQ\u0120ev": 1091,
+    "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120": 1092,
+    "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120rout": 1093,
+    "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120routing\u0120": 1094,
+    "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120routing\u0120and\u0120": 1095,
+    "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120routing\u0120and\u0120SQLite\u0120": 1096,
+    "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120routing\u0120and\u0120SQLite\u0120relational\u0120": 1097,
+    "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120routing\u0120and\u0120SQLite\u0120relational\u0120memory\u0120": 1098,
+    "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120routing\u0120and\u0120SQLite\u0120relational\u0120memory\u0120st": 1099,
+    "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120routing\u0120and\u0120SQLite\u0120relational\u0120memory\u0120state": 1100,
+    "Spe": 1101,
+    "Speak": 1102,
+    "what\u0120s": 1103,
+    "what\u0120sh": 1104,
+    "what\u0120shall\u0120": 1105,
+    "what\u0120shall\u0120we\u0120": 1106,
+    "what\u0120shall\u0120we\u0120form\u0120": 1107,
+    "what\u0120shall\u0120we\u0120form\u0120t": 1108,
+    "what\u0120shall\u0120we\u0120form\u0120tod": 1109,
+    "what\u0120shall\u0120we\u0120form\u0120today": 1110,
+    "how\u0120do\u0120you\u0120work": 1111,
+    "I\u0120am\u0120an\u0120": 1112,
+    "I\u0120am\u0120an\u0120A": 1113,
+    "I\u0120am\u0120an\u0120Aut": 1114,
+    "I\u0120am\u0120an\u0120Auton": 1115,
+    "I\u0120am\u0120an\u0120Autono": 1116,
+    "I\u0120am\u0120an\u0120Autonom": 1117,
+    "I\u0120am\u0120an\u0120Autonomo": 1118,
+    "I\u0120am\u0120an\u0120Autonomous\u0120": 1119,
+    "I\u0120am\u0120an\u0120Autonomous\u0120A": 1120,
+    "I\u0120am\u0120an\u0120Autonomous\u0120AI\u0120": 1121,
+    "I\u0120am\u0120an\u0120Autonomous\u0120AI\u0120O": 1122,
+    "I\u0120am\u0120an\u0120Autonomous\u0120AI\u0120Operat": 1123,
+    "I\u0120am\u0120an\u0120Autonomous\u0120AI\u0120Operating\u0120": 1124,
+    "I\u0120am\u0120an\u0120Autonomous\u0120AI\u0120Operating\u0120L": 1125,
+    "I\u0120am\u0120an\u0120Autonomous\u0120AI\u0120Operating\u0120Lay": 1126,
+    "I\u0120am\u0120an\u0120Autonomous\u0120AI\u0120Operating\u0120Layer\u0120": 1127,
+    "OS": 1128,
+    "that\u0120routes\u0120": 1129,
+    "that\u0120routes\u0120t": 1130,
+    "that\u0120routes\u0120task": 1131,
+    "that\u0120routes\u0120tasks": 1132,
+    "manages\u0120memor": 1133,
+    "manages\u0120memory": 1134,
+    "and\u0120execut": 1135,
+    "and\u0120executes\u0120": 1136,
+    "and\u0120executes\u0120OS\u0120": 1137,
+    "and\u0120executes\u0120OS\u0120com": 1138,
+    "and\u0120executes\u0120OS\u0120comm": 1139,
+    "and\u0120executes\u0120OS\u0120command": 1140,
+    "and\u0120executes\u0120OS\u0120commands\u0120": 1141,
+    "and\u0120executes\u0120OS\u0120commands\u0120locally": 1142,
+    "what\u0120is\u0120the\u0120c": 1143,
+    "what\u0120is\u0120the\u0120capital\u0120of\u0120France": 1144,
+    "what\u0120tem": 1145,
+    "what\u0120temperat": 1146,
+    "what\u0120temperature\u0120": 1147,
+    "what\u0120temperature\u0120does\u0120": 1148,
+    "what\u0120temperature\u0120does\u0120w": 1149,
+    "what\u0120temperature\u0120does\u0120water\u0120boil": 1150,
+    "what\u0120temperature\u0120does\u0120water\u0120boil\u0120": 1151,
+    "what\u0120temperature\u0120does\u0120water\u0120boil\u0120at": 1152,
+    "what\u0120mod": 1153,
+    "what\u0120mode\u0120is\u0120the\u0120": 1154,
+    "what\u0120mode\u0120is\u0120the\u0120system\u0120": 1155,
+    "what\u0120mode\u0120is\u0120the\u0120system\u0120running\u0120": 1156,
+    "what\u0120mode\u0120is\u0120the\u0120system\u0120running\u0120in": 1157,
+    "wtf\u0120": 1158,
+    "wtf\u0120is\u0120": 1159,
+    "wtf\u0120is\u0120this\u0120": 1160,
+    "wtf\u0120is\u0120this\u0120now": 1161,
+    "wtf\u0120is\u0120this\u0120now\u0120s": 1162,
+    "wtf\u0120is\u0120this\u0120now\u0120si": 1163,
+    "wtf\u0120is\u0120this\u0120now\u0120sihg": 1164,
+    "sihg": 1165,
+    "sigh": 1166,
+    "This\u0120is\u0120the\u0120": 1167,
+    "This\u0120is\u0120the\u0120Vibhu": 1168,
+    "Oska\u0120local\u0120": 1169,
+    "Oska\u0120local\u0120env": 1170,
+    "Oska\u0120local\u0120envir": 1171,
+    "Oska\u0120local\u0120environ": 1172,
+    "Oska\u0120local\u0120environment": 1173,
+    "amk": 1174,
+    "amke\u0120": 1175,
+    "amke\u0120it\u0120": 1176,
+    "amke\u0120it\u0120tal": 1177,
+    "amke\u0120it\u0120talk\u0120": 1178,
+    "amke\u0120it\u0120talk\u0120normal": 1179,
+    "amke": 1180,
+    "make": 1181,
+    "I\u0120w": 1182,
+    "I\u0120will": 1183,
+    "I\u0120will\u0120": 1184,
+    "I\u0120will\u0120respon": 1185,
+    "I\u0120will\u0120respond\u0120": 1186,
+    "I\u0120will\u0120respond\u0120normal": 1187,
+    "I\u0120will\u0120respond\u0120normally\u0120and\u0120": 1188,
+    "I\u0120will\u0120respond\u0120normally\u0120and\u0120conc": 1189,
+    "I\u0120will\u0120respond\u0120normally\u0120and\u0120conci": 1190,
+    "I\u0120will\u0120respond\u0120normally\u0120and\u0120concise": 1191,
+    "I\u0120will\u0120respond\u0120normally\u0120and\u0120concisely": 1192,
+    "i\u0120t": 1193,
+    "i\u0120twn": 1194,
+    "i\u0120twnat\u0120": 1195,
+    "i\u0120twnat\u0120to\u0120check\u0120": 1196,
+    "i\u0120twnat\u0120to\u0120check\u0120this": 1197,
+    "twn": 1198,
+    "twnat": 1199,
+    "want": 1200,
+    "s\u0120verif": 1201,
+    "s\u0120verify\u0120": 1202,
+    "s\u0120verify\u0120the\u0120system\u0120": 1203,
+    "s\u0120verify\u0120the\u0120system\u0120be": 1204,
+    "s\u0120verify\u0120the\u0120system\u0120beha": 1205,
+    "s\u0120verify\u0120the\u0120system\u0120behav": 1206,
+    "s\u0120verify\u0120the\u0120system\u0120behavi": 1207,
+    "s\u0120verify\u0120the\u0120system\u0120behavior": 1208,
+    "wel": 1209,
+    "welco": 1210,
+    "welcome": 1211,
+    "hell": 1212,
+    "hello\u0120": 1213,
+    "hello\u0120how": 1214,
+    "hello\u0120how\u0120to\u0120": 1215,
+    "hello\u0120how\u0120to\u0120ac": 1216,
+    "hello\u0120how\u0120to\u0120acieve\u0120": 1217,
+    "hello\u0120how\u0120to\u0120acieve\u0120this": 1218,
+    "acieve": 1219,
+    "achieve": 1220,
+    "To\u0120ach": 1221,
+    "To\u0120achieve\u0120": 1222,
+    "To\u0120achieve\u0120this\u0120": 1223,
+    "To\u0120achieve\u0120this\u0120locally": 1224,
+    "we\u0120run\u0120": 1225,
+    "we\u0120run\u0120the\u0120": 1226,
+    "we\u0120run\u0120the\u0120custom\u0120": 1227,
+    "we\u0120run\u0120the\u0120custom\u0120train": 1228,
+    "we\u0120run\u0120the\u0120custom\u0120training\u0120": 1229,
+    "we\u0120run\u0120the\u0120custom\u0120training\u0120s": 1230,
+    "we\u0120run\u0120the\u0120custom\u0120training\u0120scripts": 1231,
+    "train\u0120": 1232,
+    "train\u0120it\u0120": 1233,
+    "train\u0120it\u0120proeprly": 1234,
+    "I\u0120am\u0120be": 1235,
+    "I\u0120am\u0120being\u0120": 1236,
+    "I\u0120am\u0120being\u0120trained\u0120": 1237,
+    "I\u0120am\u0120being\u0120trained\u0120proper": 1238,
+    "I\u0120am\u0120being\u0120trained\u0120properly\u0120on\u0120local\u0120": 1239,
+    "I\u0120am\u0120being\u0120trained\u0120properly\u0120on\u0120local\u0120hardware\u0120": 1240,
+    "I\u0120am\u0120being\u0120trained\u0120properly\u0120on\u0120local\u0120hardware\u0120resources": 1241,
+    "is\u0120it\u0120": 1242,
+    "is\u0120it\u0120trained\u0120": 1243,
+    "is\u0120it\u0120trained\u0120roeprly": 1244,
+    "the\u0120ne": 1245,
+    "the\u0120neur": 1246,
+    "the\u0120neural\u0120": 1247,
+    "the\u0120neural\u0120we": 1248,
+    "the\u0120neural\u0120weigh": 1249,
+    "the\u0120neural\u0120weight": 1250,
+    "the\u0120neural\u0120weights\u0120are\u0120": 1251,
+    "the\u0120neural\u0120weights\u0120are\u0120op": 1252,
+    "the\u0120neural\u0120weights\u0120are\u0120opt": 1253,
+    "the\u0120neural\u0120weights\u0120are\u0120optim": 1254,
+    "the\u0120neural\u0120weights\u0120are\u0120optimiz": 1255,
+    "the\u0120neural\u0120weights\u0120are\u0120optimized\u0120": 1256,
+    "the\u0120neural\u0120weights\u0120are\u0120optimized\u0120on\u0120": 1257,
+    "the\u0120neural\u0120weights\u0120are\u0120optimized\u0120on\u0120the\u0120": 1258,
+    "the\u0120neural\u0120weights\u0120are\u0120optimized\u0120on\u0120the\u0120local": 1259,
+    "the\u0120neural\u0120weights\u0120are\u0120optimized\u0120on\u0120the\u0120local\u0120cor": 1260,
+    "the\u0120neural\u0120weights\u0120are\u0120optimized\u0120on\u0120the\u0120local\u0120corp": 1261,
+    "the\u0120neural\u0120weights\u0120are\u0120optimized\u0120on\u0120the\u0120local\u0120corpus": 1262,
+    "how\u0120does\u0120it\u0120": 1263,
+    "how\u0120does\u0120it\u0120reacogniz": 1264,
+    "how\u0120does\u0120it\u0120reacognize\u0120ty": 1265,
+    "how\u0120does\u0120it\u0120reacognize\u0120typos": 1266,
+    "reacognize": 1267,
+    "recogniz": 1268,
+    "recognize": 1269,
+    "The\u0120spell": 1270,
+    "The\u0120spelling\u0120": 1271,
+    "The\u0120spelling\u0120chec": 1272,
+    "The\u0120spelling\u0120check": 1273,
+    "The\u0120spelling\u0120checker\u0120": 1274,
+    "The\u0120spelling\u0120checker\u0120in\u0120": 1275,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120": 1276,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120de": 1277,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120dete": 1278,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detect": 1279,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120": 1280,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120t": 1281,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120ty": 1282,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typo": 1283,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typos\u0120and\u0120": 1284,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typos\u0120and\u0120routes\u0120": 1285,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typos\u0120and\u0120routes\u0120them\u0120": 1286,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typos\u0120and\u0120routes\u0120them\u0120d": 1287,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typos\u0120and\u0120routes\u0120them\u0120dy": 1288,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typos\u0120and\u0120routes\u0120them\u0120dynam": 1289,
+    "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typos\u0120and\u0120routes\u0120them\u0120dynamically": 1290,
+    "what\u0120is\u0120the\u0120reposnse": 1291,
+    "The\u0120respon": 1292,
+    "The\u0120respons": 1293,
+    "The\u0120response\u0120is\u0120": 1294,
+    "The\u0120response\u0120is\u0120comput": 1295,
+    "The\u0120response\u0120is\u0120computed\u0120": 1296,
+    "The\u0120response\u0120is\u0120computed\u0120in": 1297,
+    "proces": 1298,
+    "process\u0120": 1299,
+    "process\u0120using\u0120": 1300,
+    "process\u0120using\u0120local": 1301,
+    "process\u0120using\u0120local\u0120t": 1302,
+    "process\u0120using\u0120local\u0120ten": 1303,
+    "process\u0120using\u0120local\u0120tensor": 1304,
+    "process\u0120using\u0120local\u0120tensor\u0120m": 1305,
+    "process\u0120using\u0120local\u0120tensor\u0120mat": 1306,
+    "process\u0120using\u0120local\u0120tensor\u0120matr": 1307,
+    "process\u0120using\u0120local\u0120tensor\u0120matric": 1308,
+    "process\u0120using\u0120local\u0120tensor\u0120matrices": 1309,
+    "it\u0120is\u0120": 1310,
+    "it\u0120is\u0120semeing": 1311,
+    "it\u0120is\u0120semeingly\u0120": 1312,
+    "it\u0120is\u0120semeingly\u0120normal": 1313,
+    "semeingly": 1314,
+    "seem": 1315,
+    "seeming": 1316,
+    "seemingly": 1317,
+    "the\u0120system\u0120generates\u0120": 1318,
+    "the\u0120system\u0120generates\u0120c": 1319,
+    "the\u0120system\u0120generates\u0120cle": 1320,
+    "the\u0120system\u0120generates\u0120clean\u0120": 1321,
+    "the\u0120system\u0120generates\u0120clean\u0120output\u0120": 1322,
+    "the\u0120system\u0120generates\u0120clean\u0120output\u0120log": 1323,
+    "the\u0120system\u0120generates\u0120clean\u0120output\u0120logs": 1324,
+    "wt\u0120is\u0120": 1325,
+    "wt\u0120is\u0120this": 1326,
+    "what": 1327,
+    "This\u0120is\u0120the\u0120c": 1328,
+    "This\u0120is\u0120the\u0120cent": 1329,
+    "This\u0120is\u0120the\u0120centr": 1330,
+    "This\u0120is\u0120the\u0120central\u0120": 1331,
+    "This\u0120is\u0120the\u0120central\u0120work": 1332,
+    "This\u0120is\u0120the\u0120central\u0120worksp": 1333,
+    "This\u0120is\u0120the\u0120central\u0120workspac": 1334,
+    "This\u0120is\u0120the\u0120central\u0120workspace\u0120": 1335,
+    "This\u0120is\u0120the\u0120central\u0120workspace\u0120p": 1336,
+    "This\u0120is\u0120the\u0120central\u0120workspace\u0120play": 1337,
+    "This\u0120is\u0120the\u0120central\u0120workspace\u0120playground": 1338,
+    "it\u0120s": 1339,
+    "it\u0120sint\u0120": 1340,
+    "it\u0120sint\u0120work": 1341,
+    "it\u0120sint\u0120working": 1342,
+    "sint": 1343,
+    "isn": 1344,
+    "s\u0120diag": 1345,
+    "s\u0120diagn": 1346,
+    "s\u0120diagno": 1347,
+    "s\u0120diagnost": 1348,
+    "s\u0120diagnostic\u0120t": 1349,
+    "s\u0120diagnostic\u0120tr": 1350,
+    "s\u0120diagnostic\u0120trac": 1351,
+    "s\u0120diagnostic\u0120trace\u0120the\u0120": 1352,
+    "s\u0120diagnostic\u0120trace\u0120the\u0120back": 1353,
+    "s\u0120diagnostic\u0120trace\u0120the\u0120backgroun": 1354,
+    "s\u0120diagnostic\u0120trace\u0120the\u0120background\u0120": 1355,
+    "s\u0120diagnostic\u0120trace\u0120the\u0120background\u0120ser": 1356,
+    "s\u0120diagnostic\u0120trace\u0120the\u0120background\u0120serv": 1357,
+    "s\u0120diagnostic\u0120trace\u0120the\u0120background\u0120server\u0120": 1358,
+    "s\u0120diagnostic\u0120trace\u0120the\u0120background\u0120server\u0120p": 1359,
+    "s\u0120diagnostic\u0120trace\u0120the\u0120background\u0120server\u0120por": 1360,
+    "s\u0120diagnostic\u0120trace\u0120the\u0120background\u0120server\u0120ports": 1361,
+    "write\u0120a\u0120python\u0120calculator": 1362,
+    "Here\u0120is\u0120a\u0120simple\u0120python\u0120c": 1363,
+    "Here\u0120is\u0120a\u0120simple\u0120python\u0120calculator": 1364,
+    "def\u0120s": 1365,
+    "def\u0120sub": 1366,
+    "def\u0120subt": 1367,
+    "def\u0120subtr": 1368,
+    "def\u0120subtract": 1369,
+    "def\u0120m": 1370,
+    "def\u0120mult": 1371,
+    "def\u0120multip": 1372,
+    "def\u0120multiply": 1373,
+    "def\u0120divide": 1374,
+    "if\u0120b\u0120": 1375,
+    "Er": 1376,
+    "Err": 1377,
+    "Error": 1378,
+    "divis": 1379,
+    "division\u0120": 1380,
+    "division\u0120by\u0120": 1381,
+    "division\u0120by\u0120z": 1382,
+    "division\u0120by\u0120zer": 1383,
+    "division\u0120by\u0120zero": 1384,
+    "how\u0120do\u0120you\u0120add\u0120": 1385,
+    "how\u0120do\u0120you\u0120add\u0120t": 1386,
+    "how\u0120do\u0120you\u0120add\u0120two\u0120": 1387,
+    "how\u0120do\u0120you\u0120add\u0120two\u0120number": 1388,
+    "how\u0120do\u0120you\u0120add\u0120two\u0120numbers\u0120in\u0120python": 1389,
+    "You\u0120can\u0120define\u0120": 1390,
+    "You\u0120can\u0120define\u0120an\u0120": 1391,
+    "You\u0120can\u0120define\u0120an\u0120add\u0120": 1392,
+    "You\u0120can\u0120define\u0120an\u0120add\u0120function": 1393,
+    "write\u0120a\u0120python": 1394,
+    "write\u0120a\u0120python\u0120": 1395,
+    "write\u0120a\u0120python\u0120loop": 1396,
+    "To\u0120write\u0120a\u0120": 1397,
+    "To\u0120write\u0120a\u0120loop": 1398,
+    "To\u0120write\u0120a\u0120loop\u0120in\u0120Python": 1399,
+    "for\u0120i": 1400,
+    "for\u0120i\u0120in\u0120range": 1401,
+    "It": 1402,
+    "Iterat": 1403,
+    "Iteration\u0120": 1404,
+    "write\u0120a\u0120python\u0120class": 1405,
+    "Here\u0120is\u0120a\u0120python\u0120c": 1406,
+    "Here\u0120is\u0120a\u0120python\u0120class\u0120": 1407,
+    "Here\u0120is\u0120a\u0120python\u0120class\u0120def": 1408,
+    "Here\u0120is\u0120a\u0120python\u0120class\u0120defin": 1409,
+    "Here\u0120is\u0120a\u0120python\u0120class\u0120definition": 1410,
+    "class\u0120Creat": 1411,
+    "class\u0120Creator": 1412,
+    "def\u0120__": 1413,
+    "def\u0120__in": 1414,
+    "def\u0120__init": 1415,
+    "def\u0120__init__": 1416,
+    "name\u0120": 1417,
+    "def\u0120sp": 1418,
+    "def\u0120spe": 1419,
+    "def\u0120speak": 1420,
+    "Greetings\u0120": 1421,
+    "Greetings\u0120from\u0120": 1422,
+    "sort\u0120a\u0120list\u0120of\u0120": 1423,
+    "sort\u0120a\u0120list\u0120of\u0120dict": 1424,
+    "sort\u0120a\u0120list\u0120of\u0120dicts\u0120": 1425,
+    "sort\u0120a\u0120list\u0120of\u0120dicts\u0120by\u0120key\u0120": 1426,
+    "sort\u0120a\u0120list\u0120of\u0120dicts\u0120by\u0120key\u0120in\u0120": 1427,
+    "sort\u0120a\u0120list\u0120of\u0120dicts\u0120by\u0120key\u0120in\u0120python": 1428,
+    "You\u0120can": 1429,
+    "You\u0120can\u0120s": 1430,
+    "You\u0120can\u0120sort\u0120a\u0120list\u0120of\u0120": 1431,
+    "You\u0120can\u0120sort\u0120a\u0120list\u0120of\u0120dictionaries\u0120": 1432,
+    "You\u0120can\u0120sort\u0120a\u0120list\u0120of\u0120dictionaries\u0120by\u0120key\u0120": 1433,
+    "You\u0120can\u0120sort\u0120a\u0120list\u0120of\u0120dictionaries\u0120by\u0120key\u0120using\u0120a\u0120": 1434,
+    "You\u0120can\u0120sort\u0120a\u0120list\u0120of\u0120dictionaries\u0120by\u0120key\u0120using\u0120a\u0120lambda\u0120": 1435,
+    "You\u0120can\u0120sort\u0120a\u0120list\u0120of\u0120dictionaries\u0120by\u0120key\u0120using\u0120a\u0120lambda\u0120function": 1436,
+    "def\u0120sor": 1437,
+    "def\u0120sort": 1438,
+    "def\u0120sort_dicts": 1439,
+    "return\u0120sor": 1440,
+    "return\u0120sorte": 1441,
+    "return\u0120sorted": 1442,
+    "lambda\u0120x": 1443,
+    "read\u0120a\u0120file\u0120in\u0120python": 1444,
+    "To\u0120read\u0120a\u0120file\u0120in\u0120": 1445,
+    "To\u0120read\u0120a\u0120file\u0120in\u0120Python": 1446,
+    "use\u0120a\u0120": 1447,
+    "use\u0120a\u0120with\u0120": 1448,
+    "use\u0120a\u0120with\u0120stat": 1449,
+    "use\u0120a\u0120with\u0120statem": 1450,
+    "use\u0120a\u0120with\u0120statement": 1451,
+    "def\u0120read_file": 1452,
+    "write\u0120to\u0120a\u0120file\u0120in\u0120": 1453,
+    "write\u0120to\u0120a\u0120file\u0120in\u0120python": 1454,
+    "To\u0120write\u0120": 1455,
+    "To\u0120write\u0120t": 1456,
+    "To\u0120write\u0120tex": 1457,
+    "To\u0120write\u0120text\u0120": 1458,
+    "To\u0120write\u0120text\u0120to\u0120a\u0120file\u0120in\u0120": 1459,
+    "To\u0120write\u0120text\u0120to\u0120a\u0120file\u0120in\u0120Python": 1460,
+    "def\u0120write": 1461,
+    "def\u0120write_": 1462,
+    "def\u0120write_file": 1463,
+    "merge\u0120two\u0120dict": 1464,
+    "merge\u0120two\u0120dicts\u0120in\u0120python": 1465,
+    "You\u0120can\u0120merge\u0120two\u0120": 1466,
+    "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120": 1467,
+    "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120": 1468,
+    "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120the\u0120": 1469,
+    "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120the\u0120un": 1470,
+    "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120the\u0120union\u0120": 1471,
+    "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120the\u0120union\u0120operator": 1472,
+    "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120the\u0120union\u0120operator\u0120in\u0120Python": 1473,
+    "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120the\u0120union\u0120operator\u0120in\u0120Python\u0120": 1474,
+    "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120the\u0120union\u0120operator\u0120in\u0120Python\u01203": 1475,
+    "def\u0120mer": 1476,
+    "def\u0120merge": 1477,
+    "def\u0120merge_dicts": 1478,
+    "dict_a": 1479,
+    "return\u0120dict_": 1480,
+    "return\u0120dict_a\u0120": 1481,
+    "check\u0120if\u0120key\u0120": 1482,
+    "check\u0120if\u0120key\u0120exist": 1483,
+    "check\u0120if\u0120key\u0120exists\u0120in\u0120": 1484,
+    "check\u0120if\u0120key\u0120exists\u0120in\u0120dict": 1485,
+    "Us": 1486,
+    "Use\u0120the\u0120": 1487,
+    "Use\u0120the\u0120in\u0120": 1488,
+    "Use\u0120the\u0120in\u0120key": 1489,
+    "Use\u0120the\u0120in\u0120keywor": 1490,
+    "Use\u0120the\u0120in\u0120keyword\u0120": 1491,
+    "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120": 1492,
+    "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120": 1493,
+    "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120": 1494,
+    "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120": 1495,
+    "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120": 1496,
+    "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120pre": 1497,
+    "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120prese": 1498,
+    "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120presen": 1499,
+    "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120present\u0120": 1500,
+    "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120present\u0120in\u0120": 1501,
+    "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120present\u0120in\u0120a\u0120": 1502,
+    "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120present\u0120in\u0120a\u0120dictionary": 1503,
+    "if\u0120key\u0120in\u0120": 1504,
+    "if\u0120key\u0120in\u0120dictionary": 1505,
+    "Ke": 1506,
+    "Key\u0120": 1507,
+    "Key\u0120exist": 1508,
+    "Key\u0120exists": 1509,
+    "write\u0120a\u0120list\u0120": 1510,
+    "write\u0120a\u0120list\u0120comprehension": 1511,
+    "write\u0120a\u0120list\u0120comprehension\u0120in\u0120python": 1512,
+    "List\u0120": 1513,
+    "List\u0120comprehension": 1514,
+    "List\u0120comprehensions\u0120": 1515,
+    "List\u0120comprehensions\u0120pro": 1516,
+    "List\u0120comprehensions\u0120prov": 1517,
+    "List\u0120comprehensions\u0120provid": 1518,
+    "List\u0120comprehensions\u0120provide\u0120a\u0120": 1519,
+    "List\u0120comprehensions\u0120provide\u0120a\u0120conc": 1520,
+    "List\u0120comprehensions\u0120provide\u0120a\u0120concis": 1521,
+    "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120": 1522,
+    "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120w": 1523,
+    "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120wa": 1524,
+    "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120way\u0120to\u0120": 1525,
+    "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120way\u0120to\u0120creat": 1526,
+    "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120way\u0120to\u0120create\u0120": 1527,
+    "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120way\u0120to\u0120create\u0120l": 1528,
+    "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120way\u0120to\u0120create\u0120list": 1529,
+    "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120way\u0120to\u0120create\u0120lists": 1530,
+    "squ": 1531,
+    "squa": 1532,
+    "square": 1533,
+    "squares\u0120": 1534,
+    "2\u0120for\u0120": 1535,
+    "2\u0120for\u0120x": 1536,
+    "2\u0120for\u0120x\u0120in\u0120range": 1537,
+    "write\u0120a\u0120binary\u0120search": 1538,
+    "write\u0120a\u0120binary\u0120search\u0120in\u0120python": 1539,
+    "Here\u0120is\u0120the\u0120": 1540,
+    "Here\u0120is\u0120the\u0120binary\u0120search": 1541,
+    "Here\u0120is\u0120the\u0120binary\u0120search\u0120": 1542,
+    "Here\u0120is\u0120the\u0120binary\u0120search\u0120algorithm": 1543,
+    "def\u0120bin": 1544,
+    "def\u0120binary": 1545,
+    "def\u0120binary_": 1546,
+    "def\u0120binary_search": 1547,
+    "len": 1548,
+    "whil": 1549,
+    "while\u0120": 1550,
+    "while\u0120low\u0120": 1551,
+    "return\u0120mid": 1552,
+    "elif\u0120arr": 1553,
+    "else": 1554,
+    "write\u0120a\u0120fastapi\u0120": 1555,
+    "write\u0120a\u0120fastapi\u0120app": 1556,
+    "Here\u0120is\u0120a\u0120bas": 1557,
+    "Here\u0120is\u0120a\u0120basic\u0120": 1558,
+    "Here\u0120is\u0120a\u0120basic\u0120FastAPI\u0120": 1559,
+    "Here\u0120is\u0120a\u0120basic\u0120FastAPI\u0120app": 1560,
+    "Here\u0120is\u0120a\u0120basic\u0120FastAPI\u0120applic": 1561,
+    "Here\u0120is\u0120a\u0120basic\u0120FastAPI\u0120application": 1562,
+    "def\u0120read_roo": 1563,
+    "def\u0120read_root": 1564,
+    "status": 1565,
+    "he": 1566,
+    "heal": 1567,
+    "health": 1568,
+    "healthy": 1569,
+    "fastapi\u0120post\u0120": 1570,
+    "fastapi\u0120post\u0120re": 1571,
+    "fastapi\u0120post\u0120requ": 1572,
+    "fastapi\u0120post\u0120reques": 1573,
+    "fastapi\u0120post\u0120request\u0120": 1574,
+    "fastapi\u0120post\u0120request\u0120J": 1575,
+    "fastapi\u0120post\u0120request\u0120JS": 1576,
+    "fastapi\u0120post\u0120request\u0120JSON": 1577,
+    "Define\u0120": 1578,
+    "Define\u0120a\u0120": 1579,
+    "Define\u0120a\u0120post\u0120": 1580,
+    "Define\u0120a\u0120post\u0120endpoint\u0120": 1581,
+    "Define\u0120a\u0120post\u0120endpoint\u0120using\u0120a\u0120": 1582,
+    "Define\u0120a\u0120post\u0120endpoint\u0120using\u0120a\u0120P": 1583,
+    "Define\u0120a\u0120post\u0120endpoint\u0120using\u0120a\u0120Pyd": 1584,
+    "Define\u0120a\u0120post\u0120endpoint\u0120using\u0120a\u0120Pydant": 1585,
+    "Define\u0120a\u0120post\u0120endpoint\u0120using\u0120a\u0120Pydantic": 1586,
+    "Define\u0120a\u0120post\u0120endpoint\u0120using\u0120a\u0120Pydantic\u0120m": 1587,
+    "Define\u0120a\u0120post\u0120endpoint\u0120using\u0120a\u0120Pydantic\u0120model": 1588,
+    "from\u0120p": 1589,
+    "from\u0120pyd": 1590,
+    "from\u0120pydantic\u0120": 1591,
+    "from\u0120pydantic\u0120import\u0120": 1592,
+    "from\u0120pydantic\u0120import\u0120BaseModel": 1593,
+    "class\u0120Item": 1594,
+    "str": 1595,
+    "pric": 1596,
+    "price": 1597,
+    "flo": 1598,
+    "float": 1599,
+    "post": 1600,
+    "def\u0120create": 1601,
+    "def\u0120create_": 1602,
+    "def\u0120create_item": 1603,
+    "created": 1604,
+    "fastapi\u0120p": 1605,
+    "fastapi\u0120path": 1606,
+    "fastapi\u0120path\u0120parameter": 1607,
+    "Pas": 1608,
+    "Pass\u0120": 1609,
+    "Pass\u0120path": 1610,
+    "Pass\u0120path\u0120parameter": 1611,
+    "Pass\u0120path\u0120parameters\u0120di": 1612,
+    "Pass\u0120path\u0120parameters\u0120dire": 1613,
+    "Pass\u0120path\u0120parameters\u0120direct": 1614,
+    "Pass\u0120path\u0120parameters\u0120directly\u0120": 1615,
+    "Pass\u0120path\u0120parameters\u0120directly\u0120in\u0120": 1616,
+    "Pass\u0120path\u0120parameters\u0120directly\u0120in\u0120endpoint\u0120": 1617,
+    "Pass\u0120path\u0120parameters\u0120directly\u0120in\u0120endpoint\u0120arg": 1618,
+    "Pass\u0120path\u0120parameters\u0120directly\u0120in\u0120endpoint\u0120arguments": 1619,
+    "users": 1620,
+    "def\u0120get": 1621,
+    "def\u0120get_": 1622,
+    "def\u0120get_user": 1623,
+    "run\u0120uvicorn\u0120": 1624,
+    "run\u0120uvicorn\u0120ser": 1625,
+    "run\u0120uvicorn\u0120server": 1626,
+    "Run\u0120FastAPI\u0120": 1627,
+    "Run\u0120FastAPI\u0120local": 1628,
+    "Run\u0120FastAPI\u0120locally\u0120using\u0120": 1629,
+    "Run\u0120FastAPI\u0120locally\u0120using\u0120uvicor": 1630,
+    "Run\u0120FastAPI\u0120locally\u0120using\u0120uvicorn": 1631,
+    "bash": 1632,
+    "uvicorn\u0120ma": 1633,
+    "uvicorn\u0120main": 1634,
+    "relo": 1635,
+    "reloa": 1636,
+    "reload\u0120": 1637,
+    "hos": 1638,
+    "host\u0120": 1639,
+    "host\u012012": 1640,
+    "host\u0120127": 1641,
+    "1\u0120": 1642,
+    "port\u01208": 1643,
+    "port\u0120800": 1644,
+    "port\u01208000": 1645,
+    "write\u0120a\u0120react\u0120": 1646,
+    "write\u0120a\u0120react\u0120function": 1647,
+    "write\u0120a\u0120react\u0120functional\u0120": 1648,
+    "write\u0120a\u0120react\u0120functional\u0120component": 1649,
+    "Here\u0120is\u0120a\u0120simple\u0120React\u0120": 1650,
+    "Here\u0120is\u0120a\u0120simple\u0120React\u0120component": 1651,
+    "import\u0120React\u0120": 1652,
+    "import\u0120React\u0120from\u0120": 1653,
+    "export\u0120default\u0120function\u0120H": 1654,
+    "export\u0120default\u0120function\u0120He": 1655,
+    "export\u0120default\u0120function\u0120Head": 1656,
+    "export\u0120default\u0120function\u0120Heading": 1657,
+    "title\u0120": 1658,
+    "react\u0120counter\u0120": 1659,
+    "react\u0120counter\u0120compon": 1660,
+    "react\u0120counter\u0120component\u0120": 1661,
+    "react\u0120counter\u0120component\u0120using\u0120": 1662,
+    "react\u0120counter\u0120component\u0120using\u0120useState": 1663,
+    "A\u0120React\u0120": 1664,
+    "A\u0120React\u0120counter\u0120": 1665,
+    "A\u0120React\u0120counter\u0120component": 1666,
+    "export\u0120default\u0120function\u0120Coun": 1667,
+    "export\u0120default\u0120function\u0120Counter": 1668,
+    "button\u0120": 1669,
+    "button\u0120on": 1670,
+    "button\u0120onC": 1671,
+    "button\u0120onClic": 1672,
+    "button\u0120onClick": 1673,
+    "Inc": 1674,
+    "Incre": 1675,
+    "Increment": 1676,
+    "react\u0120form\u0120submission": 1677,
+    "Hand": 1678,
+    "Handle\u0120": 1679,
+    "Handle\u0120form\u0120submission": 1680,
+    "Handle\u0120form\u0120submission\u0120in\u0120": 1681,
+    "Handle\u0120form\u0120submission\u0120in\u0120React": 1682,
+    "export\u0120default\u0120function\u0120F": 1683,
+    "export\u0120default\u0120function\u0120Form": 1684,
+    "const\u0120handle": 1685,
+    "const\u0120handleSubm": 1686,
+    "const\u0120handleSubmit\u0120": 1687,
+    "prevent": 1688,
+    "preventDef": 1689,
+    "preventDefaul": 1690,
+    "preventDefault": 1691,
+    "conso": 1692,
+    "console": 1693,
+    "form\u0120on": 1694,
+    "form\u0120onSubmit": 1695,
+    "handleSubmit": 1696,
+    "input\u0120value": 1697,
+    "onCh": 1698,
+    "onChange": 1699,
+    "button\u0120t": 1700,
+    "button\u0120ty": 1701,
+    "button\u0120type": 1702,
+    "submit": 1703,
+    "react\u0120condition": 1704,
+    "react\u0120conditional\u0120": 1705,
+    "react\u0120conditional\u0120re": 1706,
+    "react\u0120conditional\u0120ren": 1707,
+    "react\u0120conditional\u0120rend": 1708,
+    "react\u0120conditional\u0120render": 1709,
+    "react\u0120conditional\u0120rendering": 1710,
+    "Rend": 1711,
+    "Render\u0120": 1712,
+    "Render\u0120element": 1713,
+    "Render\u0120elements\u0120": 1714,
+    "Render\u0120elements\u0120condition": 1715,
+    "Render\u0120elements\u0120conditional": 1716,
+    "Render\u0120elements\u0120conditionally\u0120using\u0120": 1717,
+    "Render\u0120elements\u0120conditionally\u0120using\u0120ter": 1718,
+    "Render\u0120elements\u0120conditionally\u0120using\u0120tern": 1719,
+    "Render\u0120elements\u0120conditionally\u0120using\u0120ternary\u0120": 1720,
+    "Render\u0120elements\u0120conditionally\u0120using\u0120ternary\u0120operator": 1721,
+    "Render\u0120elements\u0120conditionally\u0120using\u0120ternary\u0120operators": 1722,
+    "isLog": 1723,
+    "isLogge": 1724,
+    "isLogged": 1725,
+    "isLoggedI": 1726,
+    "isLoggedIn\u0120": 1727,
+    "Das": 1728,
+    "Dash": 1729,
+    "Dashbo": 1730,
+    "Dashboar": 1731,
+    "Dashboard\u0120": 1732,
+    "Login": 1733,
+    "LoginF": 1734,
+    "LoginFor": 1735,
+    "LoginForm\u0120": 1736,
+    "write\u0120a\u0120css\u0120": 1737,
+    "write\u0120a\u0120css\u0120grid\u0120": 1738,
+    "write\u0120a\u0120css\u0120grid\u0120lay": 1739,
+    "write\u0120a\u0120css\u0120grid\u0120layout": 1740,
+    "Se": 1741,
+    "Set\u0120": 1742,
+    "Set\u0120up\u0120": 1743,
+    "Set\u0120up\u0120a\u0120": 1744,
+    "Set\u0120up\u0120a\u0120grid\u0120": 1745,
+    "Set\u0120up\u0120a\u0120grid\u0120container\u0120": 1746,
+    "Set\u0120up\u0120a\u0120grid\u0120container\u0120with\u0120": 1747,
+    "Set\u0120up\u0120a\u0120grid\u0120container\u0120with\u0120th": 1748,
+    "Set\u0120up\u0120a\u0120grid\u0120container\u0120with\u0120thre": 1749,
+    "Set\u0120up\u0120a\u0120grid\u0120container\u0120with\u0120three\u0120": 1750,
+    "Set\u0120up\u0120a\u0120grid\u0120container\u0120with\u0120three\u0120equ": 1751,
+    "Set\u0120up\u0120a\u0120grid\u0120container\u0120with\u0120three\u0120equal\u0120": 1752,
+    "Set\u0120up\u0120a\u0120grid\u0120container\u0120with\u0120three\u0120equal\u0120columns": 1753,
+    "temp": 1754,
+    "templ": 1755,
+    "template": 1756,
+    "repe": 1757,
+    "repeat": 1758,
+    "1f": 1759,
+    "1fr": 1760,
+    "gap": 1761,
+    "16px": 1762,
+    "write\u0120css\u0120flex": 1763,
+    "write\u0120css\u0120flexbox": 1764,
+    "write\u0120css\u0120flexbox\u0120c": 1765,
+    "write\u0120css\u0120flexbox\u0120center": 1766,
+    "write\u0120css\u0120flexbox\u0120centering": 1767,
+    "Center": 1768,
+    "Center\u0120ch": 1769,
+    "Center\u0120chil": 1770,
+    "Center\u0120child\u0120": 1771,
+    "Center\u0120child\u0120element": 1772,
+    "Center\u0120child\u0120elements\u0120ver": 1773,
+    "Center\u0120child\u0120elements\u0120vert": 1774,
+    "Center\u0120child\u0120elements\u0120vertical": 1775,
+    "Center\u0120child\u0120elements\u0120vertically\u0120and\u0120": 1776,
+    "Center\u0120child\u0120elements\u0120vertically\u0120and\u0120h": 1777,
+    "Center\u0120child\u0120elements\u0120vertically\u0120and\u0120hor": 1778,
+    "Center\u0120child\u0120elements\u0120vertically\u0120and\u0120horiz": 1779,
+    "Center\u0120child\u0120elements\u0120vertically\u0120and\u0120horizon": 1780,
+    "Center\u0120child\u0120elements\u0120vertically\u0120and\u0120horizontal": 1781,
+    "Center\u0120child\u0120elements\u0120vertically\u0120and\u0120horizontally": 1782,
+    "centered\u0120": 1783,
+    "just": 1784,
+    "justif": 1785,
+    "justify": 1786,
+    "alig": 1787,
+    "align": 1788,
+    "css\u0120custom\u0120": 1789,
+    "css\u0120custom\u0120proper": 1790,
+    "css\u0120custom\u0120propert": 1791,
+    "css\u0120custom\u0120properti": 1792,
+    "css\u0120custom\u0120properties\u0120": 1793,
+    "css\u0120custom\u0120properties\u0120variables": 1794,
+    "Dec": 1795,
+    "Decl": 1796,
+    "Declare\u0120": 1797,
+    "Declare\u0120and\u0120": 1798,
+    "Declare\u0120and\u0120us": 1799,
+    "Declare\u0120and\u0120use\u0120": 1800,
+    "Declare\u0120and\u0120use\u0120C": 1801,
+    "Declare\u0120and\u0120use\u0120CS": 1802,
+    "Declare\u0120and\u0120use\u0120CSS\u0120": 1803,
+    "Declare\u0120and\u0120use\u0120CSS\u0120variables": 1804,
+    "root\u0120": 1805,
+    "00f": 1806,
+    "00f0f": 1807,
+    "00f0ff": 1808,
+    "0a0a": 1809,
+    "0a0a0f": 1810,
+    "bod": 1811,
+    "body\u0120": 1812,
+    "write\u0120css\u0120glass": 1813,
+    "write\u0120css\u0120glassmor": 1814,
+    "write\u0120css\u0120glassmorph": 1815,
+    "write\u0120css\u0120glassmorphis": 1816,
+    "write\u0120css\u0120glassmorphism\u0120": 1817,
+    "write\u0120css\u0120glassmorphism\u0120style": 1818,
+    "Create\u0120a\u0120": 1819,
+    "Create\u0120a\u0120fro": 1820,
+    "Create\u0120a\u0120froste": 1821,
+    "Create\u0120a\u0120frosted\u0120": 1822,
+    "Create\u0120a\u0120frosted\u0120g": 1823,
+    "Create\u0120a\u0120frosted\u0120glass\u0120": 1824,
+    "Create\u0120a\u0120frosted\u0120glass\u0120backdrop": 1825,
+    "Create\u0120a\u0120frosted\u0120glass\u0120backdrop\u0120": 1826,
+    "Create\u0120a\u0120frosted\u0120glass\u0120backdrop\u0120fil": 1827,
+    "Create\u0120a\u0120frosted\u0120glass\u0120backdrop\u0120filt": 1828,
+    "Create\u0120a\u0120frosted\u0120glass\u0120backdrop\u0120filter\u0120": 1829,
+    "Create\u0120a\u0120frosted\u0120glass\u0120backdrop\u0120filter\u0120style": 1830,
+    "pan": 1831,
+    "panel": 1832,
+    "panel\u0120": 1833,
+    "05": 1834,
+    "filter": 1835,
+    "bl": 1836,
+    "blur": 1837,
+    "12px": 1838,
+    "1px": 1839,
+    "1px\u0120s": 1840,
+    "1px\u0120sol": 1841,
+    "1px\u0120solid\u0120": 1842,
+    "1px\u0120solid\u0120rgba": 1843,
+    "radi": 1844,
+    "radius": 1845,
+    "8px": 1846,
+    "sqlite\u0120se": 1847,
+    "sqlite\u0120sele": 1848,
+    "sqlite\u0120selec": 1849,
+    "sqlite\u0120select\u0120": 1850,
+    "sqlite\u0120select\u0120query": 1851,
+    "Query\u0120row": 1852,
+    "Query\u0120rows\u0120": 1853,
+    "Query\u0120rows\u0120m": 1854,
+    "Query\u0120rows\u0120match": 1855,
+    "Query\u0120rows\u0120matching\u0120": 1856,
+    "Query\u0120rows\u0120matching\u0120a\u0120": 1857,
+    "Query\u0120rows\u0120matching\u0120a\u0120condition": 1858,
+    "SELECT\u0120": 1859,
+    "FROM\u0120user": 1860,
+    "FROM\u0120users\u0120": 1861,
+    "FROM\u0120users\u0120WHER": 1862,
+    "FROM\u0120users\u0120WHERE\u0120": 1863,
+    "FROM\u0120users\u0120WHERE\u0120stat": 1864,
+    "FROM\u0120users\u0120WHERE\u0120status\u0120": 1865,
+    "active": 1866,
+    "sqlite\u0120j": 1867,
+    "sqlite\u0120jo": 1868,
+    "sqlite\u0120join\u0120": 1869,
+    "sqlite\u0120join\u0120query": 1870,
+    "Ret": 1871,
+    "Retr": 1872,
+    "Retrieve\u0120": 1873,
+    "Retrieve\u0120session": 1874,
+    "Retrieve\u0120session\u0120": 1875,
+    "Retrieve\u0120session\u0120h": 1876,
+    "Retrieve\u0120session\u0120hist": 1877,
+    "Retrieve\u0120session\u0120histor": 1878,
+    "Retrieve\u0120session\u0120history\u0120": 1879,
+    "Retrieve\u0120session\u0120history\u0120de": 1880,
+    "Retrieve\u0120session\u0120history\u0120detail": 1881,
+    "Retrieve\u0120session\u0120history\u0120details\u0120": 1882,
+    "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120": 1883,
+    "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120us": 1884,
+    "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120user\u0120": 1885,
+    "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120user\u0120re": 1886,
+    "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120user\u0120ref": 1887,
+    "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120user\u0120refer": 1888,
+    "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120user\u0120referen": 1889,
+    "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120user\u0120references": 1890,
+    "SELECT": 1891,
+    "SELECT\u0120s": 1892,
+    "FROM\u0120session": 1893,
+    "FROM\u0120sessions\u0120": 1894,
+    "FROM\u0120sessions\u0120s": 1895,
+    "JO": 1896,
+    "JOIN": 1897,
+    "JOIN\u0120chats\u0120": 1898,
+    "JOIN\u0120chats\u0120c": 1899,
+    "JOIN\u0120chats\u0120c\u0120": 1900,
+    "JOIN\u0120chats\u0120c\u0120ON": 1901,
+    "JOIN\u0120chats\u0120c\u0120ON\u0120s": 1902,
+    "session_id\u0120": 1903,
+    "WHERE": 1904,
+    "WHERE\u0120s": 1905,
+    "user_id\u0120": 1906,
+    "sqlite\u0120in": 1907,
+    "sqlite\u0120insert\u0120": 1908,
+    "sqlite\u0120insert\u0120row": 1909,
+    "Insert\u0120": 1910,
+    "Insert\u0120a\u0120": 1911,
+    "Insert\u0120a\u0120new": 1912,
+    "Insert\u0120a\u0120new\u0120m": 1913,
+    "Insert\u0120a\u0120new\u0120messag": 1914,
+    "Insert\u0120a\u0120new\u0120message\u0120into\u0120": 1915,
+    "Insert\u0120a\u0120new\u0120message\u0120into\u0120the\u0120": 1916,
+    "Insert\u0120a\u0120new\u0120message\u0120into\u0120the\u0120relational\u0120": 1917,
+    "Insert\u0120a\u0120new\u0120message\u0120into\u0120the\u0120relational\u0120DB": 1918,
+    "INSE": 1919,
+    "INSER": 1920,
+    "INSERT\u0120": 1921,
+    "INSERT\u0120IN": 1922,
+    "INSERT\u0120INT": 1923,
+    "INSERT\u0120INTO": 1924,
+    "INSERT\u0120INTO\u0120chats\u0120": 1925,
+    "message_id": 1926,
+    "VA": 1927,
+    "VAL": 1928,
+    "VALU": 1929,
+    "VALUE": 1930,
+    "VALUES\u0120": 1931,
+    "chromadb\u0120add\u0120": 1932,
+    "chromadb\u0120add\u0120doc": 1933,
+    "chromadb\u0120add\u0120document": 1934,
+    "Store\u0120": 1935,
+    "Store\u0120cont": 1936,
+    "Store\u0120content\u0120": 1937,
+    "Store\u0120content\u0120in\u0120": 1938,
+    "Store\u0120content\u0120in\u0120ChromaDB": 1939,
+    "Store\u0120content\u0120in\u0120ChromaDB\u0120p": 1940,
+    "Store\u0120content\u0120in\u0120ChromaDB\u0120per": 1941,
+    "Store\u0120content\u0120in\u0120ChromaDB\u0120persist": 1942,
+    "Store\u0120content\u0120in\u0120ChromaDB\u0120persistent\u0120": 1943,
+    "Store\u0120content\u0120in\u0120ChromaDB\u0120persistent\u0120collection": 1944,
+    "met": 1945,
+    "metad": 1946,
+    "metadat": 1947,
+    "metadatas": 1948,
+    "meta": 1949,
+    "ids": 1950,
+    "doc_id": 1951,
+    "chromadb\u0120query": 1952,
+    "chromadb\u0120query\u0120": 1953,
+    "chromadb\u0120query\u0120documents": 1954,
+    "Query\u0120ChromaDB": 1955,
+    "Query\u0120ChromaDB\u0120": 1956,
+    "Query\u0120ChromaDB\u0120with\u0120": 1957,
+    "Query\u0120ChromaDB\u0120with\u0120semantic\u0120": 1958,
+    "Query\u0120ChromaDB\u0120with\u0120semantic\u0120search": 1959,
+    "result": 1960,
+    "results\u0120": 1961,
+    "query_texts": 1962,
+    "n_": 1963,
+    "n_res": 1964,
+    "n_resul": 1965,
+    "n_results": 1966,
+    "top": 1967,
+    "top_": 1968,
+    "top_k": 1969,
+    "what\u0120is\u0120the\u0120validation": 1970,
+    "what\u0120is\u0120the\u0120validation\u0120core": 1971,
+    "Val": 1972,
+    "Validation": 1973,
+    "ValidationCore\u0120": 1974,
+    "ValidationCore\u0120performs\u0120": 1975,
+    "ValidationCore\u0120performs\u0120do": 1976,
+    "ValidationCore\u0120performs\u0120doub": 1977,
+    "ValidationCore\u0120performs\u0120double": 1978,
+    "validation\u0120ch": 1979,
+    "validation\u0120chec": 1980,
+    "validation\u0120check": 1981,
+    "validation\u0120checking\u0120": 1982,
+    "validation\u0120checking\u0120input\u0120": 1983,
+    "validation\u0120checking\u0120input\u0120s": 1984,
+    "validation\u0120checking\u0120input\u0120sa": 1985,
+    "validation\u0120checking\u0120input\u0120saf": 1986,
+    "validation\u0120checking\u0120input\u0120safet": 1987,
+    "validation\u0120checking\u0120input\u0120safety\u0120": 1988,
+    "SQLi": 1989,
+    "XS": 1990,
+    "XSS": 1991,
+    "XSS\u0120p": 1992,
+    "XSS\u0120pre": 1993,
+    "XSS\u0120prevent": 1994,
+    "XSS\u0120prevention": 1995,
+    "and\u0120output\u0120": 1996,
+    "and\u0120output\u0120s": 1997,
+    "and\u0120output\u0120sch": 1998,
+    "and\u0120output\u0120schem": 1999
+  },
+  "merges": [
+    [
+      "\u0120",
+      "\u0120"
+    ],
+    [
+      "o",
+      "n"
+    ],
+    [
+      "e",
+      "r"
+    ],
+    [
+      "e",
+      "\u0120"
+    ],
+    [
+      "s",
+      "\u0120"
+    ],
+    [
+      "s",
+      "e"
+    ],
+    [
+      "e",
+      "s"
+    ],
+    [
+      "t",
+      "\u0120"
+    ],
+    [
+      "\u0120\u0120",
+      "\u0120\u0120"
+    ],
+    [
+      "i",
+      "n"
+    ],
+    [
+      "t",
+      "h"
+    ],
+    [
+      "u",
+      "er"
+    ],
+    [
+      "uer",
+      "y"
+    ],
+    [
+      "p",
+      "on"
+    ],
+    [
+      "es",
+      "pon"
+    ],
+    [
+      "Q",
+      "uery"
+    ],
+    [
+      "espon",
+      "se"
+    ],
+    [
+      "R",
+      "esponse"
+    ],
+    [
+      "o",
+      "r"
+    ],
+    [
+      "r",
+      "e"
+    ],
+    [
+      "i",
+      "s\u0120"
+    ],
+    [
+      "a",
+      "n"
+    ],
+    [
+      "a",
+      "t"
+    ],
+    [
+      "d",
+      "\u0120"
+    ],
+    [
+      "a",
+      "\u0120"
+    ],
+    [
+      "e",
+      "n"
+    ],
+    [
+      "a",
+      "l"
+    ],
+    [
+      "i",
+      "t"
+    ],
+    [
+      "a",
+      "r"
+    ],
+    [
+      "c",
+      "o"
+    ],
+    [
+      "s",
+      "t"
+    ],
+    [
+      "i",
+      "on"
+    ],
+    [
+      "h",
+      "a"
+    ],
+    [
+      "r",
+      "o"
+    ],
+    [
+      "f",
+      "\u0120"
+    ],
+    [
+      "c",
+      "t"
+    ],
+    [
+      "m",
+      "\u0120"
+    ],
+    [
+      "t\u0120",
+      "is\u0120"
+    ],
+    [
+      "d",
+      "e"
+    ],
+    [
+      "in",
+      "g"
+    ],
+    [
+      "o",
+      "\u0120"
+    ],
+    [
+      "u",
+      "n"
+    ],
+    [
+      "y",
+      "\u0120"
+    ],
+    [
+      "th",
+      "e\u0120"
+    ],
+    [
+      "in",
+      "\u0120"
+    ],
+    [
+      "l",
+      "e"
+    ],
+    [
+      "y",
+      "th"
+    ],
+    [
+      "yth",
+      "on"
+    ],
+    [
+      "l",
+      "o"
+    ],
+    [
+      "e",
+      "s\u0120"
+    ],
+    [
+      "w",
+      "ha"
+    ],
+    [
+      "an",
+      "d\u0120"
+    ],
+    [
+      "e",
+      "l"
+    ],
+    [
+      "p",
+      "ython"
+    ],
+    [
+      "\u0120\u0120\u0120\u0120",
+      "\u0120\u0120\u0120\u0120"
+    ],
+    [
+      "it",
+      "e\u0120"
+    ],
+    [
+      "u",
+      "r"
+    ],
+    [
+      "en",
+      "t"
+    ],
+    [
+      "I",
+      "\u0120"
+    ],
+    [
+      "ing",
+      "\u0120"
+    ],
+    [
+      "d",
+      "i"
+    ],
+    [
+      "n",
+      "\u0120"
+    ],
+    [
+      "o",
+      "p"
+    ],
+    [
+      "u",
+      "s"
+    ],
+    [
+      "a",
+      "c"
+    ],
+    [
+      "wha",
+      "t\u0120is\u0120"
+    ],
+    [
+      "i",
+      "c"
+    ],
+    [
+      "\u0120",
+      "c"
+    ],
+    [
+      "i",
+      "m"
+    ],
+    [
+      "i",
+      "d"
+    ],
+    [
+      "i",
+      "l"
+    ],
+    [
+      "m",
+      "e"
+    ],
+    [
+      "a",
+      "p"
+    ],
+    [
+      "c",
+      "on"
+    ],
+    [
+      "p",
+      "o"
+    ],
+    [
+      "er",
+      "\u0120"
+    ],
+    [
+      "o",
+      "f\u0120"
+    ],
+    [
+      "d",
+      "o"
+    ],
+    [
+      "er",
+      "e\u0120"
+    ],
+    [
+      "i",
+      "s"
+    ],
+    [
+      "u",
+      "t"
+    ],
+    [
+      "l",
+      "y"
+    ],
+    [
+      "a",
+      "s"
+    ],
+    [
+      "e",
+      "x"
+    ],
+    [
+      "\u0120",
+      "t"
+    ],
+    [
+      "re",
+      "t"
+    ],
+    [
+      "ret",
+      "ur"
+    ],
+    [
+      "retur",
+      "n\u0120"
+    ],
+    [
+      "w",
+      "r"
+    ],
+    [
+      "lo",
+      "c"
+    ],
+    [
+      "T",
+      "h"
+    ],
+    [
+      "e",
+      "t"
+    ],
+    [
+      "o",
+      "w"
+    ],
+    [
+      "po",
+      "s"
+    ],
+    [
+      "s",
+      "p"
+    ],
+    [
+      "ct",
+      "ion"
+    ],
+    [
+      "f",
+      "or"
+    ],
+    [
+      "e\u0120",
+      "t"
+    ],
+    [
+      "c",
+      "h"
+    ],
+    [
+      "el",
+      "l"
+    ],
+    [
+      "de",
+      "f\u0120"
+    ],
+    [
+      "u",
+      "m"
+    ],
+    [
+      "al",
+      "\u0120"
+    ],
+    [
+      "\u0120",
+      "s"
+    ],
+    [
+      "co",
+      "m"
+    ],
+    [
+      "e",
+      "m"
+    ],
+    [
+      "p",
+      "r"
+    ],
+    [
+      "a",
+      "d"
+    ],
+    [
+      "q",
+      "u"
+    ],
+    [
+      "an",
+      "\u0120"
+    ],
+    [
+      "I\u0120",
+      "se"
+    ],
+    [
+      "e\u0120t",
+      "y"
+    ],
+    [
+      "ar",
+      "e\u0120"
+    ],
+    [
+      "wr",
+      "ite\u0120"
+    ],
+    [
+      "\u0120",
+      "p"
+    ],
+    [
+      "i",
+      "g"
+    ],
+    [
+      "Th",
+      "e\u0120"
+    ],
+    [
+      "e",
+      "v"
+    ],
+    [
+      "u",
+      "s\u0120"
+    ],
+    [
+      "1",
+      "0"
+    ],
+    [
+      "A",
+      "ha"
+    ],
+    [
+      "I\u0120se",
+      "e\u0120ty"
+    ],
+    [
+      "I\u0120see\u0120ty",
+      "p"
+    ],
+    [
+      "I\u0120see\u0120typ",
+      "o\u0120"
+    ],
+    [
+      "I\u0120see\u0120typo\u0120",
+      "th"
+    ],
+    [
+      "I\u0120see\u0120typo\u0120th",
+      "ere\u0120"
+    ],
+    [
+      "c",
+      "or"
+    ],
+    [
+      "re",
+      "c"
+    ],
+    [
+      "f",
+      "ro"
+    ],
+    [
+      "or",
+      "t\u0120"
+    ],
+    [
+      "a",
+      "st"
+    ],
+    [
+      "what\u0120is\u0120",
+      "the\u0120"
+    ],
+    [
+      "and\u0120",
+      "cor"
+    ],
+    [
+      "and\u0120cor",
+      "rec"
+    ],
+    [
+      "and\u0120correc",
+      "t\u0120is\u0120"
+    ],
+    [
+      "k",
+      "e"
+    ],
+    [
+      "sp",
+      "ell"
+    ],
+    [
+      "a",
+      "ct"
+    ],
+    [
+      "de",
+      "f"
+    ],
+    [
+      "fro",
+      "m\u0120"
+    ],
+    [
+      "co",
+      "l"
+    ],
+    [
+      "s",
+      "k"
+    ],
+    [
+      "is\u0120",
+      "a\u0120"
+    ],
+    [
+      "er",
+      "at"
+    ],
+    [
+      "l",
+      "y\u0120"
+    ],
+    [
+      "s",
+      "y"
+    ],
+    [
+      "st",
+      "e"
+    ],
+    [
+      "re",
+      "at"
+    ],
+    [
+      "a",
+      "t\u0120"
+    ],
+    [
+      "ex",
+      "t"
+    ],
+    [
+      "t",
+      "o\u0120"
+    ],
+    [
+      "u",
+      "l"
+    ],
+    [
+      "s\u0120",
+      "in\u0120"
+    ],
+    [
+      "p",
+      "ort\u0120"
+    ],
+    [
+      "A",
+      "\u0120"
+    ],
+    [
+      "e",
+      "qu"
+    ],
+    [
+      "op",
+      "pos"
+    ],
+    [
+      "oppos",
+      "ite\u0120"
+    ],
+    [
+      "opposite\u0120",
+      "of\u0120"
+    ],
+    [
+      "i",
+      "b"
+    ],
+    [
+      "ib",
+      "h"
+    ],
+    [
+      "ibh",
+      "u"
+    ],
+    [
+      "r",
+      "un"
+    ],
+    [
+      "at",
+      "ion"
+    ],
+    [
+      "loc",
+      "al"
+    ],
+    [
+      "wha",
+      "t\u0120"
+    ],
+    [
+      "a",
+      "g"
+    ],
+    [
+      "e",
+      "c"
+    ],
+    [
+      "an",
+      "t"
+    ],
+    [
+      "r",
+      "a"
+    ],
+    [
+      "p",
+      "ro"
+    ],
+    [
+      "com",
+      "p"
+    ],
+    [
+      "\u0120",
+      "m"
+    ],
+    [
+      "write\u0120",
+      "a\u0120"
+    ],
+    [
+      "u",
+      "b"
+    ],
+    [
+      "n",
+      "um"
+    ],
+    [
+      "num",
+      "b"
+    ],
+    [
+      "numb",
+      "er"
+    ],
+    [
+      "in",
+      "e\u0120"
+    ],
+    [
+      "\u0120",
+      "in\u0120"
+    ],
+    [
+      "di",
+      "ct"
+    ],
+    [
+      "i",
+      "th"
+    ],
+    [
+      "con",
+      "t"
+    ],
+    [
+      "s",
+      "ion"
+    ],
+    [
+      "ap",
+      "p"
+    ],
+    [
+      "co",
+      "un"
+    ],
+    [
+      "a",
+      "b"
+    ],
+    [
+      "2",
+      "5"
+    ],
+    [
+      "\u0120",
+      "equ"
+    ],
+    [
+      "\u0120equ",
+      "al"
+    ],
+    [
+      "\u0120equal",
+      "s\u0120"
+    ],
+    [
+      "S",
+      "\u0120"
+    ],
+    [
+      "h",
+      "ow"
+    ],
+    [
+      "t",
+      "ext"
+    ],
+    [
+      "is\u0120",
+      "the\u0120"
+    ],
+    [
+      "p",
+      "er"
+    ],
+    [
+      "n",
+      "a"
+    ],
+    [
+      "in",
+      "t"
+    ],
+    [
+      "f",
+      "un"
+    ],
+    [
+      "fun",
+      "ction"
+    ],
+    [
+      "d",
+      "at"
+    ],
+    [
+      "i",
+      "d\u0120"
+    ],
+    [
+      "us",
+      "er"
+    ],
+    [
+      "_",
+      "id"
+    ],
+    [
+      "c",
+      "s"
+    ],
+    [
+      "spell",
+      "\u0120"
+    ],
+    [
+      "l",
+      "a"
+    ],
+    [
+      "ste",
+      "m\u0120"
+    ],
+    [
+      "an",
+      "d"
+    ],
+    [
+      "b",
+      "o"
+    ],
+    [
+      "do",
+      "es\u0120"
+    ],
+    [
+      "b",
+      "ac"
+    ],
+    [
+      "bac",
+      "k"
+    ],
+    [
+      "u",
+      "p"
+    ],
+    [
+      "or",
+      "e\u0120"
+    ],
+    [
+      "ig",
+      "h"
+    ],
+    [
+      "m",
+      "a"
+    ],
+    [
+      "e",
+      "d\u0120"
+    ],
+    [
+      "g",
+      "n"
+    ],
+    [
+      "it",
+      "ion"
+    ],
+    [
+      "us",
+      "ing\u0120"
+    ],
+    [
+      "def",
+      "ine\u0120"
+    ],
+    [
+      "g",
+      "e"
+    ],
+    [
+      "l",
+      "as"
+    ],
+    [
+      "f",
+      "il"
+    ],
+    [
+      "g",
+      "et"
+    ],
+    [
+      "\u0120\u0120\u0120\u0120\u0120\u0120\u0120\u0120",
+      "\u0120\u0120\u0120\u0120"
+    ],
+    [
+      "t",
+      "er"
+    ],
+    [
+      "ac",
+      "t\u0120"
+    ],
+    [
+      "ub",
+      "m"
+    ],
+    [
+      "T",
+      "\u0120"
+    ],
+    [
+      "en",
+      "\u0120"
+    ],
+    [
+      "V",
+      "ibhu"
+    ],
+    [
+      "O",
+      "sk"
+    ],
+    [
+      "run",
+      "n"
+    ],
+    [
+      "runn",
+      "ing\u0120"
+    ],
+    [
+      "sy",
+      "stem\u0120"
+    ],
+    [
+      "o",
+      "u"
+    ],
+    [
+      "r",
+      "an"
+    ],
+    [
+      "c",
+      "e"
+    ],
+    [
+      "s",
+      "i"
+    ],
+    [
+      "C",
+      "ore\u0120"
+    ],
+    [
+      "i",
+      "t\u0120"
+    ],
+    [
+      "k",
+      "\u0120"
+    ],
+    [
+      "t",
+      "s"
+    ],
+    [
+      "C",
+      "o"
+    ],
+    [
+      "l",
+      "e\u0120"
+    ],
+    [
+      "di",
+      "v"
+    ],
+    [
+      "i",
+      "f\u0120"
+    ],
+    [
+      "l",
+      "f"
+    ],
+    [
+      "na",
+      "me"
+    ],
+    [
+      "is",
+      "t\u0120"
+    ],
+    [
+      "ar",
+      "i"
+    ],
+    [
+      "w",
+      "ith"
+    ],
+    [
+      "with",
+      "\u0120"
+    ],
+    [
+      "a",
+      "th"
+    ],
+    [
+      "cont",
+      "ent"
+    ],
+    [
+      "f",
+      "ast"
+    ],
+    [
+      "F",
+      "ast"
+    ],
+    [
+      "Fast",
+      "A"
+    ],
+    [
+      "FastA",
+      "P"
+    ],
+    [
+      "im",
+      "port\u0120"
+    ],
+    [
+      "1",
+      "2"
+    ],
+    [
+      "R",
+      "e"
+    ],
+    [
+      "S",
+      "t"
+    ],
+    [
+      "con",
+      "s"
+    ],
+    [
+      "g",
+      "r"
+    ],
+    [
+      "25",
+      "5"
+    ],
+    [
+      "o",
+      "l"
+    ],
+    [
+      "s",
+      "q"
+    ],
+    [
+      "sq",
+      "l"
+    ],
+    [
+      "q",
+      "uery"
+    ],
+    [
+      "\u0120p",
+      "l"
+    ],
+    [
+      "\u0120pl",
+      "us\u0120"
+    ],
+    [
+      "\u0120t",
+      "im"
+    ],
+    [
+      "\u0120tim",
+      "es\u0120"
+    ],
+    [
+      "n",
+      "on"
+    ],
+    [
+      "non",
+      "y"
+    ],
+    [
+      "nony",
+      "m\u0120"
+    ],
+    [
+      "nonym\u0120",
+      "for"
+    ],
+    [
+      "v",
+      "er"
+    ],
+    [
+      "op",
+      "erat"
+    ],
+    [
+      "la",
+      "y"
+    ],
+    [
+      "on",
+      "\u0120"
+    ],
+    [
+      "en",
+      "t\u0120"
+    ],
+    [
+      "m",
+      "or"
+    ],
+    [
+      "at",
+      "e"
+    ],
+    [
+      "c",
+      "reat"
+    ],
+    [
+      "o",
+      "d"
+    ],
+    [
+      "how",
+      "\u0120"
+    ],
+    [
+      "w",
+      "or"
+    ],
+    [
+      "th",
+      "at\u0120"
+    ],
+    [
+      "o",
+      "de"
+    ],
+    [
+      "i",
+      "r"
+    ],
+    [
+      "w",
+      "e"
+    ],
+    [
+      "\u0120t",
+      "o\u0120"
+    ],
+    [
+      "i",
+      "ev"
+    ],
+    [
+      "c",
+      "es"
+    ],
+    [
+      "Y",
+      "es"
+    ],
+    [
+      "s\u0120",
+      "are\u0120"
+    ],
+    [
+      "i",
+      "z"
+    ],
+    [
+      "co",
+      "gn"
+    ],
+    [
+      "H",
+      "ere\u0120"
+    ],
+    [
+      "return\u0120",
+      "a\u0120"
+    ],
+    [
+      "b",
+      "y\u0120"
+    ],
+    [
+      "se",
+      "lf"
+    ],
+    [
+      "l",
+      "ist\u0120"
+    ],
+    [
+      "ke",
+      "y\u0120"
+    ],
+    [
+      "e\u0120",
+      "in\u0120"
+    ],
+    [
+      "p",
+      "ath"
+    ],
+    [
+      "co",
+      "d"
+    ],
+    [
+      "ar",
+      "y"
+    ],
+    [
+      "h",
+      "igh"
+    ],
+    [
+      "fast",
+      "ap"
+    ],
+    [
+      "fastap",
+      "i"
+    ],
+    [
+      "it",
+      "em"
+    ],
+    [
+      "u",
+      "se"
+    ],
+    [
+      "use",
+      "St"
+    ],
+    [
+      "coun",
+      "t\u0120"
+    ],
+    [
+      "v",
+      "al"
+    ],
+    [
+      "ent",
+      "er"
+    ],
+    [
+      "\u0120c",
+      "h"
+    ],
+    [
+      "pr",
+      "im"
+    ],
+    [
+      "se",
+      "s"
+    ],
+    [
+      "ses",
+      "sion"
+    ],
+    [
+      "O",
+      "\u0120"
+    ],
+    [
+      "v",
+      "ow"
+    ],
+    [
+      "vow",
+      "el"
+    ],
+    [
+      "what\u0120is\u0120the\u0120",
+      "opposite\u0120of\u0120"
+    ],
+    [
+      "The\u0120",
+      "opposite\u0120of\u0120"
+    ],
+    [
+      "Osk",
+      "a\u0120"
+    ],
+    [
+      "P",
+      "U"
+    ],
+    [
+      "me",
+      "mor"
+    ],
+    [
+      "I\u0120",
+      "a"
+    ],
+    [
+      "I\u0120a",
+      "m\u0120"
+    ],
+    [
+      "local",
+      "ly"
+    ],
+    [
+      "al",
+      "l"
+    ],
+    [
+      "for",
+      "m\u0120"
+    ],
+    [
+      "C",
+      "on"
+    ],
+    [
+      "is\u0120",
+      "is\u0120the\u0120"
+    ],
+    [
+      "t",
+      "em"
+    ],
+    [
+      "up",
+      "\u0120"
+    ],
+    [
+      "m",
+      "ent"
+    ],
+    [
+      "or",
+      "m"
+    ],
+    [
+      "ch",
+      "ec"
+    ],
+    [
+      "T",
+      "o\u0120"
+    ],
+    [
+      "t",
+      "ra"
+    ],
+    [
+      "e",
+      "pr"
+    ],
+    [
+      "epr",
+      "ly"
+    ],
+    [
+      "pro",
+      "per"
+    ],
+    [
+      "r",
+      "es"
+    ],
+    [
+      "n",
+      "e"
+    ],
+    [
+      "re",
+      "a"
+    ],
+    [
+      "p",
+      "u"
+    ],
+    [
+      "pu",
+      "t\u0120"
+    ],
+    [
+      "g",
+      "ro"
+    ],
+    [
+      "gro",
+      "un"
+    ],
+    [
+      "e\u0120",
+      "the\u0120"
+    ],
+    [
+      "s",
+      "er"
+    ],
+    [
+      "python",
+      "\u0120c"
+    ],
+    [
+      "Here\u0120",
+      "is\u0120a\u0120"
+    ],
+    [
+      "ion",
+      "\u0120"
+    ],
+    [
+      "P",
+      "ython"
+    ],
+    [
+      "las",
+      "s\u0120"
+    ],
+    [
+      "di",
+      "ction"
+    ],
+    [
+      "ke",
+      "y"
+    ],
+    [
+      "a\u0120",
+      "fil"
+    ],
+    [
+      "a\u0120fil",
+      "e\u0120in\u0120"
+    ],
+    [
+      "e\u0120",
+      "a\u0120"
+    ],
+    [
+      "wr",
+      "it"
+    ],
+    [
+      "dict",
+      "_"
+    ],
+    [
+      "i",
+      "st"
+    ],
+    [
+      "2",
+      "\u0120"
+    ],
+    [
+      "ar",
+      "y\u0120"
+    ],
+    [
+      "se",
+      "ar"
+    ],
+    [
+      "sear",
+      "ch"
+    ],
+    [
+      "ar",
+      "r"
+    ],
+    [
+      "t",
+      "ar"
+    ],
+    [
+      "tar",
+      "get"
+    ],
+    [
+      "lo",
+      "w"
+    ],
+    [
+      "fastapi",
+      "\u0120"
+    ],
+    [
+      "ic",
+      "\u0120"
+    ],
+    [
+      "FastAP",
+      "I"
+    ],
+    [
+      "um",
+      "ent"
+    ],
+    [
+      "user",
+      "_id"
+    ],
+    [
+      "re",
+      "act\u0120"
+    ],
+    [
+      "com",
+      "pon"
+    ],
+    [
+      "j",
+      "s"
+    ],
+    [
+      "js",
+      "x"
+    ],
+    [
+      "a",
+      "ul"
+    ],
+    [
+      "function",
+      "\u0120"
+    ],
+    [
+      "coun",
+      "t"
+    ],
+    [
+      "Co",
+      "un"
+    ],
+    [
+      "se",
+      "t"
+    ],
+    [
+      "b",
+      "ut"
+    ],
+    [
+      "but",
+      "t"
+    ],
+    [
+      "S",
+      "ubm"
+    ],
+    [
+      "C",
+      "h"
+    ],
+    [
+      "cs",
+      "s\u0120"
+    ],
+    [
+      "cs",
+      "s"
+    ],
+    [
+      "p",
+      "x"
+    ],
+    [
+      "v",
+      "ari"
+    ],
+    [
+      "vari",
+      "ab"
+    ],
+    [
+      "col",
+      "or"
+    ],
+    [
+      "E",
+      "\u0120"
+    ],
+    [
+      "D",
+      "B"
+    ],
+    [
+      "do",
+      "c"
+    ],
+    [
+      "col",
+      "le"
+    ],
+    [
+      "colle",
+      "ction"
+    ],
+    [
+      "or",
+      "\u0120"
+    ],
+    [
+      "count\u0120",
+      "from\u0120"
+    ],
+    [
+      "\u0120m",
+      "in"
+    ],
+    [
+      "\u0120min",
+      "us\u0120"
+    ],
+    [
+      "ev",
+      "en\u0120"
+    ],
+    [
+      "even\u0120",
+      "number"
+    ],
+    [
+      "L",
+      "\u0120"
+    ],
+    [
+      "on",
+      "ant"
+    ],
+    [
+      "r",
+      "u"
+    ],
+    [
+      "\u0120s",
+      "y"
+    ],
+    [
+      "what\u0120",
+      "does\u0120"
+    ],
+    [
+      "what\u0120does\u0120",
+      "a\u0120"
+    ],
+    [
+      "s",
+      "o"
+    ],
+    [
+      "operat",
+      "ing\u0120"
+    ],
+    [
+      "ly\u0120",
+      "on\u0120"
+    ],
+    [
+      "loc",
+      "al\u0120"
+    ],
+    [
+      "\u0120",
+      "and\u0120"
+    ],
+    [
+      "or",
+      "d"
+    ],
+    [
+      "ro",
+      "ut"
+    ],
+    [
+      "S",
+      "Q"
+    ],
+    [
+      "SQ",
+      "L"
+    ],
+    [
+      "re",
+      "l"
+    ],
+    [
+      "rel",
+      "ation"
+    ],
+    [
+      "relation",
+      "al\u0120"
+    ],
+    [
+      "memor",
+      "y\u0120"
+    ],
+    [
+      "G",
+      "re"
+    ],
+    [
+      "Gre",
+      "et"
+    ],
+    [
+      "Greet",
+      "ing"
+    ],
+    [
+      "p",
+      "e"
+    ],
+    [
+      "all",
+      "\u0120"
+    ],
+    [
+      "how\u0120",
+      "d"
+    ],
+    [
+      "how\u0120d",
+      "o\u0120"
+    ],
+    [
+      "how\u0120do\u0120",
+      "y"
+    ],
+    [
+      "how\u0120do\u0120y",
+      "ou"
+    ],
+    [
+      "how\u0120do\u0120you",
+      "\u0120"
+    ],
+    [
+      "wor",
+      "k"
+    ],
+    [
+      "Con",
+      "text"
+    ],
+    [
+      "is\u0120is\u0120the\u0120",
+      "c"
+    ],
+    [
+      "ap",
+      "it"
+    ],
+    [
+      "apit",
+      "al\u0120"
+    ],
+    [
+      "apital\u0120",
+      "of\u0120"
+    ],
+    [
+      "apital\u0120of\u0120",
+      "F"
+    ],
+    [
+      "apital\u0120of\u0120F",
+      "ran"
+    ],
+    [
+      "apital\u0120of\u0120Fran",
+      "ce"
+    ],
+    [
+      "at",
+      "er\u0120"
+    ],
+    [
+      "ater\u0120",
+      "bo"
+    ],
+    [
+      "ater\u0120bo",
+      "il"
+    ],
+    [
+      "n",
+      "orm"
+    ],
+    [
+      "norm",
+      "al"
+    ],
+    [
+      "w",
+      "n"
+    ],
+    [
+      "chec",
+      "k\u0120"
+    ],
+    [
+      "th",
+      "is"
+    ],
+    [
+      "i",
+      "f"
+    ],
+    [
+      "b",
+      "e"
+    ],
+    [
+      "iev",
+      "e\u0120"
+    ],
+    [
+      "ac",
+      "h"
+    ],
+    [
+      "u",
+      "st"
+    ],
+    [
+      "tra",
+      "in"
+    ],
+    [
+      "i",
+      "p"
+    ],
+    [
+      "w",
+      "are\u0120"
+    ],
+    [
+      "\u0120c",
+      "or"
+    ],
+    [
+      "cogn",
+      "iz"
+    ],
+    [
+      "s\u0120",
+      "and\u0120"
+    ],
+    [
+      "th",
+      "e"
+    ],
+    [
+      "ic",
+      "al"
+    ],
+    [
+      "e\u0120",
+      "is\u0120"
+    ],
+    [
+      "s",
+      "or"
+    ],
+    [
+      "o",
+      "ut"
+    ],
+    [
+      "lo",
+      "g"
+    ],
+    [
+      "groun",
+      "d"
+    ],
+    [
+      "in",
+      "t\u0120"
+    ],
+    [
+      "ad",
+      "d"
+    ],
+    [
+      "div",
+      "i"
+    ],
+    [
+      "divi",
+      "de"
+    ],
+    [
+      "b",
+      "\u0120"
+    ],
+    [
+      "ad",
+      "d\u0120"
+    ],
+    [
+      "w",
+      "o\u0120"
+    ],
+    [
+      "Y",
+      "ou"
+    ],
+    [
+      "You",
+      "\u0120c"
+    ],
+    [
+      "lo",
+      "op"
+    ],
+    [
+      "las",
+      "s"
+    ],
+    [
+      "st",
+      "at"
+    ],
+    [
+      "re",
+      "ad"
+    ],
+    [
+      "op",
+      "en"
+    ],
+    [
+      "m",
+      "er"
+    ],
+    [
+      "b",
+      "in"
+    ],
+    [
+      "al",
+      "g"
+    ],
+    [
+      "alg",
+      "or"
+    ],
+    [
+      "algor",
+      "ith"
+    ],
+    [
+      "low",
+      "\u0120"
+    ],
+    [
+      "m",
+      "id\u0120"
+    ],
+    [
+      "m",
+      "id"
+    ],
+    [
+      "app",
+      "\u0120"
+    ],
+    [
+      "en",
+      "d"
+    ],
+    [
+      "ode",
+      "l"
+    ],
+    [
+      "ant",
+      "ic\u0120"
+    ],
+    [
+      "a",
+      "se"
+    ],
+    [
+      "es",
+      "s"
+    ],
+    [
+      "ess",
+      "ag"
+    ],
+    [
+      "ument",
+      "s"
+    ],
+    [
+      "u",
+      "v"
+    ],
+    [
+      "uv",
+      "ic"
+    ],
+    [
+      "uvic",
+      "or"
+    ],
+    [
+      "h",
+      "o"
+    ],
+    [
+      "0",
+      "0"
+    ],
+    [
+      "compon",
+      "ent"
+    ],
+    [
+      "Re",
+      "act\u0120"
+    ],
+    [
+      "re",
+      "act"
+    ],
+    [
+      "ex",
+      "port\u0120"
+    ],
+    [
+      "export\u0120",
+      "def"
+    ],
+    [
+      "export\u0120def",
+      "aul"
+    ],
+    [
+      "export\u0120defaul",
+      "t\u0120"
+    ],
+    [
+      "export\u0120default\u0120",
+      "function\u0120"
+    ],
+    [
+      "t",
+      "it"
+    ],
+    [
+      "useSt",
+      "ate"
+    ],
+    [
+      "Re",
+      "act"
+    ],
+    [
+      "cons",
+      "t\u0120"
+    ],
+    [
+      "Coun",
+      "t"
+    ],
+    [
+      "I",
+      "n"
+    ],
+    [
+      "butt",
+      "on"
+    ],
+    [
+      "s",
+      "ubm"
+    ],
+    [
+      "h",
+      "and"
+    ],
+    [
+      "hand",
+      "le"
+    ],
+    [
+      "Subm",
+      "it"
+    ],
+    [
+      "val",
+      "u"
+    ],
+    [
+      "for",
+      "m"
+    ],
+    [
+      "con",
+      "d"
+    ],
+    [
+      "cond",
+      "ition"
+    ],
+    [
+      "e",
+      "le"
+    ],
+    [
+      "gr",
+      "id"
+    ],
+    [
+      "1",
+      "6"
+    ],
+    [
+      "c",
+      "enter"
+    ],
+    [
+      "ar",
+      "k"
+    ],
+    [
+      "p",
+      "h"
+    ],
+    [
+      "sql",
+      "ite\u0120"
+    ],
+    [
+      "at",
+      "ch"
+    ],
+    [
+      "S",
+      "E"
+    ],
+    [
+      "M",
+      "\u0120"
+    ],
+    [
+      "i",
+      "v"
+    ],
+    [
+      "t",
+      "a"
+    ],
+    [
+      "I",
+      "N"
+    ],
+    [
+      "Ch",
+      "ro"
+    ],
+    [
+      "Chro",
+      "ma"
+    ],
+    [
+      "Chroma",
+      "DB"
+    ],
+    [
+      "id",
+      "ation"
+    ],
+    [
+      "e\u0120",
+      "that\u0120"
+    ],
+    [
+      "dat",
+      "ab"
+    ],
+    [
+      "4",
+      "\u0120equals\u0120"
+    ],
+    [
+      "v",
+      "ibhu"
+    ],
+    [
+      "H",
+      "\u0120"
+    ],
+    [
+      "o",
+      "sk"
+    ],
+    [
+      "osk",
+      "a"
+    ],
+    [
+      "C",
+      "\u0120"
+    ],
+    [
+      "le",
+      "t"
+    ],
+    [
+      "er\u0120",
+      "th"
+    ],
+    [
+      "er\u0120th",
+      "an\u0120"
+    ],
+    [
+      "ell",
+      "ig"
+    ],
+    [
+      "what\u0120is\u0120",
+      "a\u0120"
+    ],
+    [
+      "what\u0120is\u0120a\u0120",
+      "sy"
+    ],
+    [
+      "what\u0120is\u0120a\u0120sy",
+      "nonym\u0120for"
+    ],
+    [
+      "A",
+      "\u0120sy"
+    ],
+    [
+      "A\u0120sy",
+      "nonym\u0120for"
+    ],
+    [
+      "\u0120c",
+      "le"
+    ],
+    [
+      "b",
+      "ir"
+    ],
+    [
+      "bir",
+      "d\u0120"
+    ],
+    [
+      "1",
+      "5"
+    ],
+    [
+      "A",
+      "I"
+    ],
+    [
+      "O",
+      "S\u0120"
+    ],
+    [
+      "n\u0120",
+      "operating\u0120"
+    ],
+    [
+      "i",
+      "re"
+    ],
+    [
+      "ly\u0120on\u0120",
+      "local\u0120"
+    ],
+    [
+      "C",
+      "PU"
+    ],
+    [
+      "G",
+      "PU"
+    ],
+    [
+      "at",
+      "es\u0120"
+    ],
+    [
+      "SQL",
+      "ite\u0120"
+    ],
+    [
+      "h",
+      "el"
+    ],
+    [
+      "hel",
+      "lo"
+    ],
+    [
+      "Greeting",
+      "s"
+    ],
+    [
+      "creat",
+      "or"
+    ],
+    [
+      "I\u0120am\u0120",
+      "Vibhu"
+    ],
+    [
+      "Osk",
+      "a"
+    ],
+    [
+      "running\u0120",
+      "locally"
+    ],
+    [
+      "a",
+      "k"
+    ],
+    [
+      "w",
+      "e\u0120"
+    ],
+    [
+      "a",
+      "y"
+    ],
+    [
+      "p",
+      "erat"
+    ],
+    [
+      "rout",
+      "es\u0120"
+    ],
+    [
+      "as",
+      "k"
+    ],
+    [
+      "m",
+      "an"
+    ],
+    [
+      "man",
+      "ag"
+    ],
+    [
+      "manag",
+      "es\u0120"
+    ],
+    [
+      "ex",
+      "ec"
+    ],
+    [
+      "exec",
+      "ut"
+    ],
+    [
+      "P",
+      "ar"
+    ],
+    [
+      "Par",
+      "is\u0120is\u0120the\u0120c"
+    ],
+    [
+      "Paris\u0120is\u0120the\u0120c",
+      "apital\u0120of\u0120France"
+    ],
+    [
+      "W",
+      "ater\u0120boil"
+    ],
+    [
+      "Water\u0120boil",
+      "s\u0120"
+    ],
+    [
+      "Water\u0120boils\u0120",
+      "at\u0120"
+    ],
+    [
+      "Water\u0120boils\u0120at\u0120",
+      "10"
+    ],
+    [
+      "Water\u0120boils\u0120at\u012010",
+      "0"
+    ],
+    [
+      "Water\u0120boils\u0120at\u0120100",
+      "\u0120"
+    ],
+    [
+      "Water\u0120boils\u0120at\u0120100\u0120",
+      "de"
+    ],
+    [
+      "Water\u0120boils\u0120at\u0120100\u0120de",
+      "g"
+    ],
+    [
+      "Water\u0120boils\u0120at\u0120100\u0120deg",
+      "re"
+    ],
+    [
+      "Water\u0120boils\u0120at\u0120100\u0120degre",
+      "es\u0120"
+    ],
+    [
+      "Water\u0120boils\u0120at\u0120100\u0120degrees\u0120",
+      "C"
+    ],
+    [
+      "Water\u0120boils\u0120at\u0120100\u0120degrees\u0120C",
+      "el"
+    ],
+    [
+      "Water\u0120boils\u0120at\u0120100\u0120degrees\u0120Cel",
+      "si"
+    ],
+    [
+      "Water\u0120boils\u0120at\u0120100\u0120degrees\u0120Celsi",
+      "us"
+    ],
+    [
+      "ur",
+      "e\u0120"
+    ],
+    [
+      "Oska\u0120",
+      "is\u0120"
+    ],
+    [
+      "Oska\u0120is\u0120",
+      "running\u0120"
+    ],
+    [
+      "Oska\u0120is\u0120running\u0120",
+      "in\u0120"
+    ],
+    [
+      "Oska\u0120is\u0120running\u0120in\u0120",
+      "back"
+    ],
+    [
+      "Oska\u0120is\u0120running\u0120in\u0120back",
+      "up\u0120"
+    ],
+    [
+      "Oska\u0120is\u0120running\u0120in\u0120backup\u0120",
+      "Core\u0120"
+    ],
+    [
+      "Oska\u0120is\u0120running\u0120in\u0120backup\u0120Core\u0120",
+      "m"
+    ],
+    [
+      "Oska\u0120is\u0120running\u0120in\u0120backup\u0120Core\u0120m",
+      "ode"
+    ],
+    [
+      "m",
+      "od"
+    ],
+    [
+      "e\u0120",
+      "is\u0120the\u0120"
+    ],
+    [
+      "w",
+      "t"
+    ],
+    [
+      "th",
+      "is\u0120"
+    ],
+    [
+      "n",
+      "ow"
+    ],
+    [
+      "h",
+      "g"
+    ],
+    [
+      "en",
+      "v"
+    ],
+    [
+      "a",
+      "m"
+    ],
+    [
+      "t",
+      "al"
+    ],
+    [
+      "il",
+      "l"
+    ],
+    [
+      "r",
+      "espon"
+    ],
+    [
+      "ly\u0120",
+      "and\u0120"
+    ],
+    [
+      "con",
+      "c"
+    ],
+    [
+      "to\u0120",
+      "check\u0120"
+    ],
+    [
+      "L",
+      "et"
+    ],
+    [
+      "s\u0120",
+      "ver"
+    ],
+    [
+      "the\u0120",
+      "system\u0120"
+    ],
+    [
+      "we",
+      "loc"
+    ],
+    [
+      "weloc",
+      "me"
+    ],
+    [
+      "iev",
+      "e"
+    ],
+    [
+      "run",
+      "\u0120"
+    ],
+    [
+      "c",
+      "ust"
+    ],
+    [
+      "cust",
+      "o"
+    ],
+    [
+      "custo",
+      "m\u0120"
+    ],
+    [
+      "c",
+      "r"
+    ],
+    [
+      "cr",
+      "ip"
+    ],
+    [
+      "crip",
+      "ts"
+    ],
+    [
+      "pro",
+      "eprly"
+    ],
+    [
+      "proper",
+      "ly"
+    ],
+    [
+      "train",
+      "ed\u0120"
+    ],
+    [
+      "h",
+      "ar"
+    ],
+    [
+      "har",
+      "d"
+    ],
+    [
+      "hard",
+      "ware\u0120"
+    ],
+    [
+      "res",
+      "o"
+    ],
+    [
+      "reso",
+      "ur"
+    ],
+    [
+      "resour",
+      "ces"
+    ],
+    [
+      "ro",
+      "eprly"
+    ],
+    [
+      "how\u0120",
+      "does\u0120"
+    ],
+    [
+      "rea",
+      "cogniz"
+    ],
+    [
+      "Co",
+      "gn"
+    ],
+    [
+      "Cogn",
+      "ition"
+    ],
+    [
+      "Cognition",
+      "Core\u0120"
+    ],
+    [
+      "t",
+      "e"
+    ],
+    [
+      "the",
+      "m\u0120"
+    ],
+    [
+      "na",
+      "m"
+    ],
+    [
+      "ical",
+      "ly"
+    ],
+    [
+      "re",
+      "pos"
+    ],
+    [
+      "repos",
+      "n"
+    ],
+    [
+      "reposn",
+      "se"
+    ],
+    [
+      "r",
+      "esponse"
+    ],
+    [
+      "comp",
+      "ut"
+    ],
+    [
+      "se",
+      "me"
+    ],
+    [
+      "seme",
+      "ing"
+    ],
+    [
+      "g",
+      "en"
+    ],
+    [
+      "gen",
+      "erat"
+    ],
+    [
+      "generat",
+      "es\u0120"
+    ],
+    [
+      "out",
+      "put\u0120"
+    ],
+    [
+      "w",
+      "h"
+    ],
+    [
+      "s\u0120",
+      "di"
+    ],
+    [
+      "ic",
+      "\u0120t"
+    ],
+    [
+      "write\u0120a\u0120",
+      "python\u0120c"
+    ],
+    [
+      "al",
+      "c"
+    ],
+    [
+      "alc",
+      "ul"
+    ],
+    [
+      "alcul",
+      "at"
+    ],
+    [
+      "alculat",
+      "or"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120",
+      "s"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120s",
+      "im"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120sim",
+      "p"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120simp",
+      "le\u0120"
+    ],
+    [
+      "def\u0120",
+      "add"
+    ],
+    [
+      "ul",
+      "t"
+    ],
+    [
+      "s\u0120in\u0120",
+      "python"
+    ],
+    [
+      "You\u0120c",
+      "an\u0120"
+    ],
+    [
+      "\u0120in\u0120",
+      "Python"
+    ],
+    [
+      "for",
+      "\u0120"
+    ],
+    [
+      "\u0120in\u0120",
+      "ran"
+    ],
+    [
+      "\u0120in\u0120ran",
+      "ge"
+    ],
+    [
+      "pr",
+      "int"
+    ],
+    [
+      "c",
+      "lass\u0120"
+    ],
+    [
+      "C",
+      "reat"
+    ],
+    [
+      "_",
+      "_"
+    ],
+    [
+      "return\u0120",
+      "f"
+    ],
+    [
+      "ort\u0120",
+      "a\u0120"
+    ],
+    [
+      "ort\u0120a\u0120",
+      "list\u0120"
+    ],
+    [
+      "ort\u0120a\u0120list\u0120",
+      "of\u0120"
+    ],
+    [
+      "by\u0120",
+      "key\u0120"
+    ],
+    [
+      "diction",
+      "ari"
+    ],
+    [
+      "dictionari",
+      "es\u0120"
+    ],
+    [
+      "using\u0120",
+      "a\u0120"
+    ],
+    [
+      "la",
+      "m"
+    ],
+    [
+      "lam",
+      "b"
+    ],
+    [
+      "lamb",
+      "d"
+    ],
+    [
+      "lambd",
+      "a\u0120"
+    ],
+    [
+      "_",
+      "dict"
+    ],
+    [
+      "_dict",
+      "s"
+    ],
+    [
+      "dat",
+      "a"
+    ],
+    [
+      "rea",
+      "d\u0120"
+    ],
+    [
+      "read\u0120",
+      "a\u0120file\u0120in\u0120"
+    ],
+    [
+      "def\u0120",
+      "read"
+    ],
+    [
+      "def\u0120read",
+      "_"
+    ],
+    [
+      "f",
+      "i"
+    ],
+    [
+      "fi",
+      "le"
+    ],
+    [
+      "with\u0120",
+      "open"
+    ],
+    [
+      "en",
+      "cod"
+    ],
+    [
+      "encod",
+      "ing"
+    ],
+    [
+      "ut",
+      "f"
+    ],
+    [
+      "a",
+      "s\u0120"
+    ],
+    [
+      "as\u0120",
+      "f"
+    ],
+    [
+      "to\u0120",
+      "a\u0120file\u0120in\u0120"
+    ],
+    [
+      "writ",
+      "e"
+    ],
+    [
+      "mer",
+      "g"
+    ],
+    [
+      "merg",
+      "e\u0120t"
+    ],
+    [
+      "merge\u0120t",
+      "wo\u0120"
+    ],
+    [
+      "operat",
+      "or"
+    ],
+    [
+      "dict_",
+      "b"
+    ],
+    [
+      "if\u0120",
+      "key\u0120"
+    ],
+    [
+      "ex",
+      "ist"
+    ],
+    [
+      "p",
+      "re"
+    ],
+    [
+      "diction",
+      "ary"
+    ],
+    [
+      "comp",
+      "re"
+    ],
+    [
+      "compre",
+      "h"
+    ],
+    [
+      "compreh",
+      "en"
+    ],
+    [
+      "comprehen",
+      "sion"
+    ],
+    [
+      "\u0120in\u0120",
+      "python"
+    ],
+    [
+      "y\u0120",
+      "to\u0120"
+    ],
+    [
+      "bin",
+      "ary\u0120"
+    ],
+    [
+      "binary\u0120",
+      "search"
+    ],
+    [
+      "algorith",
+      "m"
+    ],
+    [
+      "high",
+      "\u0120"
+    ],
+    [
+      "if\u0120",
+      "arr"
+    ],
+    [
+      "b",
+      "as"
+    ],
+    [
+      "FastAP",
+      "I\u0120"
+    ],
+    [
+      "l",
+      "ic"
+    ],
+    [
+      "from\u0120",
+      "fastapi\u0120"
+    ],
+    [
+      "from\u0120fastapi\u0120",
+      "import\u0120"
+    ],
+    [
+      "from\u0120fastapi\u0120import\u0120",
+      "FastAPI"
+    ],
+    [
+      "ro",
+      "o"
+    ],
+    [
+      "pos",
+      "t\u0120"
+    ],
+    [
+      "O",
+      "N"
+    ],
+    [
+      "D",
+      "e"
+    ],
+    [
+      "De",
+      "f"
+    ],
+    [
+      "end",
+      "po"
+    ],
+    [
+      "endpo",
+      "int\u0120"
+    ],
+    [
+      "y",
+      "d"
+    ],
+    [
+      "B",
+      "ase"
+    ],
+    [
+      "Base",
+      "M"
+    ],
+    [
+      "BaseM",
+      "odel"
+    ],
+    [
+      "I",
+      "tem"
+    ],
+    [
+      "item",
+      "s"
+    ],
+    [
+      "creat",
+      "e"
+    ],
+    [
+      "m",
+      "essag"
+    ],
+    [
+      "messag",
+      "e"
+    ],
+    [
+      "\u0120p",
+      "ar"
+    ],
+    [
+      "\u0120par",
+      "a"
+    ],
+    [
+      "\u0120para",
+      "me"
+    ],
+    [
+      "\u0120parame",
+      "ter"
+    ],
+    [
+      "ar",
+      "g"
+    ],
+    [
+      "uvicor",
+      "n\u0120"
+    ],
+    [
+      "R",
+      "un"
+    ],
+    [
+      "Run",
+      "\u0120"
+    ],
+    [
+      "ly\u0120",
+      "using\u0120"
+    ],
+    [
+      "h",
+      "1"
+    ],
+    [
+      "tit",
+      "le"
+    ],
+    [
+      "count",
+      "er\u0120"
+    ],
+    [
+      "import\u0120",
+      "React"
+    ],
+    [
+      "useSt",
+      "at"
+    ],
+    [
+      "useStat",
+      "e\u0120"
+    ],
+    [
+      "set",
+      "Count"
+    ],
+    [
+      "form\u0120",
+      "subm"
+    ],
+    [
+      "form\u0120subm",
+      "is"
+    ],
+    [
+      "form\u0120submis",
+      "sion"
+    ],
+    [
+      "set",
+      "T"
+    ],
+    [
+      "setT",
+      "ext"
+    ],
+    [
+      "v",
+      "ent"
+    ],
+    [
+      "in",
+      "put\u0120"
+    ],
+    [
+      "valu",
+      "e"
+    ],
+    [
+      "an",
+      "ge"
+    ],
+    [
+      "ele",
+      "ment"
+    ],
+    [
+      "L",
+      "o"
+    ],
+    [
+      "Lo",
+      "g"
+    ],
+    [
+      "gr",
+      "id\u0120"
+    ],
+    [
+      "cont",
+      "a"
+    ],
+    [
+      "conta",
+      "in"
+    ],
+    [
+      "contain",
+      "er\u0120"
+    ],
+    [
+      "col",
+      "um"
+    ],
+    [
+      "colum",
+      "n"
+    ],
+    [
+      "column",
+      "s"
+    ],
+    [
+      "di",
+      "sp"
+    ],
+    [
+      "disp",
+      "lay"
+    ],
+    [
+      "write\u0120",
+      "css\u0120"
+    ],
+    [
+      "f",
+      "le"
+    ],
+    [
+      "fle",
+      "x"
+    ],
+    [
+      "bo",
+      "x"
+    ],
+    [
+      "variab",
+      "l"
+    ],
+    [
+      "variabl",
+      "es"
+    ],
+    [
+      "prim",
+      "ary"
+    ],
+    [
+      "0",
+      "f"
+    ],
+    [
+      "b",
+      "g"
+    ],
+    [
+      "d",
+      "ark"
+    ],
+    [
+      "0",
+      "a"
+    ],
+    [
+      "back",
+      "ground"
+    ],
+    [
+      "v",
+      "ar"
+    ],
+    [
+      "g",
+      "lass"
+    ],
+    [
+      "st",
+      "y"
+    ],
+    [
+      "sty",
+      "le"
+    ],
+    [
+      "back",
+      "d"
+    ],
+    [
+      "backd",
+      "ro"
+    ],
+    [
+      "backdro",
+      "p"
+    ],
+    [
+      "r",
+      "g"
+    ],
+    [
+      "rg",
+      "b"
+    ],
+    [
+      "rgb",
+      "a"
+    ],
+    [
+      "b",
+      "ord"
+    ],
+    [
+      "bord",
+      "er"
+    ],
+    [
+      "Query",
+      "\u0120"
+    ],
+    [
+      "ro",
+      "w"
+    ],
+    [
+      "SE",
+      "L"
+    ],
+    [
+      "SEL",
+      "E"
+    ],
+    [
+      "SELE",
+      "C"
+    ],
+    [
+      "F",
+      "R"
+    ],
+    [
+      "FR",
+      "O"
+    ],
+    [
+      "FRO",
+      "M\u0120"
+    ],
+    [
+      "W",
+      "H"
+    ],
+    [
+      "WH",
+      "E"
+    ],
+    [
+      "WHE",
+      "R"
+    ],
+    [
+      "act",
+      "iv"
+    ],
+    [
+      "ta",
+      "il"
+    ],
+    [
+      "ro",
+      "le"
+    ],
+    [
+      "\u0120ch",
+      "at"
+    ],
+    [
+      "\u0120chat",
+      "s\u0120"
+    ],
+    [
+      "_",
+      "id\u0120"
+    ],
+    [
+      "session",
+      "_id"
+    ],
+    [
+      "ser",
+      "t\u0120"
+    ],
+    [
+      "ne",
+      "w"
+    ],
+    [
+      "e\u0120",
+      "in"
+    ],
+    [
+      "e\u0120in",
+      "to\u0120"
+    ],
+    [
+      "ch",
+      "ro"
+    ],
+    [
+      "chro",
+      "m"
+    ],
+    [
+      "chrom",
+      "ad"
+    ],
+    [
+      "chromad",
+      "b\u0120"
+    ],
+    [
+      "si",
+      "st"
+    ],
+    [
+      "doc",
+      "uments"
+    ],
+    [
+      "se",
+      "m"
+    ],
+    [
+      "sem",
+      "antic\u0120"
+    ],
+    [
+      "query",
+      "_"
+    ],
+    [
+      "query_",
+      "text"
+    ],
+    [
+      "val",
+      "idation"
+    ],
+    [
+      "\u0120cor",
+      "e"
+    ],
+    [
+      "per",
+      "form"
+    ],
+    [
+      "perform",
+      "s\u0120"
+    ],
+    [
+      "l",
+      "i"
+    ],
+    [
+      "dat",
+      "a\u0120"
+    ],
+    [
+      "datab",
+      "as"
+    ],
+    [
+      "databas",
+      "e\u0120"
+    ],
+    [
+      "en",
+      "c"
+    ],
+    [
+      "ev",
+      "ol"
+    ],
+    [
+      "cod",
+      "e\u0120"
+    ],
+    [
+      "t",
+      "es"
+    ],
+    [
+      "tes",
+      "t"
+    ],
+    [
+      "es\u0120",
+      "the\u0120"
+    ],
+    [
+      "\u0120t",
+      "es"
+    ],
+    [
+      "\u0120tes",
+      "ts"
+    ],
+    [
+      "count\u0120from\u0120",
+      "1"
+    ],
+    [
+      "count\u0120from\u01201",
+      "\u0120to\u0120"
+    ],
+    [
+      "2",
+      "\u0120plus\u0120"
+    ],
+    [
+      "2\u0120plus\u0120",
+      "3"
+    ],
+    [
+      "1",
+      "\u0120plus\u0120"
+    ],
+    [
+      "1\u0120plus\u0120",
+      "1"
+    ],
+    [
+      "\u0120equals\u0120",
+      "2"
+    ],
+    [
+      "10",
+      "\u0120minus\u0120"
+    ],
+    [
+      "5",
+      "\u0120times\u0120"
+    ],
+    [
+      "5\u0120times\u0120",
+      "5"
+    ],
+    [
+      "3",
+      "\u0120times\u0120"
+    ],
+    [
+      "s\u0120",
+      "b"
+    ],
+    [
+      "s\u0120b",
+      "et"
+    ],
+    [
+      "s\u0120bet",
+      "we"
+    ],
+    [
+      "s\u0120betwe",
+      "en\u0120"
+    ],
+    [
+      "s\u0120between\u0120",
+      "1"
+    ],
+    [
+      "s\u0120between\u01201",
+      "\u0120and\u0120"
+    ],
+    [
+      "s\u0120between\u01201\u0120and\u0120",
+      "10"
+    ],
+    [
+      "od",
+      "d\u0120"
+    ],
+    [
+      "odd\u0120",
+      "number"
+    ],
+    [
+      "7",
+      "\u0120"
+    ],
+    [
+      "prim",
+      "e\u0120"
+    ],
+    [
+      "prime\u0120",
+      "number"
+    ],
+    [
+      "V",
+      "\u0120"
+    ],
+    [
+      "Y",
+      "\u0120"
+    ],
+    [
+      "G",
+      "\u0120"
+    ],
+    [
+      "what\u0120",
+      "are\u0120"
+    ],
+    [
+      "what\u0120are\u0120",
+      "the\u0120"
+    ],
+    [
+      "cons",
+      "onant"
+    ],
+    [
+      "s",
+      "onant"
+    ],
+    [
+      "s\u0120in\u0120",
+      "the\u0120"
+    ],
+    [
+      "ste",
+      "p"
+    ],
+    [
+      "\u0120p",
+      "ro"
+    ],
+    [
+      "comp",
+      "il"
+    ],
+    [
+      "st",
+      "or"
+    ],
+    [
+      "int",
+      "ellig"
+    ],
+    [
+      "\u0120s",
+      "m"
+    ],
+    [
+      "\u0120sm",
+      "ar"
+    ],
+    [
+      "t",
+      "ru"
+    ],
+    [
+      "comp",
+      "let"
+    ],
+    [
+      "complet",
+      "e\u0120the\u0120"
+    ],
+    [
+      "complete\u0120the\u0120",
+      "ph"
+    ],
+    [
+      "complete\u0120the\u0120ph",
+      "ra"
+    ],
+    [
+      "complete\u0120the\u0120phra",
+      "se"
+    ],
+    [
+      "c",
+      "atch"
+    ],
+    [
+      "pr",
+      "act"
+    ],
+    [
+      "pract",
+      "ic"
+    ],
+    [
+      "practic",
+      "e\u0120"
+    ],
+    [
+      "practice\u0120",
+      "ma"
+    ],
+    [
+      "practice\u0120ma",
+      "k"
+    ],
+    [
+      "p",
+      "ur"
+    ],
+    [
+      "do",
+      "g"
+    ],
+    [
+      "dog",
+      "\u0120"
+    ],
+    [
+      "f",
+      "is"
+    ],
+    [
+      "fis",
+      "h"
+    ],
+    [
+      "st",
+      "em"
+    ],
+    [
+      "2",
+      "0"
+    ],
+    [
+      "7",
+      "\u0120plus\u0120"
+    ],
+    [
+      "7\u0120plus\u0120",
+      "8"
+    ],
+    [
+      "12",
+      "\u0120minus\u0120"
+    ],
+    [
+      "12\u0120minus\u0120",
+      "5"
+    ],
+    [
+      "9",
+      "\u0120times\u0120"
+    ],
+    [
+      "9\u0120times\u0120",
+      "3"
+    ],
+    [
+      "16",
+      "\u0120"
+    ],
+    [
+      "16\u0120",
+      "divide"
+    ],
+    [
+      "16\u0120divide",
+      "d\u0120"
+    ],
+    [
+      "16\u0120divided\u0120",
+      "by\u0120"
+    ],
+    [
+      "9",
+      "\u0120"
+    ],
+    [
+      "g",
+      "reat"
+    ],
+    [
+      "great",
+      "er\u0120than\u0120"
+    ],
+    [
+      "greater\u0120than\u0120",
+      "4"
+    ],
+    [
+      "an\u0120",
+      "even\u0120number"
+    ],
+    [
+      "how",
+      "\u0120m"
+    ],
+    [
+      "how\u0120m",
+      "an"
+    ],
+    [
+      "how\u0120man",
+      "y\u0120"
+    ],
+    [
+      "vowel",
+      "s\u0120in\u0120"
+    ],
+    [
+      "vowels\u0120in\u0120",
+      "vibhu"
+    ],
+    [
+      "Th",
+      "ere\u0120"
+    ],
+    [
+      "There\u0120",
+      "are\u0120"
+    ],
+    [
+      "s\u0120in\u0120",
+      "oska"
+    ],
+    [
+      "Oska\u0120",
+      "AI"
+    ],
+    [
+      "OS\u0120",
+      "is\u0120a\u0120"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120",
+      "so"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120so",
+      "ver"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sover",
+      "e"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovere",
+      "ig"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereig",
+      "n\u0120operating\u0120"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120",
+      "lay"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120lay",
+      "er\u0120"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120",
+      "running\u0120"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120",
+      "ent"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120ent",
+      "ire"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entire",
+      "ly\u0120on\u0120local\u0120"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120",
+      "CPU"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120CPU",
+      "\u0120and\u0120"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120CPU\u0120and\u0120",
+      "GPU"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120CPU\u0120and\u0120GPU",
+      "\u0120s"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120CPU\u0120and\u0120GPU\u0120s",
+      "il"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120CPU\u0120and\u0120GPU\u0120sil",
+      "ic"
+    ],
+    [
+      "OS\u0120is\u0120a\u0120sovereign\u0120operating\u0120layer\u0120running\u0120entirely\u0120on\u0120local\u0120CPU\u0120and\u0120GPU\u0120silic",
+      "on"
+    ],
+    [
+      "The\u0120",
+      "system\u0120"
+    ],
+    [
+      "The\u0120system\u0120",
+      "co"
+    ],
+    [
+      "The\u0120system\u0120co",
+      "ord"
+    ],
+    [
+      "The\u0120system\u0120coord",
+      "in"
+    ],
+    [
+      "The\u0120system\u0120coordin",
+      "ates\u0120"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120",
+      "Z"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120Z",
+      "M"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120ZM",
+      "Q"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120ZMQ",
+      "\u0120"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120ZMQ\u0120",
+      "ev"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120ZMQ\u0120ev",
+      "ent\u0120"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120",
+      "rout"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120rout",
+      "ing\u0120"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120routing\u0120",
+      "and\u0120"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120routing\u0120and\u0120",
+      "SQLite\u0120"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120routing\u0120and\u0120SQLite\u0120",
+      "relational\u0120"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120routing\u0120and\u0120SQLite\u0120relational\u0120",
+      "memory\u0120"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120routing\u0120and\u0120SQLite\u0120relational\u0120memory\u0120",
+      "st"
+    ],
+    [
+      "The\u0120system\u0120coordinates\u0120ZMQ\u0120event\u0120routing\u0120and\u0120SQLite\u0120relational\u0120memory\u0120st",
+      "ate"
+    ],
+    [
+      "S",
+      "pe"
+    ],
+    [
+      "Spe",
+      "ak"
+    ],
+    [
+      "what\u0120",
+      "s"
+    ],
+    [
+      "what\u0120s",
+      "h"
+    ],
+    [
+      "what\u0120sh",
+      "all\u0120"
+    ],
+    [
+      "what\u0120shall\u0120",
+      "we\u0120"
+    ],
+    [
+      "what\u0120shall\u0120we\u0120",
+      "form\u0120"
+    ],
+    [
+      "what\u0120shall\u0120we\u0120form\u0120",
+      "t"
+    ],
+    [
+      "what\u0120shall\u0120we\u0120form\u0120t",
+      "od"
+    ],
+    [
+      "what\u0120shall\u0120we\u0120form\u0120tod",
+      "ay"
+    ],
+    [
+      "how\u0120do\u0120you\u0120",
+      "work"
+    ],
+    [
+      "I\u0120am\u0120",
+      "an\u0120"
+    ],
+    [
+      "I\u0120am\u0120an\u0120",
+      "A"
+    ],
+    [
+      "I\u0120am\u0120an\u0120A",
+      "ut"
+    ],
+    [
+      "I\u0120am\u0120an\u0120Aut",
+      "on"
+    ],
+    [
+      "I\u0120am\u0120an\u0120Auton",
+      "o"
+    ],
+    [
+      "I\u0120am\u0120an\u0120Autono",
+      "m"
+    ],
+    [
+      "I\u0120am\u0120an\u0120Autonom",
+      "o"
+    ],
+    [
+      "I\u0120am\u0120an\u0120Autonomo",
+      "us\u0120"
+    ],
+    [
+      "I\u0120am\u0120an\u0120Autonomous\u0120",
+      "A"
+    ],
+    [
+      "I\u0120am\u0120an\u0120Autonomous\u0120A",
+      "I\u0120"
+    ],
+    [
+      "I\u0120am\u0120an\u0120Autonomous\u0120AI\u0120",
+      "O"
+    ],
+    [
+      "I\u0120am\u0120an\u0120Autonomous\u0120AI\u0120O",
+      "perat"
+    ],
+    [
+      "I\u0120am\u0120an\u0120Autonomous\u0120AI\u0120Operat",
+      "ing\u0120"
+    ],
+    [
+      "I\u0120am\u0120an\u0120Autonomous\u0120AI\u0120Operating\u0120",
+      "L"
+    ],
+    [
+      "I\u0120am\u0120an\u0120Autonomous\u0120AI\u0120Operating\u0120L",
+      "ay"
+    ],
+    [
+      "I\u0120am\u0120an\u0120Autonomous\u0120AI\u0120Operating\u0120Lay",
+      "er\u0120"
+    ],
+    [
+      "O",
+      "S"
+    ],
+    [
+      "that\u0120",
+      "routes\u0120"
+    ],
+    [
+      "that\u0120routes\u0120",
+      "t"
+    ],
+    [
+      "that\u0120routes\u0120t",
+      "ask"
+    ],
+    [
+      "that\u0120routes\u0120task",
+      "s"
+    ],
+    [
+      "manages\u0120",
+      "memor"
+    ],
+    [
+      "manages\u0120memor",
+      "y"
+    ],
+    [
+      "and\u0120",
+      "execut"
+    ],
+    [
+      "and\u0120execut",
+      "es\u0120"
+    ],
+    [
+      "and\u0120executes\u0120",
+      "OS\u0120"
+    ],
+    [
+      "and\u0120executes\u0120OS\u0120",
+      "com"
+    ],
+    [
+      "and\u0120executes\u0120OS\u0120com",
+      "m"
+    ],
+    [
+      "and\u0120executes\u0120OS\u0120comm",
+      "and"
+    ],
+    [
+      "and\u0120executes\u0120OS\u0120command",
+      "s\u0120"
+    ],
+    [
+      "and\u0120executes\u0120OS\u0120commands\u0120",
+      "locally"
+    ],
+    [
+      "what\u0120is\u0120the\u0120",
+      "c"
+    ],
+    [
+      "what\u0120is\u0120the\u0120c",
+      "apital\u0120of\u0120France"
+    ],
+    [
+      "what\u0120",
+      "tem"
+    ],
+    [
+      "what\u0120tem",
+      "perat"
+    ],
+    [
+      "what\u0120temperat",
+      "ure\u0120"
+    ],
+    [
+      "what\u0120temperature\u0120",
+      "does\u0120"
+    ],
+    [
+      "what\u0120temperature\u0120does\u0120",
+      "w"
+    ],
+    [
+      "what\u0120temperature\u0120does\u0120w",
+      "ater\u0120boil"
+    ],
+    [
+      "what\u0120temperature\u0120does\u0120water\u0120boil",
+      "\u0120"
+    ],
+    [
+      "what\u0120temperature\u0120does\u0120water\u0120boil\u0120",
+      "at"
+    ],
+    [
+      "what\u0120",
+      "mod"
+    ],
+    [
+      "what\u0120mod",
+      "e\u0120is\u0120the\u0120"
+    ],
+    [
+      "what\u0120mode\u0120is\u0120the\u0120",
+      "system\u0120"
+    ],
+    [
+      "what\u0120mode\u0120is\u0120the\u0120system\u0120",
+      "running\u0120"
+    ],
+    [
+      "what\u0120mode\u0120is\u0120the\u0120system\u0120running\u0120",
+      "in"
+    ],
+    [
+      "wt",
+      "f\u0120"
+    ],
+    [
+      "wtf\u0120",
+      "is\u0120"
+    ],
+    [
+      "wtf\u0120is\u0120",
+      "this\u0120"
+    ],
+    [
+      "wtf\u0120is\u0120this\u0120",
+      "now"
+    ],
+    [
+      "wtf\u0120is\u0120this\u0120now",
+      "\u0120s"
+    ],
+    [
+      "wtf\u0120is\u0120this\u0120now\u0120s",
+      "i"
+    ],
+    [
+      "wtf\u0120is\u0120this\u0120now\u0120si",
+      "hg"
+    ],
+    [
+      "si",
+      "hg"
+    ],
+    [
+      "s",
+      "igh"
+    ],
+    [
+      "Th",
+      "is\u0120is\u0120the\u0120"
+    ],
+    [
+      "This\u0120is\u0120the\u0120",
+      "Vibhu"
+    ],
+    [
+      "Oska\u0120",
+      "local\u0120"
+    ],
+    [
+      "Oska\u0120local\u0120",
+      "env"
+    ],
+    [
+      "Oska\u0120local\u0120env",
+      "ir"
+    ],
+    [
+      "Oska\u0120local\u0120envir",
+      "on"
+    ],
+    [
+      "Oska\u0120local\u0120environ",
+      "ment"
+    ],
+    [
+      "am",
+      "k"
+    ],
+    [
+      "amk",
+      "e\u0120"
+    ],
+    [
+      "amke\u0120",
+      "it\u0120"
+    ],
+    [
+      "amke\u0120it\u0120",
+      "tal"
+    ],
+    [
+      "amke\u0120it\u0120tal",
+      "k\u0120"
+    ],
+    [
+      "amke\u0120it\u0120talk\u0120",
+      "normal"
+    ],
+    [
+      "am",
+      "ke"
+    ],
+    [
+      "ma",
+      "ke"
+    ],
+    [
+      "I\u0120",
+      "w"
+    ],
+    [
+      "I\u0120w",
+      "ill"
+    ],
+    [
+      "I\u0120will",
+      "\u0120"
+    ],
+    [
+      "I\u0120will\u0120",
+      "respon"
+    ],
+    [
+      "I\u0120will\u0120respon",
+      "d\u0120"
+    ],
+    [
+      "I\u0120will\u0120respond\u0120",
+      "normal"
+    ],
+    [
+      "I\u0120will\u0120respond\u0120normal",
+      "ly\u0120and\u0120"
+    ],
+    [
+      "I\u0120will\u0120respond\u0120normally\u0120and\u0120",
+      "conc"
+    ],
+    [
+      "I\u0120will\u0120respond\u0120normally\u0120and\u0120conc",
+      "i"
+    ],
+    [
+      "I\u0120will\u0120respond\u0120normally\u0120and\u0120conci",
+      "se"
+    ],
+    [
+      "I\u0120will\u0120respond\u0120normally\u0120and\u0120concise",
+      "ly"
+    ],
+    [
+      "i",
+      "\u0120t"
+    ],
+    [
+      "i\u0120t",
+      "wn"
+    ],
+    [
+      "i\u0120twn",
+      "at\u0120"
+    ],
+    [
+      "i\u0120twnat\u0120",
+      "to\u0120check\u0120"
+    ],
+    [
+      "i\u0120twnat\u0120to\u0120check\u0120",
+      "this"
+    ],
+    [
+      "t",
+      "wn"
+    ],
+    [
+      "twn",
+      "at"
+    ],
+    [
+      "w",
+      "ant"
+    ],
+    [
+      "s\u0120ver",
+      "if"
+    ],
+    [
+      "s\u0120verif",
+      "y\u0120"
+    ],
+    [
+      "s\u0120verify\u0120",
+      "the\u0120system\u0120"
+    ],
+    [
+      "s\u0120verify\u0120the\u0120system\u0120",
+      "be"
+    ],
+    [
+      "s\u0120verify\u0120the\u0120system\u0120be",
+      "ha"
+    ],
+    [
+      "s\u0120verify\u0120the\u0120system\u0120beha",
+      "v"
+    ],
+    [
+      "s\u0120verify\u0120the\u0120system\u0120behav",
+      "i"
+    ],
+    [
+      "s\u0120verify\u0120the\u0120system\u0120behavi",
+      "or"
+    ],
+    [
+      "w",
+      "el"
+    ],
+    [
+      "wel",
+      "co"
+    ],
+    [
+      "welco",
+      "me"
+    ],
+    [
+      "h",
+      "ell"
+    ],
+    [
+      "hell",
+      "o\u0120"
+    ],
+    [
+      "hello\u0120",
+      "how"
+    ],
+    [
+      "hello\u0120how",
+      "\u0120to\u0120"
+    ],
+    [
+      "hello\u0120how\u0120to\u0120",
+      "ac"
+    ],
+    [
+      "hello\u0120how\u0120to\u0120ac",
+      "ieve\u0120"
+    ],
+    [
+      "hello\u0120how\u0120to\u0120acieve\u0120",
+      "this"
+    ],
+    [
+      "ac",
+      "ieve"
+    ],
+    [
+      "ach",
+      "ieve"
+    ],
+    [
+      "To\u0120",
+      "ach"
+    ],
+    [
+      "To\u0120ach",
+      "ieve\u0120"
+    ],
+    [
+      "To\u0120achieve\u0120",
+      "this\u0120"
+    ],
+    [
+      "To\u0120achieve\u0120this\u0120",
+      "locally"
+    ],
+    [
+      "we\u0120",
+      "run\u0120"
+    ],
+    [
+      "we\u0120run\u0120",
+      "the\u0120"
+    ],
+    [
+      "we\u0120run\u0120the\u0120",
+      "custom\u0120"
+    ],
+    [
+      "we\u0120run\u0120the\u0120custom\u0120",
+      "train"
+    ],
+    [
+      "we\u0120run\u0120the\u0120custom\u0120train",
+      "ing\u0120"
+    ],
+    [
+      "we\u0120run\u0120the\u0120custom\u0120training\u0120",
+      "s"
+    ],
+    [
+      "we\u0120run\u0120the\u0120custom\u0120training\u0120s",
+      "cripts"
+    ],
+    [
+      "tra",
+      "in\u0120"
+    ],
+    [
+      "train\u0120",
+      "it\u0120"
+    ],
+    [
+      "train\u0120it\u0120",
+      "proeprly"
+    ],
+    [
+      "I\u0120am\u0120",
+      "be"
+    ],
+    [
+      "I\u0120am\u0120be",
+      "ing\u0120"
+    ],
+    [
+      "I\u0120am\u0120being\u0120",
+      "trained\u0120"
+    ],
+    [
+      "I\u0120am\u0120being\u0120trained\u0120",
+      "proper"
+    ],
+    [
+      "I\u0120am\u0120being\u0120trained\u0120proper",
+      "ly\u0120on\u0120local\u0120"
+    ],
+    [
+      "I\u0120am\u0120being\u0120trained\u0120properly\u0120on\u0120local\u0120",
+      "hardware\u0120"
+    ],
+    [
+      "I\u0120am\u0120being\u0120trained\u0120properly\u0120on\u0120local\u0120hardware\u0120",
+      "resources"
+    ],
+    [
+      "is\u0120",
+      "it\u0120"
+    ],
+    [
+      "is\u0120it\u0120",
+      "trained\u0120"
+    ],
+    [
+      "is\u0120it\u0120trained\u0120",
+      "roeprly"
+    ],
+    [
+      "the\u0120",
+      "ne"
+    ],
+    [
+      "the\u0120ne",
+      "ur"
+    ],
+    [
+      "the\u0120neur",
+      "al\u0120"
+    ],
+    [
+      "the\u0120neural\u0120",
+      "we"
+    ],
+    [
+      "the\u0120neural\u0120we",
+      "igh"
+    ],
+    [
+      "the\u0120neural\u0120weigh",
+      "t"
+    ],
+    [
+      "the\u0120neural\u0120weight",
+      "s\u0120are\u0120"
+    ],
+    [
+      "the\u0120neural\u0120weights\u0120are\u0120",
+      "op"
+    ],
+    [
+      "the\u0120neural\u0120weights\u0120are\u0120op",
+      "t"
+    ],
+    [
+      "the\u0120neural\u0120weights\u0120are\u0120opt",
+      "im"
+    ],
+    [
+      "the\u0120neural\u0120weights\u0120are\u0120optim",
+      "iz"
+    ],
+    [
+      "the\u0120neural\u0120weights\u0120are\u0120optimiz",
+      "ed\u0120"
+    ],
+    [
+      "the\u0120neural\u0120weights\u0120are\u0120optimized\u0120",
+      "on\u0120"
+    ],
+    [
+      "the\u0120neural\u0120weights\u0120are\u0120optimized\u0120on\u0120",
+      "the\u0120"
+    ],
+    [
+      "the\u0120neural\u0120weights\u0120are\u0120optimized\u0120on\u0120the\u0120",
+      "local"
+    ],
+    [
+      "the\u0120neural\u0120weights\u0120are\u0120optimized\u0120on\u0120the\u0120local",
+      "\u0120cor"
+    ],
+    [
+      "the\u0120neural\u0120weights\u0120are\u0120optimized\u0120on\u0120the\u0120local\u0120cor",
+      "p"
+    ],
+    [
+      "the\u0120neural\u0120weights\u0120are\u0120optimized\u0120on\u0120the\u0120local\u0120corp",
+      "us"
+    ],
+    [
+      "how\u0120does\u0120",
+      "it\u0120"
+    ],
+    [
+      "how\u0120does\u0120it\u0120",
+      "reacogniz"
+    ],
+    [
+      "how\u0120does\u0120it\u0120reacogniz",
+      "e\u0120ty"
+    ],
+    [
+      "how\u0120does\u0120it\u0120reacognize\u0120ty",
+      "pos"
+    ],
+    [
+      "reacogniz",
+      "e"
+    ],
+    [
+      "re",
+      "cogniz"
+    ],
+    [
+      "recogniz",
+      "e"
+    ],
+    [
+      "The\u0120",
+      "spell"
+    ],
+    [
+      "The\u0120spell",
+      "ing\u0120"
+    ],
+    [
+      "The\u0120spelling\u0120",
+      "chec"
+    ],
+    [
+      "The\u0120spelling\u0120chec",
+      "k"
+    ],
+    [
+      "The\u0120spelling\u0120check",
+      "er\u0120"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120",
+      "in\u0120"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120",
+      "CognitionCore\u0120"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120",
+      "de"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120de",
+      "te"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120dete",
+      "ct"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detect",
+      "s\u0120"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120",
+      "t"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120t",
+      "y"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120ty",
+      "po"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typo",
+      "s\u0120and\u0120"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typos\u0120and\u0120",
+      "routes\u0120"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typos\u0120and\u0120routes\u0120",
+      "them\u0120"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typos\u0120and\u0120routes\u0120them\u0120",
+      "d"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typos\u0120and\u0120routes\u0120them\u0120d",
+      "y"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typos\u0120and\u0120routes\u0120them\u0120dy",
+      "nam"
+    ],
+    [
+      "The\u0120spelling\u0120checker\u0120in\u0120CognitionCore\u0120detects\u0120typos\u0120and\u0120routes\u0120them\u0120dynam",
+      "ically"
+    ],
+    [
+      "what\u0120is\u0120the\u0120",
+      "reposnse"
+    ],
+    [
+      "The\u0120",
+      "respon"
+    ],
+    [
+      "The\u0120respon",
+      "s"
+    ],
+    [
+      "The\u0120respons",
+      "e\u0120is\u0120"
+    ],
+    [
+      "The\u0120response\u0120is\u0120",
+      "comput"
+    ],
+    [
+      "The\u0120response\u0120is\u0120comput",
+      "ed\u0120"
+    ],
+    [
+      "The\u0120response\u0120is\u0120computed\u0120",
+      "in"
+    ],
+    [
+      "pro",
+      "ces"
+    ],
+    [
+      "proces",
+      "s\u0120"
+    ],
+    [
+      "process\u0120",
+      "using\u0120"
+    ],
+    [
+      "process\u0120using\u0120",
+      "local"
+    ],
+    [
+      "process\u0120using\u0120local",
+      "\u0120t"
+    ],
+    [
+      "process\u0120using\u0120local\u0120t",
+      "en"
+    ],
+    [
+      "process\u0120using\u0120local\u0120ten",
+      "sor"
+    ],
+    [
+      "process\u0120using\u0120local\u0120tensor",
+      "\u0120m"
+    ],
+    [
+      "process\u0120using\u0120local\u0120tensor\u0120m",
+      "at"
+    ],
+    [
+      "process\u0120using\u0120local\u0120tensor\u0120mat",
+      "r"
+    ],
+    [
+      "process\u0120using\u0120local\u0120tensor\u0120matr",
+      "ic"
+    ],
+    [
+      "process\u0120using\u0120local\u0120tensor\u0120matric",
+      "es"
+    ],
+    [
+      "i",
+      "t\u0120is\u0120"
+    ],
+    [
+      "it\u0120is\u0120",
+      "semeing"
+    ],
+    [
+      "it\u0120is\u0120semeing",
+      "ly\u0120"
+    ],
+    [
+      "it\u0120is\u0120semeingly\u0120",
+      "normal"
+    ],
+    [
+      "semeing",
+      "ly"
+    ],
+    [
+      "se",
+      "em"
+    ],
+    [
+      "seem",
+      "ing"
+    ],
+    [
+      "seeming",
+      "ly"
+    ],
+    [
+      "the\u0120system\u0120",
+      "generates\u0120"
+    ],
+    [
+      "the\u0120system\u0120generates\u0120",
+      "c"
+    ],
+    [
+      "the\u0120system\u0120generates\u0120c",
+      "le"
+    ],
+    [
+      "the\u0120system\u0120generates\u0120cle",
+      "an\u0120"
+    ],
+    [
+      "the\u0120system\u0120generates\u0120clean\u0120",
+      "output\u0120"
+    ],
+    [
+      "the\u0120system\u0120generates\u0120clean\u0120output\u0120",
+      "log"
+    ],
+    [
+      "the\u0120system\u0120generates\u0120clean\u0120output\u0120log",
+      "s"
+    ],
+    [
+      "w",
+      "t\u0120is\u0120"
+    ],
+    [
+      "wt\u0120is\u0120",
+      "this"
+    ],
+    [
+      "wh",
+      "at"
+    ],
+    [
+      "Th",
+      "is\u0120is\u0120the\u0120c"
+    ],
+    [
+      "This\u0120is\u0120the\u0120c",
+      "ent"
+    ],
+    [
+      "This\u0120is\u0120the\u0120cent",
+      "r"
+    ],
+    [
+      "This\u0120is\u0120the\u0120centr",
+      "al\u0120"
+    ],
+    [
+      "This\u0120is\u0120the\u0120central\u0120",
+      "work"
+    ],
+    [
+      "This\u0120is\u0120the\u0120central\u0120work",
+      "sp"
+    ],
+    [
+      "This\u0120is\u0120the\u0120central\u0120worksp",
+      "ac"
+    ],
+    [
+      "This\u0120is\u0120the\u0120central\u0120workspac",
+      "e\u0120"
+    ],
+    [
+      "This\u0120is\u0120the\u0120central\u0120workspace\u0120",
+      "p"
+    ],
+    [
+      "This\u0120is\u0120the\u0120central\u0120workspace\u0120p",
+      "lay"
+    ],
+    [
+      "This\u0120is\u0120the\u0120central\u0120workspace\u0120play",
+      "ground"
+    ],
+    [
+      "it\u0120",
+      "s"
+    ],
+    [
+      "it\u0120s",
+      "int\u0120"
+    ],
+    [
+      "it\u0120sint\u0120",
+      "work"
+    ],
+    [
+      "it\u0120sint\u0120work",
+      "ing"
+    ],
+    [
+      "s",
+      "int"
+    ],
+    [
+      "is",
+      "n"
+    ],
+    [
+      "s\u0120di",
+      "ag"
+    ],
+    [
+      "s\u0120diag",
+      "n"
+    ],
+    [
+      "s\u0120diagn",
+      "o"
+    ],
+    [
+      "s\u0120diagno",
+      "st"
+    ],
+    [
+      "s\u0120diagnost",
+      "ic\u0120t"
+    ],
+    [
+      "s\u0120diagnostic\u0120t",
+      "r"
+    ],
+    [
+      "s\u0120diagnostic\u0120tr",
+      "ac"
+    ],
+    [
+      "s\u0120diagnostic\u0120trac",
+      "e\u0120the\u0120"
+    ],
+    [
+      "s\u0120diagnostic\u0120trace\u0120the\u0120",
+      "back"
+    ],
+    [
+      "s\u0120diagnostic\u0120trace\u0120the\u0120back",
+      "groun"
+    ],
+    [
+      "s\u0120diagnostic\u0120trace\u0120the\u0120backgroun",
+      "d\u0120"
+    ],
+    [
+      "s\u0120diagnostic\u0120trace\u0120the\u0120background\u0120",
+      "ser"
+    ],
+    [
+      "s\u0120diagnostic\u0120trace\u0120the\u0120background\u0120ser",
+      "v"
+    ],
+    [
+      "s\u0120diagnostic\u0120trace\u0120the\u0120background\u0120serv",
+      "er\u0120"
+    ],
+    [
+      "s\u0120diagnostic\u0120trace\u0120the\u0120background\u0120server\u0120",
+      "p"
+    ],
+    [
+      "s\u0120diagnostic\u0120trace\u0120the\u0120background\u0120server\u0120p",
+      "or"
+    ],
+    [
+      "s\u0120diagnostic\u0120trace\u0120the\u0120background\u0120server\u0120por",
+      "ts"
+    ],
+    [
+      "write\u0120a\u0120python\u0120c",
+      "alculator"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120simple\u0120",
+      "python\u0120c"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120simple\u0120python\u0120c",
+      "alculator"
+    ],
+    [
+      "def\u0120",
+      "s"
+    ],
+    [
+      "def\u0120s",
+      "ub"
+    ],
+    [
+      "def\u0120sub",
+      "t"
+    ],
+    [
+      "def\u0120subt",
+      "r"
+    ],
+    [
+      "def\u0120subtr",
+      "act"
+    ],
+    [
+      "def\u0120",
+      "m"
+    ],
+    [
+      "def\u0120m",
+      "ult"
+    ],
+    [
+      "def\u0120mult",
+      "ip"
+    ],
+    [
+      "def\u0120multip",
+      "ly"
+    ],
+    [
+      "def\u0120",
+      "divide"
+    ],
+    [
+      "if\u0120",
+      "b\u0120"
+    ],
+    [
+      "E",
+      "r"
+    ],
+    [
+      "Er",
+      "r"
+    ],
+    [
+      "Err",
+      "or"
+    ],
+    [
+      "div",
+      "is"
+    ],
+    [
+      "divis",
+      "ion\u0120"
+    ],
+    [
+      "division\u0120",
+      "by\u0120"
+    ],
+    [
+      "division\u0120by\u0120",
+      "z"
+    ],
+    [
+      "division\u0120by\u0120z",
+      "er"
+    ],
+    [
+      "division\u0120by\u0120zer",
+      "o"
+    ],
+    [
+      "how\u0120do\u0120you\u0120",
+      "add\u0120"
+    ],
+    [
+      "how\u0120do\u0120you\u0120add\u0120",
+      "t"
+    ],
+    [
+      "how\u0120do\u0120you\u0120add\u0120t",
+      "wo\u0120"
+    ],
+    [
+      "how\u0120do\u0120you\u0120add\u0120two\u0120",
+      "number"
+    ],
+    [
+      "how\u0120do\u0120you\u0120add\u0120two\u0120number",
+      "s\u0120in\u0120python"
+    ],
+    [
+      "You\u0120can\u0120",
+      "define\u0120"
+    ],
+    [
+      "You\u0120can\u0120define\u0120",
+      "an\u0120"
+    ],
+    [
+      "You\u0120can\u0120define\u0120an\u0120",
+      "add\u0120"
+    ],
+    [
+      "You\u0120can\u0120define\u0120an\u0120add\u0120",
+      "function"
+    ],
+    [
+      "write\u0120a\u0120",
+      "python"
+    ],
+    [
+      "write\u0120a\u0120python",
+      "\u0120"
+    ],
+    [
+      "write\u0120a\u0120python\u0120",
+      "loop"
+    ],
+    [
+      "To\u0120",
+      "write\u0120a\u0120"
+    ],
+    [
+      "To\u0120write\u0120a\u0120",
+      "loop"
+    ],
+    [
+      "To\u0120write\u0120a\u0120loop",
+      "\u0120in\u0120Python"
+    ],
+    [
+      "for\u0120",
+      "i"
+    ],
+    [
+      "for\u0120i",
+      "\u0120in\u0120range"
+    ],
+    [
+      "I",
+      "t"
+    ],
+    [
+      "It",
+      "erat"
+    ],
+    [
+      "Iterat",
+      "ion\u0120"
+    ],
+    [
+      "write\u0120a\u0120python\u0120c",
+      "lass"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120",
+      "python\u0120c"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120python\u0120c",
+      "lass\u0120"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120python\u0120class\u0120",
+      "def"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120python\u0120class\u0120def",
+      "in"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120python\u0120class\u0120defin",
+      "ition"
+    ],
+    [
+      "class\u0120",
+      "Creat"
+    ],
+    [
+      "class\u0120Creat",
+      "or"
+    ],
+    [
+      "def\u0120",
+      "__"
+    ],
+    [
+      "def\u0120__",
+      "in"
+    ],
+    [
+      "def\u0120__in",
+      "it"
+    ],
+    [
+      "def\u0120__init",
+      "__"
+    ],
+    [
+      "nam",
+      "e\u0120"
+    ],
+    [
+      "def\u0120",
+      "sp"
+    ],
+    [
+      "def\u0120sp",
+      "e"
+    ],
+    [
+      "def\u0120spe",
+      "ak"
+    ],
+    [
+      "Greeting",
+      "s\u0120"
+    ],
+    [
+      "Greetings\u0120",
+      "from\u0120"
+    ],
+    [
+      "s",
+      "ort\u0120a\u0120list\u0120of\u0120"
+    ],
+    [
+      "sort\u0120a\u0120list\u0120of\u0120",
+      "dict"
+    ],
+    [
+      "sort\u0120a\u0120list\u0120of\u0120dict",
+      "s\u0120"
+    ],
+    [
+      "sort\u0120a\u0120list\u0120of\u0120dicts\u0120",
+      "by\u0120key\u0120"
+    ],
+    [
+      "sort\u0120a\u0120list\u0120of\u0120dicts\u0120by\u0120key\u0120",
+      "in\u0120"
+    ],
+    [
+      "sort\u0120a\u0120list\u0120of\u0120dicts\u0120by\u0120key\u0120in\u0120",
+      "python"
+    ],
+    [
+      "You\u0120c",
+      "an"
+    ],
+    [
+      "You\u0120can",
+      "\u0120s"
+    ],
+    [
+      "You\u0120can\u0120s",
+      "ort\u0120a\u0120list\u0120of\u0120"
+    ],
+    [
+      "You\u0120can\u0120sort\u0120a\u0120list\u0120of\u0120",
+      "dictionaries\u0120"
+    ],
+    [
+      "You\u0120can\u0120sort\u0120a\u0120list\u0120of\u0120dictionaries\u0120",
+      "by\u0120key\u0120"
+    ],
+    [
+      "You\u0120can\u0120sort\u0120a\u0120list\u0120of\u0120dictionaries\u0120by\u0120key\u0120",
+      "using\u0120a\u0120"
+    ],
+    [
+      "You\u0120can\u0120sort\u0120a\u0120list\u0120of\u0120dictionaries\u0120by\u0120key\u0120using\u0120a\u0120",
+      "lambda\u0120"
+    ],
+    [
+      "You\u0120can\u0120sort\u0120a\u0120list\u0120of\u0120dictionaries\u0120by\u0120key\u0120using\u0120a\u0120lambda\u0120",
+      "function"
+    ],
+    [
+      "def\u0120",
+      "sor"
+    ],
+    [
+      "def\u0120sor",
+      "t"
+    ],
+    [
+      "def\u0120sort",
+      "_dicts"
+    ],
+    [
+      "return\u0120",
+      "sor"
+    ],
+    [
+      "return\u0120sor",
+      "te"
+    ],
+    [
+      "return\u0120sorte",
+      "d"
+    ],
+    [
+      "lambda\u0120",
+      "x"
+    ],
+    [
+      "read\u0120a\u0120file\u0120in\u0120",
+      "python"
+    ],
+    [
+      "To\u0120",
+      "read\u0120a\u0120file\u0120in\u0120"
+    ],
+    [
+      "To\u0120read\u0120a\u0120file\u0120in\u0120",
+      "Python"
+    ],
+    [
+      "us",
+      "e\u0120a\u0120"
+    ],
+    [
+      "use\u0120a\u0120",
+      "with\u0120"
+    ],
+    [
+      "use\u0120a\u0120with\u0120",
+      "stat"
+    ],
+    [
+      "use\u0120a\u0120with\u0120stat",
+      "em"
+    ],
+    [
+      "use\u0120a\u0120with\u0120statem",
+      "ent"
+    ],
+    [
+      "def\u0120read_",
+      "file"
+    ],
+    [
+      "write\u0120",
+      "to\u0120a\u0120file\u0120in\u0120"
+    ],
+    [
+      "write\u0120to\u0120a\u0120file\u0120in\u0120",
+      "python"
+    ],
+    [
+      "To\u0120",
+      "write\u0120"
+    ],
+    [
+      "To\u0120write\u0120",
+      "t"
+    ],
+    [
+      "To\u0120write\u0120t",
+      "ex"
+    ],
+    [
+      "To\u0120write\u0120tex",
+      "t\u0120"
+    ],
+    [
+      "To\u0120write\u0120text\u0120",
+      "to\u0120a\u0120file\u0120in\u0120"
+    ],
+    [
+      "To\u0120write\u0120text\u0120to\u0120a\u0120file\u0120in\u0120",
+      "Python"
+    ],
+    [
+      "def\u0120",
+      "write"
+    ],
+    [
+      "def\u0120write",
+      "_"
+    ],
+    [
+      "def\u0120write_",
+      "file"
+    ],
+    [
+      "merge\u0120two\u0120",
+      "dict"
+    ],
+    [
+      "merge\u0120two\u0120dict",
+      "s\u0120in\u0120python"
+    ],
+    [
+      "You\u0120can\u0120",
+      "merge\u0120two\u0120"
+    ],
+    [
+      "You\u0120can\u0120merge\u0120two\u0120",
+      "dictionaries\u0120"
+    ],
+    [
+      "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120",
+      "using\u0120"
+    ],
+    [
+      "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120",
+      "the\u0120"
+    ],
+    [
+      "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120the\u0120",
+      "un"
+    ],
+    [
+      "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120the\u0120un",
+      "ion\u0120"
+    ],
+    [
+      "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120the\u0120union\u0120",
+      "operator"
+    ],
+    [
+      "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120the\u0120union\u0120operator",
+      "\u0120in\u0120Python"
+    ],
+    [
+      "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120the\u0120union\u0120operator\u0120in\u0120Python",
+      "\u0120"
+    ],
+    [
+      "You\u0120can\u0120merge\u0120two\u0120dictionaries\u0120using\u0120the\u0120union\u0120operator\u0120in\u0120Python\u0120",
+      "3"
+    ],
+    [
+      "def\u0120",
+      "mer"
+    ],
+    [
+      "def\u0120mer",
+      "ge"
+    ],
+    [
+      "def\u0120merge",
+      "_dicts"
+    ],
+    [
+      "dict_",
+      "a"
+    ],
+    [
+      "return\u0120",
+      "dict_"
+    ],
+    [
+      "return\u0120dict_",
+      "a\u0120"
+    ],
+    [
+      "check\u0120",
+      "if\u0120key\u0120"
+    ],
+    [
+      "check\u0120if\u0120key\u0120",
+      "exist"
+    ],
+    [
+      "check\u0120if\u0120key\u0120exist",
+      "s\u0120in\u0120"
+    ],
+    [
+      "check\u0120if\u0120key\u0120exists\u0120in\u0120",
+      "dict"
+    ],
+    [
+      "U",
+      "s"
+    ],
+    [
+      "Us",
+      "e\u0120the\u0120"
+    ],
+    [
+      "Use\u0120the\u0120",
+      "in\u0120"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120",
+      "key"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120key",
+      "wor"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120keywor",
+      "d\u0120"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120keyword\u0120",
+      "to\u0120check\u0120"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120",
+      "if\u0120"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120",
+      "a\u0120"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120",
+      "key\u0120"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120",
+      "is\u0120"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120",
+      "pre"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120pre",
+      "se"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120prese",
+      "n"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120presen",
+      "t\u0120"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120present\u0120",
+      "in\u0120"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120present\u0120in\u0120",
+      "a\u0120"
+    ],
+    [
+      "Use\u0120the\u0120in\u0120keyword\u0120to\u0120check\u0120if\u0120a\u0120key\u0120is\u0120present\u0120in\u0120a\u0120",
+      "dictionary"
+    ],
+    [
+      "if\u0120key\u0120",
+      "in\u0120"
+    ],
+    [
+      "if\u0120key\u0120in\u0120",
+      "dictionary"
+    ],
+    [
+      "K",
+      "e"
+    ],
+    [
+      "Ke",
+      "y\u0120"
+    ],
+    [
+      "Key\u0120",
+      "exist"
+    ],
+    [
+      "Key\u0120exist",
+      "s"
+    ],
+    [
+      "write\u0120a\u0120",
+      "list\u0120"
+    ],
+    [
+      "write\u0120a\u0120list\u0120",
+      "comprehension"
+    ],
+    [
+      "write\u0120a\u0120list\u0120comprehension",
+      "\u0120in\u0120python"
+    ],
+    [
+      "L",
+      "ist\u0120"
+    ],
+    [
+      "List\u0120",
+      "comprehension"
+    ],
+    [
+      "List\u0120comprehension",
+      "s\u0120"
+    ],
+    [
+      "List\u0120comprehensions\u0120",
+      "pro"
+    ],
+    [
+      "List\u0120comprehensions\u0120pro",
+      "v"
+    ],
+    [
+      "List\u0120comprehensions\u0120prov",
+      "id"
+    ],
+    [
+      "List\u0120comprehensions\u0120provid",
+      "e\u0120a\u0120"
+    ],
+    [
+      "List\u0120comprehensions\u0120provide\u0120a\u0120",
+      "conc"
+    ],
+    [
+      "List\u0120comprehensions\u0120provide\u0120a\u0120conc",
+      "is"
+    ],
+    [
+      "List\u0120comprehensions\u0120provide\u0120a\u0120concis",
+      "e\u0120"
+    ],
+    [
+      "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120",
+      "w"
+    ],
+    [
+      "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120w",
+      "a"
+    ],
+    [
+      "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120wa",
+      "y\u0120to\u0120"
+    ],
+    [
+      "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120way\u0120to\u0120",
+      "creat"
+    ],
+    [
+      "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120way\u0120to\u0120creat",
+      "e\u0120"
+    ],
+    [
+      "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120way\u0120to\u0120create\u0120",
+      "l"
+    ],
+    [
+      "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120way\u0120to\u0120create\u0120l",
+      "ist"
+    ],
+    [
+      "List\u0120comprehensions\u0120provide\u0120a\u0120concise\u0120way\u0120to\u0120create\u0120list",
+      "s"
+    ],
+    [
+      "s",
+      "qu"
+    ],
+    [
+      "squ",
+      "a"
+    ],
+    [
+      "squa",
+      "re"
+    ],
+    [
+      "square",
+      "s\u0120"
+    ],
+    [
+      "2\u0120",
+      "for\u0120"
+    ],
+    [
+      "2\u0120for\u0120",
+      "x"
+    ],
+    [
+      "2\u0120for\u0120x",
+      "\u0120in\u0120range"
+    ],
+    [
+      "write\u0120a\u0120",
+      "binary\u0120search"
+    ],
+    [
+      "write\u0120a\u0120binary\u0120search",
+      "\u0120in\u0120python"
+    ],
+    [
+      "Here\u0120",
+      "is\u0120the\u0120"
+    ],
+    [
+      "Here\u0120is\u0120the\u0120",
+      "binary\u0120search"
+    ],
+    [
+      "Here\u0120is\u0120the\u0120binary\u0120search",
+      "\u0120"
+    ],
+    [
+      "Here\u0120is\u0120the\u0120binary\u0120search\u0120",
+      "algorithm"
+    ],
+    [
+      "def\u0120",
+      "bin"
+    ],
+    [
+      "def\u0120bin",
+      "ary"
+    ],
+    [
+      "def\u0120binary",
+      "_"
+    ],
+    [
+      "def\u0120binary_",
+      "search"
+    ],
+    [
+      "l",
+      "en"
+    ],
+    [
+      "wh",
+      "il"
+    ],
+    [
+      "whil",
+      "e\u0120"
+    ],
+    [
+      "while\u0120",
+      "low\u0120"
+    ],
+    [
+      "return\u0120",
+      "mid"
+    ],
+    [
+      "el",
+      "if\u0120arr"
+    ],
+    [
+      "el",
+      "se"
+    ],
+    [
+      "write\u0120a\u0120",
+      "fastapi\u0120"
+    ],
+    [
+      "write\u0120a\u0120fastapi\u0120",
+      "app"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120",
+      "bas"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120bas",
+      "ic\u0120"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120basic\u0120",
+      "FastAPI\u0120"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120basic\u0120FastAPI\u0120",
+      "app"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120basic\u0120FastAPI\u0120app",
+      "lic"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120basic\u0120FastAPI\u0120applic",
+      "ation"
+    ],
+    [
+      "def\u0120read_",
+      "roo"
+    ],
+    [
+      "def\u0120read_roo",
+      "t"
+    ],
+    [
+      "stat",
+      "us"
+    ],
+    [
+      "h",
+      "e"
+    ],
+    [
+      "he",
+      "al"
+    ],
+    [
+      "heal",
+      "th"
+    ],
+    [
+      "health",
+      "y"
+    ],
+    [
+      "fastapi\u0120",
+      "post\u0120"
+    ],
+    [
+      "fastapi\u0120post\u0120",
+      "re"
+    ],
+    [
+      "fastapi\u0120post\u0120re",
+      "qu"
+    ],
+    [
+      "fastapi\u0120post\u0120requ",
+      "es"
+    ],
+    [
+      "fastapi\u0120post\u0120reques",
+      "t\u0120"
+    ],
+    [
+      "fastapi\u0120post\u0120request\u0120",
+      "J"
+    ],
+    [
+      "fastapi\u0120post\u0120request\u0120J",
+      "S"
+    ],
+    [
+      "fastapi\u0120post\u0120request\u0120JS",
+      "ON"
+    ],
+    [
+      "Def",
+      "ine\u0120"
+    ],
+    [
+      "Define\u0120",
+      "a\u0120"
+    ],
+    [
+      "Define\u0120a\u0120",
+      "post\u0120"
+    ],
+    [
+      "Define\u0120a\u0120post\u0120",
+      "endpoint\u0120"
+    ],
+    [
+      "Define\u0120a\u0120post\u0120endpoint\u0120",
+      "using\u0120a\u0120"
+    ],
+    [
+      "Define\u0120a\u0120post\u0120endpoint\u0120using\u0120a\u0120",
+      "P"
+    ],
+    [
+      "Define\u0120a\u0120post\u0120endpoint\u0120using\u0120a\u0120P",
+      "yd"
+    ],
+    [
+      "Define\u0120a\u0120post\u0120endpoint\u0120using\u0120a\u0120Pyd",
+      "ant"
+    ],
+    [
+      "Define\u0120a\u0120post\u0120endpoint\u0120using\u0120a\u0120Pydant",
+      "ic"
+    ],
+    [
+      "Define\u0120a\u0120post\u0120endpoint\u0120using\u0120a\u0120Pydantic",
+      "\u0120m"
+    ],
+    [
+      "Define\u0120a\u0120post\u0120endpoint\u0120using\u0120a\u0120Pydantic\u0120m",
+      "odel"
+    ],
+    [
+      "from\u0120",
+      "p"
+    ],
+    [
+      "from\u0120p",
+      "yd"
+    ],
+    [
+      "from\u0120pyd",
+      "antic\u0120"
+    ],
+    [
+      "from\u0120pydantic\u0120",
+      "import\u0120"
+    ],
+    [
+      "from\u0120pydantic\u0120import\u0120",
+      "BaseModel"
+    ],
+    [
+      "class\u0120",
+      "Item"
+    ],
+    [
+      "st",
+      "r"
+    ],
+    [
+      "pr",
+      "ic"
+    ],
+    [
+      "pric",
+      "e"
+    ],
+    [
+      "f",
+      "lo"
+    ],
+    [
+      "flo",
+      "at"
+    ],
+    [
+      "po",
+      "st"
+    ],
+    [
+      "def\u0120",
+      "create"
+    ],
+    [
+      "def\u0120create",
+      "_"
+    ],
+    [
+      "def\u0120create_",
+      "item"
+    ],
+    [
+      "create",
+      "d"
+    ],
+    [
+      "fastapi",
+      "\u0120p"
+    ],
+    [
+      "fastapi\u0120p",
+      "ath"
+    ],
+    [
+      "fastapi\u0120path",
+      "\u0120parameter"
+    ],
+    [
+      "P",
+      "as"
+    ],
+    [
+      "Pas",
+      "s\u0120"
+    ],
+    [
+      "Pass\u0120",
+      "path"
+    ],
+    [
+      "Pass\u0120path",
+      "\u0120parameter"
+    ],
+    [
+      "Pass\u0120path\u0120parameter",
+      "s\u0120di"
+    ],
+    [
+      "Pass\u0120path\u0120parameters\u0120di",
+      "re"
+    ],
+    [
+      "Pass\u0120path\u0120parameters\u0120dire",
+      "ct"
+    ],
+    [
+      "Pass\u0120path\u0120parameters\u0120direct",
+      "ly\u0120"
+    ],
+    [
+      "Pass\u0120path\u0120parameters\u0120directly\u0120",
+      "in\u0120"
+    ],
+    [
+      "Pass\u0120path\u0120parameters\u0120directly\u0120in\u0120",
+      "endpoint\u0120"
+    ],
+    [
+      "Pass\u0120path\u0120parameters\u0120directly\u0120in\u0120endpoint\u0120",
+      "arg"
+    ],
+    [
+      "Pass\u0120path\u0120parameters\u0120directly\u0120in\u0120endpoint\u0120arg",
+      "uments"
+    ],
+    [
+      "user",
+      "s"
+    ],
+    [
+      "def\u0120",
+      "get"
+    ],
+    [
+      "def\u0120get",
+      "_"
+    ],
+    [
+      "def\u0120get_",
+      "user"
+    ],
+    [
+      "run\u0120",
+      "uvicorn\u0120"
+    ],
+    [
+      "run\u0120uvicorn\u0120",
+      "ser"
+    ],
+    [
+      "run\u0120uvicorn\u0120ser",
+      "ver"
+    ],
+    [
+      "Run\u0120",
+      "FastAPI\u0120"
+    ],
+    [
+      "Run\u0120FastAPI\u0120",
+      "local"
+    ],
+    [
+      "Run\u0120FastAPI\u0120local",
+      "ly\u0120using\u0120"
+    ],
+    [
+      "Run\u0120FastAPI\u0120locally\u0120using\u0120",
+      "uvicor"
+    ],
+    [
+      "Run\u0120FastAPI\u0120locally\u0120using\u0120uvicor",
+      "n"
+    ],
+    [
+      "bas",
+      "h"
+    ],
+    [
+      "uvicorn\u0120",
+      "ma"
+    ],
+    [
+      "uvicorn\u0120ma",
+      "in"
+    ],
+    [
+      "re",
+      "lo"
+    ],
+    [
+      "relo",
+      "a"
+    ],
+    [
+      "reloa",
+      "d\u0120"
+    ],
+    [
+      "ho",
+      "s"
+    ],
+    [
+      "hos",
+      "t\u0120"
+    ],
+    [
+      "host\u0120",
+      "12"
+    ],
+    [
+      "host\u012012",
+      "7"
+    ],
+    [
+      "1",
+      "\u0120"
+    ],
+    [
+      "port\u0120",
+      "8"
+    ],
+    [
+      "port\u01208",
+      "00"
+    ],
+    [
+      "port\u0120800",
+      "0"
+    ],
+    [
+      "write\u0120a\u0120",
+      "react\u0120"
+    ],
+    [
+      "write\u0120a\u0120react\u0120",
+      "function"
+    ],
+    [
+      "write\u0120a\u0120react\u0120function",
+      "al\u0120"
+    ],
+    [
+      "write\u0120a\u0120react\u0120functional\u0120",
+      "component"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120simple\u0120",
+      "React\u0120"
+    ],
+    [
+      "Here\u0120is\u0120a\u0120simple\u0120React\u0120",
+      "component"
+    ],
+    [
+      "import\u0120",
+      "React\u0120"
+    ],
+    [
+      "import\u0120React\u0120",
+      "from\u0120"
+    ],
+    [
+      "export\u0120default\u0120function\u0120",
+      "H"
+    ],
+    [
+      "export\u0120default\u0120function\u0120H",
+      "e"
+    ],
+    [
+      "export\u0120default\u0120function\u0120He",
+      "ad"
+    ],
+    [
+      "export\u0120default\u0120function\u0120Head",
+      "ing"
+    ],
+    [
+      "tit",
+      "le\u0120"
+    ],
+    [
+      "react\u0120",
+      "counter\u0120"
+    ],
+    [
+      "react\u0120counter\u0120",
+      "compon"
+    ],
+    [
+      "react\u0120counter\u0120compon",
+      "ent\u0120"
+    ],
+    [
+      "react\u0120counter\u0120component\u0120",
+      "using\u0120"
+    ],
+    [
+      "react\u0120counter\u0120component\u0120using\u0120",
+      "useState"
+    ],
+    [
+      "A\u0120",
+      "React\u0120"
+    ],
+    [
+      "A\u0120React\u0120",
+      "counter\u0120"
+    ],
+    [
+      "A\u0120React\u0120counter\u0120",
+      "component"
+    ],
+    [
+      "export\u0120default\u0120function\u0120",
+      "Coun"
+    ],
+    [
+      "export\u0120default\u0120function\u0120Coun",
+      "ter"
+    ],
+    [
+      "butt",
+      "on\u0120"
+    ],
+    [
+      "button\u0120",
+      "on"
+    ],
+    [
+      "button\u0120on",
+      "C"
+    ],
+    [
+      "button\u0120onC",
+      "lic"
+    ],
+    [
+      "button\u0120onClic",
+      "k"
+    ],
+    [
+      "In",
+      "c"
+    ],
+    [
+      "Inc",
+      "re"
+    ],
+    [
+      "Incre",
+      "ment"
+    ],
+    [
+      "react\u0120",
+      "form\u0120submission"
+    ],
+    [
+      "H",
+      "and"
+    ],
+    [
+      "Hand",
+      "le\u0120"
+    ],
+    [
+      "Handle\u0120",
+      "form\u0120submission"
+    ],
+    [
+      "Handle\u0120form\u0120submission",
+      "\u0120in\u0120"
+    ],
+    [
+      "Handle\u0120form\u0120submission\u0120in\u0120",
+      "React"
+    ],
+    [
+      "export\u0120default\u0120function\u0120",
+      "F"
+    ],
+    [
+      "export\u0120default\u0120function\u0120F",
+      "orm"
+    ],
+    [
+      "const\u0120",
+      "handle"
+    ],
+    [
+      "const\u0120handle",
+      "Subm"
+    ],
+    [
+      "const\u0120handleSubm",
+      "it\u0120"
+    ],
+    [
+      "pre",
+      "vent"
+    ],
+    [
+      "prevent",
+      "Def"
+    ],
+    [
+      "preventDef",
+      "aul"
+    ],
+    [
+      "preventDefaul",
+      "t"
+    ],
+    [
+      "cons",
+      "o"
+    ],
+    [
+      "conso",
+      "le"
+    ],
+    [
+      "form\u0120",
+      "on"
+    ],
+    [
+      "form\u0120on",
+      "Submit"
+    ],
+    [
+      "handle",
+      "Submit"
+    ],
+    [
+      "input\u0120",
+      "value"
+    ],
+    [
+      "on",
+      "Ch"
+    ],
+    [
+      "onCh",
+      "ange"
+    ],
+    [
+      "button",
+      "\u0120t"
+    ],
+    [
+      "button\u0120t",
+      "y"
+    ],
+    [
+      "button\u0120ty",
+      "pe"
+    ],
+    [
+      "subm",
+      "it"
+    ],
+    [
+      "react\u0120",
+      "condition"
+    ],
+    [
+      "react\u0120condition",
+      "al\u0120"
+    ],
+    [
+      "react\u0120conditional\u0120",
+      "re"
+    ],
+    [
+      "react\u0120conditional\u0120re",
+      "n"
+    ],
+    [
+      "react\u0120conditional\u0120ren",
+      "d"
+    ],
+    [
+      "react\u0120conditional\u0120rend",
+      "er"
+    ],
+    [
+      "react\u0120conditional\u0120render",
+      "ing"
+    ],
+    [
+      "R",
+      "end"
+    ],
+    [
+      "Rend",
+      "er\u0120"
+    ],
+    [
+      "Render\u0120",
+      "element"
+    ],
+    [
+      "Render\u0120element",
+      "s\u0120"
+    ],
+    [
+      "Render\u0120elements\u0120",
+      "condition"
+    ],
+    [
+      "Render\u0120elements\u0120condition",
+      "al"
+    ],
+    [
+      "Render\u0120elements\u0120conditional",
+      "ly\u0120using\u0120"
+    ],
+    [
+      "Render\u0120elements\u0120conditionally\u0120using\u0120",
+      "ter"
+    ],
+    [
+      "Render\u0120elements\u0120conditionally\u0120using\u0120ter",
+      "n"
+    ],
+    [
+      "Render\u0120elements\u0120conditionally\u0120using\u0120tern",
+      "ary\u0120"
+    ],
+    [
+      "Render\u0120elements\u0120conditionally\u0120using\u0120ternary\u0120",
+      "operator"
+    ],
+    [
+      "Render\u0120elements\u0120conditionally\u0120using\u0120ternary\u0120operator",
+      "s"
+    ],
+    [
+      "is",
+      "Log"
+    ],
+    [
+      "isLog",
+      "ge"
+    ],
+    [
+      "isLogge",
+      "d"
+    ],
+    [
+      "isLogged",
+      "I"
+    ],
+    [
+      "isLoggedI",
+      "n\u0120"
+    ],
+    [
+      "D",
+      "as"
+    ],
+    [
+      "Das",
+      "h"
+    ],
+    [
+      "Dash",
+      "bo"
+    ],
+    [
+      "Dashbo",
+      "ar"
+    ],
+    [
+      "Dashboar",
+      "d\u0120"
+    ],
+    [
+      "Log",
+      "in"
+    ],
+    [
+      "Login",
+      "F"
+    ],
+    [
+      "LoginF",
+      "or"
+    ],
+    [
+      "LoginFor",
+      "m\u0120"
+    ],
+    [
+      "write\u0120a\u0120",
+      "css\u0120"
+    ],
+    [
+      "write\u0120a\u0120css\u0120",
+      "grid\u0120"
+    ],
+    [
+      "write\u0120a\u0120css\u0120grid\u0120",
+      "lay"
+    ],
+    [
+      "write\u0120a\u0120css\u0120grid\u0120lay",
+      "out"
+    ],
+    [
+      "S",
+      "e"
+    ],
+    [
+      "Se",
+      "t\u0120"
+    ],
+    [
+      "Set\u0120",
+      "up\u0120"
+    ],
+    [
+      "Set\u0120up\u0120",
+      "a\u0120"
+    ],
+    [
+      "Set\u0120up\u0120a\u0120",
+      "grid\u0120"
+    ],
+    [
+      "Set\u0120up\u0120a\u0120grid\u0120",
+      "container\u0120"
+    ],
+    [
+      "Set\u0120up\u0120a\u0120grid\u0120container\u0120",
+      "with\u0120"
+    ],
+    [
+      "Set\u0120up\u0120a\u0120grid\u0120container\u0120with\u0120",
+      "th"
+    ],
+    [
+      "Set\u0120up\u0120a\u0120grid\u0120container\u0120with\u0120th",
+      "re"
+    ],
+    [
+      "Set\u0120up\u0120a\u0120grid\u0120container\u0120with\u0120thre",
+      "e\u0120"
+    ],
+    [
+      "Set\u0120up\u0120a\u0120grid\u0120container\u0120with\u0120three\u0120",
+      "equ"
+    ],
+    [
+      "Set\u0120up\u0120a\u0120grid\u0120container\u0120with\u0120three\u0120equ",
+      "al\u0120"
+    ],
+    [
+      "Set\u0120up\u0120a\u0120grid\u0120container\u0120with\u0120three\u0120equal\u0120",
+      "columns"
+    ],
+    [
+      "tem",
+      "p"
+    ],
+    [
+      "temp",
+      "l"
+    ],
+    [
+      "templ",
+      "ate"
+    ],
+    [
+      "re",
+      "pe"
+    ],
+    [
+      "repe",
+      "at"
+    ],
+    [
+      "1",
+      "f"
+    ],
+    [
+      "1f",
+      "r"
+    ],
+    [
+      "g",
+      "ap"
+    ],
+    [
+      "16",
+      "px"
+    ],
+    [
+      "write\u0120css\u0120",
+      "flex"
+    ],
+    [
+      "write\u0120css\u0120flex",
+      "box"
+    ],
+    [
+      "write\u0120css\u0120flexbox",
+      "\u0120c"
+    ],
+    [
+      "write\u0120css\u0120flexbox\u0120c",
+      "enter"
+    ],
+    [
+      "write\u0120css\u0120flexbox\u0120center",
+      "ing"
+    ],
+    [
+      "C",
+      "enter"
+    ],
+    [
+      "Center",
+      "\u0120ch"
+    ],
+    [
+      "Center\u0120ch",
+      "il"
+    ],
+    [
+      "Center\u0120chil",
+      "d\u0120"
+    ],
+    [
+      "Center\u0120child\u0120",
+      "element"
+    ],
+    [
+      "Center\u0120child\u0120element",
+      "s\u0120ver"
+    ],
+    [
+      "Center\u0120child\u0120elements\u0120ver",
+      "t"
+    ],
+    [
+      "Center\u0120child\u0120elements\u0120vert",
+      "ical"
+    ],
+    [
+      "Center\u0120child\u0120elements\u0120vertical",
+      "ly\u0120and\u0120"
+    ],
+    [
+      "Center\u0120child\u0120elements\u0120vertically\u0120and\u0120",
+      "h"
+    ],
+    [
+      "Center\u0120child\u0120elements\u0120vertically\u0120and\u0120h",
+      "or"
+    ],
+    [
+      "Center\u0120child\u0120elements\u0120vertically\u0120and\u0120hor",
+      "iz"
+    ],
+    [
+      "Center\u0120child\u0120elements\u0120vertically\u0120and\u0120horiz",
+      "on"
+    ],
+    [
+      "Center\u0120child\u0120elements\u0120vertically\u0120and\u0120horizon",
+      "tal"
+    ],
+    [
+      "Center\u0120child\u0120elements\u0120vertically\u0120and\u0120horizontal",
+      "ly"
+    ],
+    [
+      "center",
+      "ed\u0120"
+    ],
+    [
+      "j",
+      "ust"
+    ],
+    [
+      "just",
+      "if"
+    ],
+    [
+      "justif",
+      "y"
+    ],
+    [
+      "al",
+      "ig"
+    ],
+    [
+      "alig",
+      "n"
+    ],
+    [
+      "css\u0120",
+      "custom\u0120"
+    ],
+    [
+      "css\u0120custom\u0120",
+      "proper"
+    ],
+    [
+      "css\u0120custom\u0120proper",
+      "t"
+    ],
+    [
+      "css\u0120custom\u0120propert",
+      "i"
+    ],
+    [
+      "css\u0120custom\u0120properti",
+      "es\u0120"
+    ],
+    [
+      "css\u0120custom\u0120properties\u0120",
+      "variables"
+    ],
+    [
+      "D",
+      "ec"
+    ],
+    [
+      "Dec",
+      "l"
+    ],
+    [
+      "Decl",
+      "are\u0120"
+    ],
+    [
+      "Declare\u0120",
+      "and\u0120"
+    ],
+    [
+      "Declare\u0120and\u0120",
+      "us"
+    ],
+    [
+      "Declare\u0120and\u0120us",
+      "e\u0120"
+    ],
+    [
+      "Declare\u0120and\u0120use\u0120",
+      "C"
+    ],
+    [
+      "Declare\u0120and\u0120use\u0120C",
+      "S"
+    ],
+    [
+      "Declare\u0120and\u0120use\u0120CS",
+      "S\u0120"
+    ],
+    [
+      "Declare\u0120and\u0120use\u0120CSS\u0120",
+      "variables"
+    ],
+    [
+      "roo",
+      "t\u0120"
+    ],
+    [
+      "00",
+      "f"
+    ],
+    [
+      "00f",
+      "0f"
+    ],
+    [
+      "00f0f",
+      "f"
+    ],
+    [
+      "0a",
+      "0a"
+    ],
+    [
+      "0a0a",
+      "0f"
+    ],
+    [
+      "bo",
+      "d"
+    ],
+    [
+      "bod",
+      "y\u0120"
+    ],
+    [
+      "write\u0120css\u0120",
+      "glass"
+    ],
+    [
+      "write\u0120css\u0120glass",
+      "mor"
+    ],
+    [
+      "write\u0120css\u0120glassmor",
+      "ph"
+    ],
+    [
+      "write\u0120css\u0120glassmorph",
+      "is"
+    ],
+    [
+      "write\u0120css\u0120glassmorphis",
+      "m\u0120"
+    ],
+    [
+      "write\u0120css\u0120glassmorphism\u0120",
+      "style"
+    ],
+    [
+      "Creat",
+      "e\u0120a\u0120"
+    ],
+    [
+      "Create\u0120a\u0120",
+      "fro"
+    ],
+    [
+      "Create\u0120a\u0120fro",
+      "ste"
+    ],
+    [
+      "Create\u0120a\u0120froste",
+      "d\u0120"
+    ],
+    [
+      "Create\u0120a\u0120frosted\u0120",
+      "g"
+    ],
+    [
+      "Create\u0120a\u0120frosted\u0120g",
+      "lass\u0120"
+    ],
+    [
+      "Create\u0120a\u0120frosted\u0120glass\u0120",
+      "backdrop"
+    ],
+    [
+      "Create\u0120a\u0120frosted\u0120glass\u0120backdrop",
+      "\u0120"
+    ],
+    [
+      "Create\u0120a\u0120frosted\u0120glass\u0120backdrop\u0120",
+      "fil"
+    ],
+    [
+      "Create\u0120a\u0120frosted\u0120glass\u0120backdrop\u0120fil",
+      "t"
+    ],
+    [
+      "Create\u0120a\u0120frosted\u0120glass\u0120backdrop\u0120filt",
+      "er\u0120"
+    ],
+    [
+      "Create\u0120a\u0120frosted\u0120glass\u0120backdrop\u0120filter\u0120",
+      "style"
+    ],
+    [
+      "p",
+      "an"
+    ],
+    [
+      "pan",
+      "el"
+    ],
+    [
+      "panel",
+      "\u0120"
+    ],
+    [
+      "0",
+      "5"
+    ],
+    [
+      "fil",
+      "ter"
+    ],
+    [
+      "b",
+      "l"
+    ],
+    [
+      "bl",
+      "ur"
+    ],
+    [
+      "12",
+      "px"
+    ],
+    [
+      "1",
+      "px"
+    ],
+    [
+      "1px",
+      "\u0120s"
+    ],
+    [
+      "1px\u0120s",
+      "ol"
+    ],
+    [
+      "1px\u0120sol",
+      "id\u0120"
+    ],
+    [
+      "1px\u0120solid\u0120",
+      "rgba"
+    ],
+    [
+      "ra",
+      "di"
+    ],
+    [
+      "radi",
+      "us"
+    ],
+    [
+      "8",
+      "px"
+    ],
+    [
+      "sqlite\u0120",
+      "se"
+    ],
+    [
+      "sqlite\u0120se",
+      "le"
+    ],
+    [
+      "sqlite\u0120sele",
+      "c"
+    ],
+    [
+      "sqlite\u0120selec",
+      "t\u0120"
+    ],
+    [
+      "sqlite\u0120select\u0120",
+      "query"
+    ],
+    [
+      "Query\u0120",
+      "row"
+    ],
+    [
+      "Query\u0120row",
+      "s\u0120"
+    ],
+    [
+      "Query\u0120rows\u0120",
+      "m"
+    ],
+    [
+      "Query\u0120rows\u0120m",
+      "atch"
+    ],
+    [
+      "Query\u0120rows\u0120match",
+      "ing\u0120"
+    ],
+    [
+      "Query\u0120rows\u0120matching\u0120",
+      "a\u0120"
+    ],
+    [
+      "Query\u0120rows\u0120matching\u0120a\u0120",
+      "condition"
+    ],
+    [
+      "SELEC",
+      "T\u0120"
+    ],
+    [
+      "FROM\u0120",
+      "user"
+    ],
+    [
+      "FROM\u0120user",
+      "s\u0120"
+    ],
+    [
+      "FROM\u0120users\u0120",
+      "WHER"
+    ],
+    [
+      "FROM\u0120users\u0120WHER",
+      "E\u0120"
+    ],
+    [
+      "FROM\u0120users\u0120WHERE\u0120",
+      "stat"
+    ],
+    [
+      "FROM\u0120users\u0120WHERE\u0120stat",
+      "us\u0120"
+    ],
+    [
+      "activ",
+      "e"
+    ],
+    [
+      "sqlite\u0120",
+      "j"
+    ],
+    [
+      "sqlite\u0120j",
+      "o"
+    ],
+    [
+      "sqlite\u0120jo",
+      "in\u0120"
+    ],
+    [
+      "sqlite\u0120join\u0120",
+      "query"
+    ],
+    [
+      "R",
+      "et"
+    ],
+    [
+      "Ret",
+      "r"
+    ],
+    [
+      "Retr",
+      "ieve\u0120"
+    ],
+    [
+      "Retrieve\u0120",
+      "session"
+    ],
+    [
+      "Retrieve\u0120session",
+      "\u0120"
+    ],
+    [
+      "Retrieve\u0120session\u0120",
+      "h"
+    ],
+    [
+      "Retrieve\u0120session\u0120h",
+      "ist"
+    ],
+    [
+      "Retrieve\u0120session\u0120hist",
+      "or"
+    ],
+    [
+      "Retrieve\u0120session\u0120histor",
+      "y\u0120"
+    ],
+    [
+      "Retrieve\u0120session\u0120history\u0120",
+      "de"
+    ],
+    [
+      "Retrieve\u0120session\u0120history\u0120de",
+      "tail"
+    ],
+    [
+      "Retrieve\u0120session\u0120history\u0120detail",
+      "s\u0120"
+    ],
+    [
+      "Retrieve\u0120session\u0120history\u0120details\u0120",
+      "with\u0120"
+    ],
+    [
+      "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120",
+      "us"
+    ],
+    [
+      "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120us",
+      "er\u0120"
+    ],
+    [
+      "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120user\u0120",
+      "re"
+    ],
+    [
+      "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120user\u0120re",
+      "f"
+    ],
+    [
+      "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120user\u0120ref",
+      "er"
+    ],
+    [
+      "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120user\u0120refer",
+      "en"
+    ],
+    [
+      "Retrieve\u0120session\u0120history\u0120details\u0120with\u0120user\u0120referen",
+      "ces"
+    ],
+    [
+      "SELEC",
+      "T"
+    ],
+    [
+      "SELECT",
+      "\u0120s"
+    ],
+    [
+      "FROM\u0120",
+      "session"
+    ],
+    [
+      "FROM\u0120session",
+      "s\u0120"
+    ],
+    [
+      "FROM\u0120sessions\u0120",
+      "s"
+    ],
+    [
+      "J",
+      "O"
+    ],
+    [
+      "JO",
+      "IN"
+    ],
+    [
+      "JOIN",
+      "\u0120chats\u0120"
+    ],
+    [
+      "JOIN\u0120chats\u0120",
+      "c"
+    ],
+    [
+      "JOIN\u0120chats\u0120c",
+      "\u0120"
+    ],
+    [
+      "JOIN\u0120chats\u0120c\u0120",
+      "ON"
+    ],
+    [
+      "JOIN\u0120chats\u0120c\u0120ON",
+      "\u0120s"
+    ],
+    [
+      "session",
+      "_id\u0120"
+    ],
+    [
+      "WHER",
+      "E"
+    ],
+    [
+      "WHERE",
+      "\u0120s"
+    ],
+    [
+      "user",
+      "_id\u0120"
+    ],
+    [
+      "sqlite\u0120",
+      "in"
+    ],
+    [
+      "sqlite\u0120in",
+      "sert\u0120"
+    ],
+    [
+      "sqlite\u0120insert\u0120",
+      "row"
+    ],
+    [
+      "In",
+      "sert\u0120"
+    ],
+    [
+      "Insert\u0120",
+      "a\u0120"
+    ],
+    [
+      "Insert\u0120a\u0120",
+      "new"
+    ],
+    [
+      "Insert\u0120a\u0120new",
+      "\u0120m"
+    ],
+    [
+      "Insert\u0120a\u0120new\u0120m",
+      "essag"
+    ],
+    [
+      "Insert\u0120a\u0120new\u0120messag",
+      "e\u0120into\u0120"
+    ],
+    [
+      "Insert\u0120a\u0120new\u0120message\u0120into\u0120",
+      "the\u0120"
+    ],
+    [
+      "Insert\u0120a\u0120new\u0120message\u0120into\u0120the\u0120",
+      "relational\u0120"
+    ],
+    [
+      "Insert\u0120a\u0120new\u0120message\u0120into\u0120the\u0120relational\u0120",
+      "DB"
+    ],
+    [
+      "IN",
+      "SE"
+    ],
+    [
+      "INSE",
+      "R"
+    ],
+    [
+      "INSER",
+      "T\u0120"
+    ],
+    [
+      "INSERT\u0120",
+      "IN"
+    ],
+    [
+      "INSERT\u0120IN",
+      "T"
+    ],
+    [
+      "INSERT\u0120INT",
+      "O"
+    ],
+    [
+      "INSERT\u0120INTO",
+      "\u0120chats\u0120"
+    ],
+    [
+      "message",
+      "_id"
+    ],
+    [
+      "V",
+      "A"
+    ],
+    [
+      "VA",
+      "L"
+    ],
+    [
+      "VAL",
+      "U"
+    ],
+    [
+      "VALU",
+      "E"
+    ],
+    [
+      "VALUE",
+      "S\u0120"
+    ],
+    [
+      "chromadb\u0120",
+      "add\u0120"
+    ],
+    [
+      "chromadb\u0120add\u0120",
+      "doc"
+    ],
+    [
+      "chromadb\u0120add\u0120doc",
+      "ument"
+    ],
+    [
+      "St",
+      "ore\u0120"
+    ],
+    [
+      "Store\u0120",
+      "cont"
+    ],
+    [
+      "Store\u0120cont",
+      "ent\u0120"
+    ],
+    [
+      "Store\u0120content\u0120",
+      "in\u0120"
+    ],
+    [
+      "Store\u0120content\u0120in\u0120",
+      "ChromaDB"
+    ],
+    [
+      "Store\u0120content\u0120in\u0120ChromaDB",
+      "\u0120p"
+    ],
+    [
+      "Store\u0120content\u0120in\u0120ChromaDB\u0120p",
+      "er"
+    ],
+    [
+      "Store\u0120content\u0120in\u0120ChromaDB\u0120per",
+      "sist"
+    ],
+    [
+      "Store\u0120content\u0120in\u0120ChromaDB\u0120persist",
+      "ent\u0120"
+    ],
+    [
+      "Store\u0120content\u0120in\u0120ChromaDB\u0120persistent\u0120",
+      "collection"
+    ],
+    [
+      "me",
+      "t"
+    ],
+    [
+      "met",
+      "ad"
+    ],
+    [
+      "metad",
+      "at"
+    ],
+    [
+      "metadat",
+      "as"
+    ],
+    [
+      "me",
+      "ta"
+    ],
+    [
+      "id",
+      "s"
+    ],
+    [
+      "doc",
+      "_id"
+    ],
+    [
+      "chromadb\u0120",
+      "query"
+    ],
+    [
+      "chromadb\u0120query",
+      "\u0120"
+    ],
+    [
+      "chromadb\u0120query\u0120",
+      "documents"
+    ],
+    [
+      "Query\u0120",
+      "ChromaDB"
+    ],
+    [
+      "Query\u0120ChromaDB",
+      "\u0120"
+    ],
+    [
+      "Query\u0120ChromaDB\u0120",
+      "with\u0120"
+    ],
+    [
+      "Query\u0120ChromaDB\u0120with\u0120",
+      "semantic\u0120"
+    ],
+    [
+      "Query\u0120ChromaDB\u0120with\u0120semantic\u0120",
+      "search"
+    ],
+    [
+      "res",
+      "ult"
+    ],
+    [
+      "result",
+      "s\u0120"
+    ],
+    [
+      "query_text",
+      "s"
+    ],
+    [
+      "n",
+      "_"
+    ],
+    [
+      "n_",
+      "res"
+    ],
+    [
+      "n_res",
+      "ul"
+    ],
+    [
+      "n_resul",
+      "ts"
+    ],
+    [
+      "t",
+      "op"
+    ],
+    [
+      "top",
+      "_"
+    ],
+    [
+      "top_",
+      "k"
+    ],
+    [
+      "what\u0120is\u0120the\u0120",
+      "validation"
+    ],
+    [
+      "what\u0120is\u0120the\u0120validation",
+      "\u0120core"
+    ],
+    [
+      "V",
+      "al"
+    ],
+    [
+      "Val",
+      "idation"
+    ],
+    [
+      "Validation",
+      "Core\u0120"
+    ],
+    [
+      "ValidationCore\u0120",
+      "performs\u0120"
+    ],
+    [
+      "ValidationCore\u0120performs\u0120",
+      "do"
+    ],
+    [
+      "ValidationCore\u0120performs\u0120do",
+      "ub"
+    ],
+    [
+      "ValidationCore\u0120performs\u0120doub",
+      "le"
+    ],
+    [
+      "validation",
+      "\u0120ch"
+    ],
+    [
+      "validation\u0120ch",
+      "ec"
+    ],
+    [
+      "validation\u0120chec",
+      "k"
+    ],
+    [
+      "validation\u0120check",
+      "ing\u0120"
+    ],
+    [
+      "validation\u0120checking\u0120",
+      "input\u0120"
+    ],
+    [
+      "validation\u0120checking\u0120input\u0120",
+      "s"
+    ],
+    [
+      "validation\u0120checking\u0120input\u0120s",
+      "a"
+    ],
+    [
+      "validation\u0120checking\u0120input\u0120sa",
+      "f"
+    ],
+    [
+      "validation\u0120checking\u0120input\u0120saf",
+      "et"
+    ],
+    [
+      "validation\u0120checking\u0120input\u0120safet",
+      "y\u0120"
+    ],
+    [
+      "SQL",
+      "i"
+    ],
+    [
+      "X",
+      "S"
+    ],
+    [
+      "XS",
+      "S"
+    ],
+    [
+      "XSS",
+      "\u0120p"
+    ],
+    [
+      "XSS\u0120p",
+      "re"
+    ],
+    [
+      "XSS\u0120pre",
+      "vent"
+    ],
+    [
+      "XSS\u0120prevent",
+      "ion"
+    ],
+    [
+      "and\u0120",
+      "output\u0120"
+    ],
+    [
+      "and\u0120output\u0120",
+      "s"
+    ],
+    [
+      "and\u0120output\u0120s",
+      "ch"
+    ],
+    [
+      "and\u0120output\u0120sch",
+      "em"
+    ]
+  ]
+}
