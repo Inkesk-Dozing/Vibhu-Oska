@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #060912;
+  --foreground: #E8EEFF;
+  
+  --bg-void: #060912;
+  --bg-dark: #0A0E1A;
+  --bg-surface: #0F1525;
+  --bg-card: rgba(15, 21, 37, 0.85);
+  --bg-elevated: rgba(20, 28, 50, 0.9);
+  
+  --cyan: #00D4FF;
+  --cyan-glow: rgba(0, 212, 255, 0.25);
+  --amber: #FFB800;
+  --amber-glow: rgba(255, 184, 0, 0.2);
+  --purple: #7B2FBE;
+  --purple-glow: rgba(123, 47, 190, 0.2);
+  
+  --green: #22D3A0;
+  --red: #FF4444;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.1);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.3);
+}
+
+/* Glassmorphism panel helper */
+.glass-panel {
+  background: rgba(15, 21, 37, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 212, 255, 0.08);
+}
+
+.glass-panel-active {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
+}
+
+/* Keyframes */
+@keyframes pulse-cyan {
+  0%, 100% { box-shadow: 0 0 8px rgba(0, 212, 255, 0.2); }
+  50% { box-shadow: 0 0 16px rgba(0, 212, 255, 0.4); }
+}
+
+.animate-pulse-cyan {
+  animation: pulse-cyan 3s infinite;
+}
