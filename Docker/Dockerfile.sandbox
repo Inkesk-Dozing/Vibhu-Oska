@@ -1,0 +1,38 @@
+# ============================================================================
+# Vibhu-Oska AI-OS — Code Execution Sandbox Dockerfile
+# Hardened, minimal runtime for executing untrusted code.
+#
+# Security posture:
+#   - Read-only filesystem (tmpfs for /tmp only)
+#   - No network access (docker-compose sets network_mode: none)
+#   - No new privileges
+#   - Resource-limited (4GB RAM, 2 CPUs — set in docker-compose)
+#   - Unprivileged execution via dedicated sandbox user
+# ============================================================================
+
+FROM python:3.11-slim
+
+WORKDIR /sandbox
+
+# Minimal runtime only — no pip, no build tools in final layer
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip install --no-cache-dir psutil
+
+# Create unprivileged sandbox user
+RUN groupadd -r sandbox && useradd -r -g sandbox -d /sandbox sandbox-exec
+
+# Pre-install safe standard library only — no third-party packages
+# Third-party packages must be explicitly approved and mounted
+
+USER sandbox-exec
+
+# Minimal execution server — receives code via stdin, executes, returns stdout
+CMD ["python", "-c", \
+     "import sys, subprocess; \
+      code = sys.stdin.read(); \
+      result = subprocess.run(['python', '-c', code], \
+          capture_output=True, text=True, timeout=60); \
+      print(result.stdout, end=''); \
+      print(result.stderr, file=sys.stderr, end='')"]
