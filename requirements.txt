@@ -1,2 +1,34 @@
-flask
-protobuf
+# ============================================================================
+# Vibhu-Oska AI-OS — Core Dependencies
+# Install: pip install -e .
+# Install with ML: pip install -e ".[ml]"
+# Install with dev: pip install -e ".[dev]"
+# ============================================================================
+
+# Core Framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+websockets>=13.0
+
+# Serialization & Validation
+protobuf>=5.28.0
+pydantic>=2.9.0
+
+# Event Bus
+pyzmq>=26.2.0
+
+# Configuration
+pyyaml>=6.0.2
+python-dotenv>=1.0.1
+
+# Database & Memory
+chromadb>=0.5.0
+aiosqlite>=0.20.0
+
+# Logging & Monitoring
+structlog>=24.4.0
+rich>=13.9.0
+
+# Utilities
+httpx>=0.27.0
+psutil>=6.1.0

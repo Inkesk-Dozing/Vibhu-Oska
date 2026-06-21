@@ -1,0 +1,138 @@
+// ============================================================================
+// Vibhu-Oska AI-OS — Brain Protocol
+// Defines the cognitive payload structures: tasks, memory, and AI responses
+// ============================================================================
+
+syntax = "proto3";
+package vibhu_oska.brain;
+
+import "common.proto";
+
+option python_package = "Shared.generated.brain_pb2";
+
+// ── Task System ──
+
+enum TaskType {
+    TASK_UNKNOWN = 0;
+    TASK_CHAT = 1;              // Conversational response
+    TASK_CODE_GENERATE = 2;     // Generate code from specification
+    TASK_CODE_REVIEW = 3;       // Review and analyze existing code
+    TASK_CODE_FIX = 4;          // Debug and fix broken code
+    TASK_RESEARCH = 5;          // Deep web research via SearXNG
+    TASK_ANALYZE = 6;           // Data analysis and reasoning
+    TASK_DESIGN = 7;            // UI/UX design generation
+    TASK_SYSTEM = 8;            // Internal system operation
+    TASK_MEMORY_STORE = 9;      // Store information in memory
+    TASK_MEMORY_RECALL = 10;    // Retrieve from memory
+    TASK_SELF_IMPROVE = 11;     // Self-improvement cycle
+    TASK_SCHEDULE = 12;         // Autonomous task scheduling
+}
+
+message TaskRequest {
+    vibhu_oska.common.RequestMetadata metadata = 1;
+    TaskType type = 2;
+    string prompt = 3;                          // The user's input or system event
+    repeated ContextChunk context = 4;          // Retrieved context from DataCore
+    ModelConfig model_config = 5;               // Which model / parameters to use
+    map<string, string> parameters = 6;         // Task-specific key-value params
+}
+
+message TaskResponse {
+    vibhu_oska.common.ResponseMetadata metadata = 1;
+    TaskType type = 2;
+    string content = 3;                         // The primary text/code response
+    repeated Artifact artifacts = 4;            // Generated files, images, etc.
+    repeated ToolCall tool_calls = 5;           // Tools the AI wants to invoke
+    CognitionTrace trace = 6;                   // Reasoning trace for debugging
+    TokenUsage token_usage = 7;
+}
+
+// ── Context & Memory ──
+
+message ContextChunk {
+    string source = 1;             // Where this context came from (e.g., "chromadb", "sqlite", "conversation")
+    string content = 2;            // The actual text content
+    float relevance_score = 3;     // Similarity score (0.0 to 1.0)
+    map<string, string> metadata = 4;
+}
+
+message MemoryQuery {
+    vibhu_oska.common.RequestMetadata metadata = 1;
+    string query_text = 2;         // Semantic search query
+    string collection = 3;         // ChromaDB collection name
+    int32 top_k = 4;              // Number of results to return
+    float min_relevance = 5;       // Minimum similarity threshold
+}
+
+message MemoryStore {
+    vibhu_oska.common.RequestMetadata metadata = 1;
+    string content = 2;           // Text to embed and store
+    string collection = 3;        // Target collection
+    map<string, string> tags = 4; // Metadata tags for filtering
+}
+
+message MemoryResult {
+    vibhu_oska.common.ResponseMetadata metadata = 1;
+    repeated ContextChunk chunks = 2;
+    int32 total_results = 3;
+}
+
+// ── Model Configuration ──
+
+message ModelConfig {
+    string model_id = 1;          // e.g., "vibhu-router-150m", "qwen2.5-coder-3b-qlora"
+    float temperature = 2;
+    int32 max_tokens = 3;
+    float top_p = 4;
+    repeated string stop_sequences = 5;
+    bool stream = 6;
+    vibhu_oska.common.ExecutionTarget target = 7;
+}
+
+message TokenUsage {
+    int32 prompt_tokens = 1;
+    int32 completion_tokens = 2;
+    int32 total_tokens = 3;
+    int32 context_window_remaining = 4;
+}
+
+// ── Tool Calls ──
+
+message ToolCall {
+    string tool_name = 1;         // e.g., "search_engine", "code_analyzer", "file_write"
+    string action = 2;            // The specific action within the tool
+    string arguments_json = 3;    // JSON-encoded arguments
+    vibhu_oska.common.Priority priority = 4;
+}
+
+message ToolResult {
+    string tool_name = 1;
+    string action = 2;
+    vibhu_oska.common.Status status = 3;
+    string result_json = 4;       // JSON-encoded result
+    int64 execution_time_ms = 5;
+}
+
+// ── Artifacts ──
+
+message Artifact {
+    string name = 1;
+    string type = 2;              // e.g., "code", "image", "document", "config"
+    string content = 3;           // Text content or base64-encoded binary
+    string language = 4;          // Programming language if type == "code"
+    string file_path = 5;         // Suggested file path for saving
+}
+
+// ── Cognition Trace ──
+
+message CognitionTrace {
+    repeated ThoughtStep steps = 1;
+    int64 total_reasoning_time_ms = 2;
+}
+
+message ThoughtStep {
+    int32 step_number = 1;
+    string phase = 2;            // e.g., "planning", "executing", "reflecting"
+    string thought = 3;          // The reasoning at this step
+    vibhu_oska.common.Timestamp timestamp = 4;
+}

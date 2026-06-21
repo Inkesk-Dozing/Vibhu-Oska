@@ -1,0 +1,135 @@
+# ============================================================================
+# Vibhu-Oska AI-OS — Docker Compose
+# Orchestrates all backend services for development and production.
+#
+# Services:
+#   redis      — In-memory LRU cache + Pub/Sub event persistence
+#   searxng    — Self-hosted web search (DeepResearch plugin backend)
+#   sandbox    — Isolated Python code execution environment
+#   gateway    — FastAPI AI-OS entry point (NVIDIA GPU passthrough)
+#
+# Usage:
+#   docker compose -f Docker/docker-compose.yml up -d
+#   docker compose -f Docker/docker-compose.yml logs -f gateway
+# ============================================================================
+
+services:
+
+  # ── Redis Cache & Pub/Sub ──────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: vibhu-oska-redis
+    command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    restart: unless-stopped
+    networks:
+      - vibhu-internal
+
+  # ── SearXNG Self-hosted Search ─────────────────────────────────────────────
+  searxng:
+    image: searxng/searxng:latest
+    container_name: vibhu-oska-searxng
+    ports:
+      - "8081:8080"
+    volumes:
+      - searxng_data:/etc/searxng
+    environment:
+      - SEARXNG_BASE_URL=http://localhost:8081
+      - SEARXNG_SECRET_KEY=vibhu-oska-searxng-secret-change-in-prod
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped
+    networks:
+      - vibhu-internal
+      - vibhu-external          # SearXNG needs internet access
+
+  # ── Code Execution Sandbox ─────────────────────────────────────────────────
+  # Isolated Python runtime with NO network, NO external volumes
+  # Used by AutomationCore for sandboxed script execution
+  sandbox:
+    image: python:3.11-slim
+    container_name: vibhu-oska-sandbox
+    command: >
+      sh -c "pip install --quiet --no-cache-dir psutil &&
+             python -m http.server 9090"
+    ports:
+      - "9090:9090"
+    environment:
+      - SANDBOX_MODE=true
+    read_only: true
+    tmpfs:
+      - /tmp:size=512m
+    mem_limit: 4g
+    cpus: "2.0"
+    network_mode: none           # Hard network isolation — no egress
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+  # ── API Gateway (FastAPI + AI-OS Core) ─────────────────────────────────────
+  gateway:
+    build:
+      context: ..
+      dockerfile: Docker/Dockerfile.gateway
+    container_name: vibhu-oska-gateway
+    ports:
+      - "8000:8000"
+    environment:
+      - VIBHU_OSKA_ENV=development
+      - VIBHU_OSKA__MEMORY__CACHE__ENGINE=redis
+      - VIBHU_OSKA__MEMORY__CACHE__REDIS_URL=redis://redis:6379/0
+      - VIBHU_OSKA__LOGGING__FORMAT=json
+    volumes:
+      - ../Backend:/app/Backend:ro
+      - ../Shared:/app/Shared:ro
+      - ../config:/app/config:ro
+      - ../Models:/app/Models:ro
+      - log_data:/app/Log
+      - data_vol:/app/Data
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - vibhu-internal
+      - vibhu-external
+    # ── GPU Passthrough for NVIDIA RTX 4060 ──
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+# ── Networks ───────────────────────────────────────────────────────────────────
+networks:
+  vibhu-internal:
+    driver: bridge
+    internal: true              # No direct host internet access (use vibhu-external for that)
+  vibhu-external:
+    driver: bridge
+
+# ── Persistent Volumes ─────────────────────────────────────────────────────────
+volumes:
+  redis_data:
+    driver: local
+  searxng_data:
+    driver: local
+  log_data:
+    driver: local
+  data_vol:
+    driver: local
