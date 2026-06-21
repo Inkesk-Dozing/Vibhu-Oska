@@ -61,3 +61,5 @@ htmlcov/
 # ── Misc ──
 *.bak
 *.tmp
+
+recovered_chat_history.md
