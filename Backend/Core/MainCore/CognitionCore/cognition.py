@@ -280,21 +280,23 @@ class CognitionCore(BaseService):
         """Runs prompt inference using our custom Sovereign GPT from scratch."""
         import time
         from pathlib import Path
-        
+
         # Check if model has checkpoints
         root = Path(__file__).resolve().parent.parent.parent.parent.parent
         checkpoints_dir = root / "Models" / "sovereign_gpt" / "checkpoints"
-        
+
         vocab_path = checkpoints_dir / "tokenizer_vocab.json"
         ckpt_path = checkpoints_dir / "sovereign_gpt.pt"
-        
+
         if not vocab_path.exists() or not ckpt_path.exists():
-            return TaskResponse(
-                content="Sovereign GPT has not been trained yet. Please initialize training from the Configuration panel first.",
-                token_usage=TokenUsage(prompt_tokens=0, completion_tokens=0, total_tokens=0),
-                metadata=ResponseMetadata(
-                    status=Status(code=StatusCode.FAILED, message="Model checkpoints missing. Train the model first.")
-                )
+            raise RuntimeError("Sovereign GPT checkpoints missing. Train the model first.")
+
+        # Checkpoint readiness gate: if < 1MB, model hasn't trained enough to be useful
+        ckpt_size_mb = ckpt_path.stat().st_size / (1024 * 1024)
+        if ckpt_size_mb < 1.0:
+            raise RuntimeError(
+                f"Sovereign GPT checkpoint too small ({ckpt_size_mb:.2f}MB) — "
+                "needs more training epochs. Using BackupCore."
             )
             
         try:
@@ -323,6 +325,16 @@ class CognitionCore(BaseService):
                 
             output = await asyncio.to_thread(_generate)
             elapsed_ms = int((time.time() - start_time) * 1000)
+
+            # Quality gate: validate output is coherent before accepting
+            import re as _re
+            clean = output.strip()
+            alpha_words = _re.findall(r'[a-zA-Z]{3,}', clean)
+            if len(clean) < 15 or len(alpha_words) < 2:
+                raise RuntimeError(
+                    f"Sovereign GPT output quality too low (len={len(clean)}, words={len(alpha_words)}). "
+                    "Checkpoint needs more training. Falling back to BackupCore."
+                )
             
             prompt_tokens = len(self._sovereign_generator.tokenizer.encode(formatted_prompt))
             completion_tokens = len(self._sovereign_generator.tokenizer.encode(output))
@@ -340,14 +352,11 @@ class CognitionCore(BaseService):
             )
             
         except Exception as e:
-            self._log.error("Failed running Sovereign GPT inference", error=str(e))
-            return TaskResponse(
-                content=f"Error running Sovereign GPT inference: {str(e)}",
-                token_usage=TokenUsage(prompt_tokens=0, completion_tokens=0, total_tokens=0),
-                metadata=ResponseMetadata(
-                    status=Status(code=StatusCode.FAILED, message=str(e))
-                )
+            self._log.warning(
+                "Sovereign GPT inference failed — re-raising for HybridCore fallback",
+                error=str(e)
             )
+            raise  # Let HybridCore catch this and route to BackupCore
 
     async def generate(
         self,
