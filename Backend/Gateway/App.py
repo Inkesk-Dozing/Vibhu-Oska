@@ -849,36 +849,41 @@ async def websocket_endpoint(websocket: WebSocket):
                     )
                     elapsed = int(__import__("time").time() * 1000) - start_ms
 
-                    # Send completed response directly to this client
-                    await websocket.send_json({
-                        "type":     "task.completed",
-                        "event_id": request_id,
-                        "source":   "orchestrator",
-                        "payload": {
-                            "content":    response,
-                            "request_id": request_id,
-                            "metadata": {
-                                "processing_time_ms": elapsed,
-                                "status": {"code": 5, "message": "OK"},
+                    # Guard: client may disconnect while processing — wrap all sends
+                    try:
+                        await websocket.send_json({
+                            "type":     "task.completed",
+                            "event_id": request_id,
+                            "source":   "orchestrator",
+                            "payload": {
+                                "content":    response,
+                                "request_id": request_id,
+                                "metadata": {
+                                    "processing_time_ms": elapsed,
+                                    "status": {"code": 5, "message": "OK"},
+                                },
                             },
-                        },
-                    })
-
-                    # Also broadcast to any other connected clients (monitor panel etc.)
-                    await _broadcast_event_to_others(websocket, {
-                        "type":     "task.completed",
-                        "event_id": request_id,
-                        "source":   "orchestrator",
-                        "payload":  {"request_id": request_id, "content": response[:80] + "…"},
-                    })
+                        })
+                        await _broadcast_event_to_others(websocket, {
+                            "type":     "task.completed",
+                            "event_id": request_id,
+                            "source":   "orchestrator",
+                            "payload":  {"request_id": request_id, "content": response[:80]},
+                        })
+                    except Exception:
+                        log.info("Client disconnected before response sent", request_id=request_id)
 
                 except Exception as proc_err:
                     log.error("Prompt processing failed", error=str(proc_err))
-                    await websocket.send_json({
-                        "type":     "task.failed",
-                        "event_id": request_id,
-                        "payload":  {"error": str(proc_err), "request_id": request_id},
-                    })
+                    try:
+                        await websocket.send_json({
+                            "type":     "task.failed",
+                            "event_id": request_id,
+                            "payload":  {"error": str(proc_err)[:200], "request_id": request_id},
+                        })
+                    except Exception:
+                        pass  # Socket already closed
+
 
     except WebSocketDisconnect:
         state.ws_clients.discard(websocket)
@@ -941,19 +946,23 @@ async def _process_prompt_direct(
         if specialized is not None:
             content = specialized.content
         else:
-            # Route through HybridCore (Sovereign GPT → BackupCore fallback)
-            system_prompt = (
-                "You are Vibhu-Oska AI-OS — a sovereign, locally-hosted artificial intelligence. "
-                "Respond accurately, concisely, and professionally. Never reference being an AI assistant "
-                "or external cloud service. You run entirely on the creator's local hardware."
-            )
-            task_resp = await state.orchestrator._hybrid_core.process_request(
-                prompt=prompt,
-                system_prompt=system_prompt,
-                context=context,
-                model_id=model_id,
-            )
-            content = task_resp.content
+            # ── Fast pre-dispatch ────────────────────────────────────────────────
+            # Intercept prompts BackupCore handles instantly — skips router + Qwen load.
+            # Only falls through to HybridCore for prompts needing real LLM reasoning.
+            content = _try_fast_dispatch(prompt)
+            if content is None:
+                system_prompt = (
+                    "You are Vibhu-Oska AI-OS — a sovereign, locally-hosted artificial intelligence. "
+                    "Respond accurately, concisely, and professionally. Never reference being an AI assistant "
+                    "or external cloud service. You run entirely on the creator's local hardware."
+                )
+                task_resp = await state.orchestrator._hybrid_core.process_request(
+                    prompt=prompt,
+                    system_prompt=system_prompt,
+                    context=context,
+                    model_id=model_id,
+                )
+                content = task_resp.content
 
         # Persist interaction
         await state.orchestrator._data_core.save_chat_message(str(uuid.uuid4()), session_id, "user", prompt)
@@ -967,12 +976,93 @@ async def _process_prompt_direct(
 
     except Exception as e:
         log.error("Direct processing error", error=str(e))
-        # Return a graceful error message rather than crashing
         return (
-            f"⚠ Processing error: `{str(e)[:120]}`\n\n"
+            f"\u26a0 Processing error: `{str(e)[:120]}`\n\n"
             "Vibhu-Oska BackupCore is active. The Sovereign GPT model requires training. "
             "Use the **Train** panel to initiate model training."
         )
+
+
+def _try_fast_dispatch(prompt: str) -> str | None:
+    """
+    Attempt to resolve a prompt instantly via BackupCore pattern matching,
+    bypassing HybridCore router inference and any LLM loading cost.
+
+    Parameters:
+        prompt: Raw user input string
+    Returns: Response string if pattern matched, None to fall through to HybridCore
+    Edge cases: Returns None for open-ended or complex queries needing LLM
+    """
+    import re, math as _math
+
+    norm = prompt.strip().lower()
+
+    # ── Math expressions ─────────────────────────────────────────────────────
+    # Handle before anything else — avoids 30s Qwen cold-start for "128 * 8"
+    if re.search(r'\d', prompt):
+        # Arithmetic: "128 * 8", "2^10", "100 / 4", "15 % 7"
+        expr = re.search(
+            r'(\d+\.?\d*)\s*([\+\-\*\/\^%]|\*\*|//)\s*(\d+\.?\d*)',
+            prompt.replace('×', '*').replace('÷', '/').replace('^', '**')
+        )
+        if expr:
+            try:
+                a, op, b = float(expr.group(1)), expr.group(2), float(expr.group(3))
+                ops = {'+': a+b, '-': a-b, '*': a*b, '^': a**b, '**': a**b,
+                       '%': a%b}
+                if op in ('/', '÷'):
+                    result = "undefined (division by zero)" if b == 0 else a / b
+                elif op == '//':
+                    result = int(a) // int(b)
+                else:
+                    result = ops.get(op)
+                if result is not None:
+                    display = int(result) if isinstance(result, float) and result == int(result) else (
+                        round(result, 6) if isinstance(result, float) else result
+                    )
+                    return f"`{expr.group(1)} {op} {expr.group(3)}` = **`{display}`**"
+            except Exception:
+                pass
+
+        if re.search(r'\b(sqrt|square root of)\b', norm):
+            n = re.search(r'(\d+\.?\d*)', prompt)
+            if n:
+                val = _math.sqrt(float(n.group(1)))
+                display = int(val) if val == int(val) else round(val, 6)
+                return f"\u221a{n.group(1)} = **`{display}`**"
+
+        if re.search(r'\bfactorial\b', norm) or re.search(r'\b(\d+)!\s*$', prompt):
+            n = re.search(r'(\d+)', prompt)
+            if n and int(n.group(1)) <= 25:
+                return f"`{n.group(1)}!` = **`{_math.factorial(int(n.group(1)))}`**"
+
+    # ── Instant conversational patterns ──────────────────────────────────────
+    # These would hit router → CHAT → BackupCore anyway; save the round-trip.
+    from Backend.Core.BackupCore.BackupCore import BackupCore as _BC
+    _bc = _BC()
+
+    if re.search(r'^\s*(hello|hi|hey|yo|sup|greetings|good\s*(morning|afternoon|evening|night))\s*[!.,?]?\s*$', norm):
+        return _bc._reason(prompt)
+
+    if re.search(r'\b(who are you|what are you|tell me about yourself|what is vibhu|what can you do|your capabilities)\b', norm):
+        return _bc._reason(prompt)
+
+    if re.search(r'^\s*(status|health|how are you|are you (ok|working|online|alive|up))\s*[!.,?]?\s*$', norm):
+        return _bc._reason(prompt)
+
+    if re.search(r'^(what is the )?(time|date|current time|today)\??\s*$', norm):
+        return _bc._reason(prompt)
+
+    if re.search(r'^\s*(help|commands|what can you do)\s*[!.,?]?\s*$', norm):
+        return _bc._reason(prompt)
+
+    if re.search(r'^\s*(ok|okay|got it|understood|thanks|thank you|great|nice|cool|awesome|perfect|sure|alright)\s*[!.,?]?\s*$', norm):
+        return "Acknowledged. What would you like to work on?"
+
+    # ── Let HybridCore handle the rest ───────────────────────────────────────
+    return None
+
+
 
 
 async def _broadcast_to_ws(event: Event) -> None:

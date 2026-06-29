@@ -5,7 +5,9 @@ Monitors model endpoint health and routes requests to the primary engine or back
 
 from __future__ import annotations
 
+import asyncio
 from typing import Any
+
 
 from Backend.Core.BackupCore.BackupCore import BackupCore
 from Backend.Core.MainCore.CognitionCore.cognition import CognitionCore
@@ -26,9 +28,15 @@ class HybridCore:
         self._log = Logger.get("HybridCore")
 
     async def initialize(self) -> None:
-        """Initialize both cognition cores."""
+        """Initialize both cognition cores and pre-load the router for zero cold-start latency."""
         await self._primary.initialize()
         self._status = CoreStatus.HEALTHY
+        # Pre-load router in background so first request doesn't pay the load cost
+        try:
+            await asyncio.to_thread(self._load_router)
+            self._log.info("Speculative router pre-loaded on startup")
+        except Exception as e:
+            self._log.warning("Router pre-load failed — will load on first request", error=str(e))
 
     @property
     def status(self) -> CoreStatus:
@@ -138,16 +146,19 @@ class HybridCore:
                     )
 
                     if prediction["task"] == "CODE":
-                        model_id = "vibhu-core"
-                        self._log.info("Speculative routing matched CODE: routing to vibhu-core (Qwen 0.5B)")
+                        # BackupCore handles code help; Qwen takes 15s cold-start
+                        # and produces unreliable output. Re-enable when code corpus ready.
+                        model_id = "backup-1"
+                        self._log.info("Speculative routing CODE -> BackupCore (Qwen warm-up disabled)")
                     elif prediction["task"] == "CHAT":
-                        model_id = "sovereign-gpt"
-                        self._log.info("Speculative routing matched CHAT: routing to sovereign-gpt")
+                        # Route CHAT directly to BackupCore while Sovereign GPT is in training.
+                        model_id = "backup-1"
+                        self._log.info("Speculative routing CHAT -> BackupCore (Sovereign GPT in training)")
                     else:
-                        model_id = "sovereign-gpt"
+                        model_id = "backup-1"  # RESEARCH, MEMORY, general -> BackupCore
             except Exception as e:
-                self._log.warning("Speculative routing failed, defaulting to Sovereign GPT", error=str(e))
-                model_id = "sovereign-gpt"
+                self._log.warning("Speculative routing failed, defaulting to BackupCore", error=str(e))
+                model_id = "backup-1"  # Never fall back to untrained Sovereign GPT
 
         # If backup core is explicitly requested
         if model_id == "backup-1":

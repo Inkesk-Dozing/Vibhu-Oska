@@ -1,6 +1,7 @@
 """
 Vibhu-Oska AI-OS — CognitionCore
-Handles local LLM inference in-process using direct local models or local Sovereign GPT.
+Primary inference interface for Sovereign GPT — built entirely from scratch.
+No external models, no HuggingFace, no cloud APIs. Pure PyTorch primitives.
 """
 
 from __future__ import annotations
@@ -187,21 +188,32 @@ class CognitionCore(BaseService):
     # =================─────────────────────────────────────────────────────────────────────────────────
 
     async def load_direct_model(self) -> None:
-        """Load in-process transformers weights."""
-        from transformers import AutoTokenizer, AutoModelForCausalLM
-        import torch
+        """
+        Reserved for future native model integration.
+        Vibhu-Oska is built exclusively from scratch — no external model weights.
+        """
+        raise NotImplementedError(
+            "load_direct_model: Vibhu-Oska does not load external model weights. "
+            "All inference runs through Sovereign GPT (custom transformer) or BackupCore."
+        )
 
-        model_name = "Qwen/Qwen2.5-0.5B-Instruct"
-        self._log.info(f"Loading in-process direct transformer: {model_name}")
-        self._tokenizer = AutoTokenizer.from_pretrained(model_name)
+    async def generate_direct(
+        self,
+        prompt: str,
+        system_prompt: str = "",
+        context: list[dict[str, Any]] | None = None,
+        temperature: float | None = None,
+        max_tokens: int | None = None
+    ) -> TaskResponse:
+        """
+        Reserved for future native model integration.
+        Vibhu-Oska is built exclusively from scratch — no external model weights.
+        """
+        raise NotImplementedError(
+            "generate_direct: No external model loaded. "
+            "Use generate_sovereign() for Sovereign GPT inference."
+        )
 
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        self._log.info(f"Loading in-process model on: {device}")
-        self._model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            torch_dtype=torch.float32
-        ).to(device)
-        self._use_direct = True
 
     async def generate_direct(
         self,
@@ -326,14 +338,34 @@ class CognitionCore(BaseService):
             output = await asyncio.to_thread(_generate)
             elapsed_ms = int((time.time() - start_time) * 1000)
 
-            # Quality gate: validate output is coherent before accepting
+            # Quality gate: validate output is coherent before accepting.
+            # The Sovereign GPT checkpoint is undertrained — output must pass
+            # all checks or we fall back to BackupCore for a clean response.
             import re as _re
             clean = output.strip()
-            alpha_words = _re.findall(r'[a-zA-Z]{3,}', clean)
-            if len(clean) < 15 or len(alpha_words) < 2:
+
+            # Must have real content length
+            if len(clean) < 50:
                 raise RuntimeError(
-                    f"Sovereign GPT output quality too low (len={len(clean)}, words={len(alpha_words)}). "
-                    "Checkpoint needs more training. Falling back to BackupCore."
+                    f"Sovereign GPT output too short (len={len(clean)}). "
+                    "Checkpoint needs training. Falling back to BackupCore."
+                )
+
+            # Must have enough real words (4+ chars to filter single-char tokens)
+            real_words = _re.findall(r'\b[a-zA-Z]{4,}\b', clean)
+            if len(real_words) < 8:
+                raise RuntimeError(
+                    f"Sovereign GPT output has too few real words ({len(real_words)}). "
+                    "Checkpoint needs training. Falling back to BackupCore."
+                )
+
+            # Detect interleaved number-letter junk (e.g. "1, I, 21, E, ftelligence")
+            junk_pattern = _re.findall(r'\b\d+\b.*?\b[A-Z]\b|\b[A-Z]\b.*?\b\d+\b', clean)
+            token_noise = _re.findall(r'\b[A-Z]\b', clean)  # Single capital letters
+            if len(token_noise) > 3 or len(junk_pattern) > 2:
+                raise RuntimeError(
+                    f"Sovereign GPT output contains token noise (caps={len(token_noise)}). "
+                    "Checkpoint needs training. Falling back to BackupCore."
                 )
             
             prompt_tokens = len(self._sovereign_generator.tokenizer.encode(formatted_prompt))
@@ -390,42 +422,11 @@ class CognitionCore(BaseService):
             else:
                 active_system_prompt = "You are Vibhu-Oska AI-OS. Respond concisely and professionally. Do NOT output any \"Aha...\" typo correction prefix."
 
-        # Route request based on selected target
-        if model_id == "sovereign-gpt":
+        # Route request: only Sovereign GPT is supported — no external models
+        if model_id in ("sovereign-gpt", "vibhu-core", "direct-transformers", "", None):
             return await self.generate_sovereign(prompt, active_system_prompt, context, temperature, max_tokens)
 
-        if model_id in ("vibhu-core", "direct-transformers"):
-            try:
-                if not self._model or not self._tokenizer:
-                    await self.load_direct_model()
-                return await self.generate_direct(prompt, active_system_prompt, context, temperature, max_tokens)
-            except Exception as e:
-                self._log.warning("Direct transformer loading/generation failed, falling back to Sovereign GPT", error=str(e))
-                return await self.generate_sovereign(prompt, active_system_prompt, context, temperature, max_tokens)
-
-        # Default fallback sequence (model_id == "" or other values)
-        # Try Sovereign GPT first if checkpoints exist
-        root = Path(__file__).resolve().parent.parent.parent.parent.parent
-        checkpoints_dir = root / "Models" / "sovereign_gpt" / "checkpoints"
-        vocab_path = checkpoints_dir / "tokenizer_vocab.json"
-        ckpt_path = checkpoints_dir / "sovereign_gpt.pt"
-
-        if vocab_path.exists() and ckpt_path.exists():
-            try:
-                self._log.info("Attempting inference via Sovereign GPT...")
-                return await self.generate_sovereign(prompt, active_system_prompt, context, temperature, max_tokens)
-            except Exception as e:
-                self._log.warning("Sovereign GPT inference failed, trying direct local transformer", error=str(e))
-
-        # Fallback to direct local model
-        try:
-            if not self._model or not self._tokenizer:
-                await self.load_direct_model()
-            return await self.generate_direct(prompt, active_system_prompt, context, temperature, max_tokens)
-        except Exception as e:
-            self._log.error("Both Sovereign GPT and Direct local transformer failed", error=str(e))
-            # Re-raise so HybridCore routes to Backup CPU Core
-            raise e
+        raise ValueError(f"Unknown model_id: {model_id!r}. Sovereign GPT is the only supported engine.")
 
     def process(self, data: Any) -> Any:
         """Backward compatibility pass-through."""

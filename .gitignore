@@ -35,8 +35,10 @@ ENV/
 Data/chromadb/
 Data/training/
 Data/weights/
+Data/vibhu_oska.db
 Models/router/checkpoints/
 Models/reasoning/adapters/
+Models/sovereign_gpt/checkpoints/
 
 # ── Logs ──
 Log/*.log
