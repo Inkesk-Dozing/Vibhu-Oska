@@ -15,15 +15,18 @@ from typing import Optional, Any
 
 @dataclass
 class GPTConfig:
-    vocab_size:      int   = 4000        # Custom small vocabulary
-    hidden_size:     int   = 256         # Embedding dimension
-    intermediate_size: int = 1024        # FFN intermediate
-    num_layers:      int   = 6           # Number of transformer blocks
-    num_heads:       int   = 8           # Number of attention heads
-    max_seq_len:     int   = 256         # Maximum sequence length
-    dropout:         float = 0.1
-    layer_norm_eps:  float = 1e-5
-    pad_token_id:    int   = 0
+    vocab_size:        int   = 8000   # Rich vocabulary for coherent output
+    hidden_size:       int   = 512    # Embedding dimension (was 256)
+    intermediate_size: int   = 2048   # FFN intermediate (was 1024)
+    num_layers:        int   = 12     # Transformer depth (was 6) — primary reasoning capacity
+    num_heads:         int   = 8      # Attention heads; head_dim = 64 (optimal)
+    max_seq_len:       int   = 512    # Context window (was 256)
+    dropout:           float = 0.1
+    layer_norm_eps:    float = 1e-5
+    pad_token_id:      int   = 0
+
+    # ~25M parameters: 8000*512 + 12*(512*3*512 + 512*2048*2) + 512*8000
+    # Trainable on RTX 4060 Laptop (8GB VRAM) with float16 + gradient checkpointing
 
 
 class RotaryEmbedding(nn.Module):

@@ -145,16 +145,26 @@ class EventBus:
 
     async def publish(self, event: Event) -> None:
         """
-        Publish an event to all subscribers matching the topic.
+        Publish an event to all in-process subscribers immediately, then also
+        send through ZeroMQ for distributed/future multi-process consumers.
+
+        The in-process dispatch runs first to avoid the ZeroMQ "slow joiner"
+        race condition where the first few messages are dropped before the
+        SUB socket filter propagates.
 
         Args:
             event: The event to broadcast
         """
-        if not self._pub_socket:
-            raise RuntimeError("EventBus not started. Call await bus.start() first.")
+        # 1. Dispatch in-process immediately (guaranteed delivery, no race)
+        asyncio.create_task(self._dispatch(event))
 
-        frames = event.to_zmq_frames()
-        await self._pub_socket.send_multipart(frames)
+        # 2. Also emit over ZeroMQ for any external/distributed consumers
+        if self._pub_socket:
+            try:
+                frames = event.to_zmq_frames()
+                await self._pub_socket.send_multipart(frames)
+            except Exception:
+                pass  # ZMQ failure must not block in-process delivery
 
     async def subscribe(self, topic_prefix: str, handler: EventHandler) -> None:
         """

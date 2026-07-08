@@ -80,6 +80,10 @@ select = ["E", "F", "W", "I", "N", "UP"]
 [tool.pytest.ini_options]
 testpaths = ["Tests"]
 asyncio_mode = "auto"
+markers = [
+    "integration: marks tests that require isolated infrastructure (clean ZMQ ports, no live server)",
+]
+
 
 [tool.mypy]
 python_version = "3.11"

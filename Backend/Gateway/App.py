@@ -69,6 +69,7 @@ class AppState:
     orchestrator: OrchestratorCore
     watchdog: Watchdog | None = None
     context_manager: ContextManager | None = None
+    data_core: DataCore | None = None
     start_time: float = 0.0
     ws_clients: set[WebSocket] = set()
     training_in_progress: bool = False
@@ -157,10 +158,9 @@ async def lifespan(app: FastAPI):
     await state.registry.register_and_init(DatabaseConnector())
     await state.registry.register_and_init(CacheManager())
     await state.registry.register_and_init(CognitionCore())
-    # DataCore exposed directly for Memory API endpoints
-    data_core = DataCore()
-    await data_core.initialize(state.registry)
-    state.registry.register("data_core", data_core)
+    # DataCore exposed directly for Memory API endpoints (not a BaseService)
+    state.data_core = DataCore()
+    await state.data_core.initialize(state.registry)
 
     # Stage 4-6 Plugins
     search_engine      = SearchEngine()
@@ -478,7 +478,7 @@ class MemoryStoreRequest(BaseModel):
 @app.post("/api/v1/memory/query", tags=["Memory"])
 async def query_vector_memory(req: MemoryQueryRequest):
     """Query ChromaDB semantic memory for relevant chunks."""
-    dc = state.registry.get_safe("data_core")
+    dc = state.data_core
     if not dc:
         raise HTTPException(status_code=503, detail="DataCore unavailable")
     results = await dc.query_memory(query_text=req.query, top_k=req.top_k)
@@ -488,7 +488,7 @@ async def query_vector_memory(req: MemoryQueryRequest):
 @app.post("/api/v1/memory/store", tags=["Memory"])
 async def store_vector_memory(req: MemoryStoreRequest):
     """Store a text chunk in ChromaDB semantic memory."""
-    dc = state.registry.get_safe("data_core")
+    dc = state.data_core
     if not dc:
         raise HTTPException(status_code=503, detail="DataCore unavailable")
     await dc.store_memory(
@@ -502,7 +502,7 @@ async def store_vector_memory(req: MemoryStoreRequest):
 @app.post("/api/v1/memory/kg", tags=["Memory"])
 async def query_knowledge_graph(req: MemoryQueryRequest):
     """Query the GRAG knowledge graph for entity matches; always returns live node/edge counts."""
-    dc = state.registry.get_safe("data_core")
+    dc = state.data_core
     db = state.registry.get_safe("database_connector")
     if not dc:
         raise HTTPException(status_code=503, detail="DataCore unavailable")
@@ -540,7 +540,7 @@ async def query_knowledge_graph(req: MemoryQueryRequest):
 @app.get("/api/v1/memory/sessions", tags=["Memory"])
 async def list_sessions(limit: int = 20):
     """List recent chat sessions from SQLite."""
-    dc = state.registry.get_safe("data_core")
+    dc = state.data_core
     if not dc:
         raise HTTPException(status_code=503, detail="DataCore unavailable")
     db = state.registry.get_safe("database_connector")
@@ -557,7 +557,7 @@ async def list_sessions(limit: int = 20):
 @app.get("/api/v1/memory/history/{session_id}", tags=["Memory"])
 async def get_session_history(session_id: str, limit: int = 50):
     """Get chat history for a session."""
-    dc = state.registry.get_safe("data_core")
+    dc = state.data_core
     if not dc:
         raise HTTPException(status_code=503, detail="DataCore unavailable")
     history = await dc.get_session_history(session_id=session_id, limit=limit)
@@ -652,7 +652,7 @@ async def append_corpus(req: CorpusAppendRequest):
         f.write(appended)
 
     # Also ingest into ChromaDB for immediate semantic retrieval
-    dc = state.registry.get_safe("data_core")
+    dc = state.data_core
     if dc:
         await dc.store_memory(content=text, source="corpus_append", metadata={"format": req.format})
 
@@ -727,7 +727,7 @@ async def ingest_into_kg(req: KGIngestRequest):
             pass
 
     # Store full text in semantic memory too
-    dc = state.registry.get_safe("data_core")
+    dc = state.data_core
     if dc:
         await dc.store_memory(content=req.text, source=req.source, metadata={"type": "kg_ingest"})
 
@@ -804,8 +804,9 @@ async def trigger_model_training(req: ModelTrainRequest, background_tasks: Backg
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     """
-    Real-time WebSocket connection for streaming events to frontends.
-    Clients receive all task and system events as they happen.
+    Real-time WebSocket connection.
+    Prompts are processed directly and the response is returned on the same socket.
+    System events (health, training logs, alerts) are broadcast via EventBus to all clients.
     """
     await websocket.accept()
     state.ws_clients.add(websocket)
@@ -814,20 +815,75 @@ async def websocket_endpoint(websocket: WebSocket):
 
     try:
         while True:
-            # Listen for incoming messages from the client
             data = await websocket.receive_json()
 
-            # Client can submit events via WebSocket too
             if "prompt" in data:
-                event = EventFactory.user_input(
-                    prompt=data["prompt"],
-                    session_id=data.get("session_id", str(uuid.uuid4())),
-                )
-                await state.event_bus.publish(event)
+                prompt    = data["prompt"]
+                session_id = data.get("session_id", str(uuid.uuid4()))
+                model_id   = data.get("model_id", "")
+
+                # Generate a stable request ID
+                request_id = str(uuid.uuid4())
+
+                # ACK immediately so the UI shows typing indicator
                 await websocket.send_json({
-                    "type": "ack",
-                    "event_id": event.event_id,
+                    "type":     "ack",
+                    "event_id": request_id,
                 })
+
+                # Notify all clients that a task was created
+                await websocket.send_json({
+                    "type":    "task.created",
+                    "event_id": request_id,
+                    "payload": {"task_id": request_id, "prompt": prompt},
+                })
+
+                # ── Core processing ──────────────────────────────────────
+                start_ms = int(__import__("time").time() * 1000)
+                try:
+                    response = await _process_prompt_direct(
+                        prompt=prompt,
+                        session_id=session_id,
+                        model_id=model_id,
+                        request_id=request_id,
+                    )
+                    elapsed = int(__import__("time").time() * 1000) - start_ms
+
+                    # Guard: client may disconnect while processing — wrap all sends
+                    try:
+                        await websocket.send_json({
+                            "type":     "task.completed",
+                            "event_id": request_id,
+                            "source":   "orchestrator",
+                            "payload": {
+                                "content":    response,
+                                "request_id": request_id,
+                                "metadata": {
+                                    "processing_time_ms": elapsed,
+                                    "status": {"code": 5, "message": "OK"},
+                                },
+                            },
+                        })
+                        await _broadcast_event_to_others(websocket, {
+                            "type":     "task.completed",
+                            "event_id": request_id,
+                            "source":   "orchestrator",
+                            "payload":  {"request_id": request_id, "content": response[:80]},
+                        })
+                    except Exception:
+                        log.info("Client disconnected before response sent", request_id=request_id)
+
+                except Exception as proc_err:
+                    log.error("Prompt processing failed", error=str(proc_err))
+                    try:
+                        await websocket.send_json({
+                            "type":     "task.failed",
+                            "event_id": request_id,
+                            "payload":  {"error": str(proc_err)[:200], "request_id": request_id},
+                        })
+                    except Exception:
+                        pass  # Socket already closed
+
 
     except WebSocketDisconnect:
         state.ws_clients.discard(websocket)
@@ -837,16 +893,188 @@ async def websocket_endpoint(websocket: WebSocket):
         log.error("WebSocket error", error=str(e))
 
 
+async def _process_prompt_direct(
+    prompt: str,
+    session_id: str,
+    model_id: str,
+    request_id: str,
+) -> str:
+    """
+    Directly invoke HybridCore → BackupCore/CognitionCore and return the response string.
+    Bypasses the EventBus entirely for the primary response path — no async scheduling gaps.
+
+    Parameters:
+        prompt: User input string
+        session_id: Conversation session identifier
+        model_id: Optional target model override
+        request_id: Trace ID for this request
+    Returns: Response content string
+    Edge cases: Always returns a string; never raises (caught internally)
+    """
+    log = Logger.get("DirectProcessor")
+    Logger.bind_request(request_id)
+    log.info("Processing prompt", session_id=session_id, prompt_preview=prompt[:60])
+
+    try:
+        # Check response cache first
+        cached = await state.orchestrator._optimization.check_query_cache(prompt)
+        if cached:
+            log.info("Cache hit", prompt=prompt[:40])
+            # Persist chat interaction
+            await state.orchestrator._data_core.create_session(session_id, "operator")
+            await state.orchestrator._data_core.save_chat_message(str(uuid.uuid4()), session_id, "user", prompt)
+            await state.orchestrator._data_core.save_chat_message(str(uuid.uuid4()), session_id, "assistant", cached)
+            return cached
+
+        # Retrieve context
+        await state.orchestrator._data_core.create_session(session_id, "operator")
+        history  = await state.orchestrator._data_core.get_session_history(session_id, limit=4)
+        sem_ctx  = await state.orchestrator._data_core.query_memory(prompt, top_k=1)
+        kg_ctx   = await state.orchestrator._data_core.query_knowledge_graph(prompt)
+
+        context: list[dict] = []
+        for msg in history:
+            context.append({"source": f"chat:{msg['role']}", "content": msg["content"]})
+        context.extend(sem_ctx)
+        if kg_ctx:
+            context.append({"source": "knowledge_graph", "content": kg_ctx})
+
+        context = await state.orchestrator._optimization.optimize_prompt_context(context)
+
+        # Check for specialized core routing first
+        specialized = await state.orchestrator._route_to_specialized_core(prompt, context)
+        if specialized is not None:
+            content = specialized.content
+        else:
+            # ── Fast pre-dispatch ────────────────────────────────────────────────
+            # Intercept prompts BackupCore handles instantly — skips router + Qwen load.
+            # Only falls through to HybridCore for prompts needing real LLM reasoning.
+            content = _try_fast_dispatch(prompt)
+            if content is None:
+                system_prompt = (
+                    "You are Vibhu-Oska AI-OS — a sovereign, locally-hosted artificial intelligence. "
+                    "Respond accurately, concisely, and professionally. Never reference being an AI assistant "
+                    "or external cloud service. You run entirely on the creator's local hardware."
+                )
+                task_resp = await state.orchestrator._hybrid_core.process_request(
+                    prompt=prompt,
+                    system_prompt=system_prompt,
+                    context=context,
+                    model_id=model_id,
+                )
+                content = task_resp.content
+
+        # Persist interaction
+        await state.orchestrator._data_core.save_chat_message(str(uuid.uuid4()), session_id, "user", prompt)
+        await state.orchestrator._data_core.save_chat_message(str(uuid.uuid4()), session_id, "assistant", content)
+
+        # Cache for future identical queries
+        await state.orchestrator._optimization.save_response_cache(prompt, content)
+
+        log.info("Prompt processed successfully", chars=len(content))
+        return content
+
+    except Exception as e:
+        log.error("Direct processing error", error=str(e))
+        return (
+            f"\u26a0 Processing error: `{str(e)[:120]}`\n\n"
+            "Vibhu-Oska BackupCore is active. The Sovereign GPT model requires training. "
+            "Use the **Train** panel to initiate model training."
+        )
+
+
+def _try_fast_dispatch(prompt: str) -> str | None:
+    """
+    Attempt to resolve a prompt instantly via BackupCore pattern matching,
+    bypassing HybridCore router inference and any LLM loading cost.
+
+    Parameters:
+        prompt: Raw user input string
+    Returns: Response string if pattern matched, None to fall through to HybridCore
+    Edge cases: Returns None for open-ended or complex queries needing LLM
+    """
+    import re, math as _math
+
+    norm = prompt.strip().lower()
+
+    # ── Math expressions ─────────────────────────────────────────────────────
+    # Handle before anything else — avoids 30s Qwen cold-start for "128 * 8"
+    if re.search(r'\d', prompt):
+        # Arithmetic: "128 * 8", "2^10", "100 / 4", "15 % 7"
+        expr = re.search(
+            r'(\d+\.?\d*)\s*([\+\-\*\/\^%]|\*\*|//)\s*(\d+\.?\d*)',
+            prompt.replace('×', '*').replace('÷', '/').replace('^', '**')
+        )
+        if expr:
+            try:
+                a, op, b = float(expr.group(1)), expr.group(2), float(expr.group(3))
+                ops = {'+': a+b, '-': a-b, '*': a*b, '^': a**b, '**': a**b,
+                       '%': a%b}
+                if op in ('/', '÷'):
+                    result = "undefined (division by zero)" if b == 0 else a / b
+                elif op == '//':
+                    result = int(a) // int(b)
+                else:
+                    result = ops.get(op)
+                if result is not None:
+                    display = int(result) if isinstance(result, float) and result == int(result) else (
+                        round(result, 6) if isinstance(result, float) else result
+                    )
+                    return f"`{expr.group(1)} {op} {expr.group(3)}` = **`{display}`**"
+            except Exception:
+                pass
+
+        if re.search(r'\b(sqrt|square root of)\b', norm):
+            n = re.search(r'(\d+\.?\d*)', prompt)
+            if n:
+                val = _math.sqrt(float(n.group(1)))
+                display = int(val) if val == int(val) else round(val, 6)
+                return f"\u221a{n.group(1)} = **`{display}`**"
+
+        if re.search(r'\bfactorial\b', norm) or re.search(r'\b(\d+)!\s*$', prompt):
+            n = re.search(r'(\d+)', prompt)
+            if n and int(n.group(1)) <= 25:
+                return f"`{n.group(1)}!` = **`{_math.factorial(int(n.group(1)))}`**"
+
+    # ── Instant conversational patterns ──────────────────────────────────────
+    # These would hit router → CHAT → BackupCore anyway; save the round-trip.
+    from Backend.Core.BackupCore.BackupCore import BackupCore as _BC
+    _bc = _BC()
+
+    if re.search(r'^\s*(hello|hi|hey|yo|sup|greetings|good\s*(morning|afternoon|evening|night))\s*[!.,?]?\s*$', norm):
+        return _bc._reason(prompt)
+
+    if re.search(r'\b(who are you|what are you|tell me about yourself|what is vibhu|what can you do|your capabilities)\b', norm):
+        return _bc._reason(prompt)
+
+    if re.search(r'^\s*(status|health|how are you|are you (ok|working|online|alive|up))\s*[!.,?]?\s*$', norm):
+        return _bc._reason(prompt)
+
+    if re.search(r'^(what is the )?(time|date|current time|today)\??\s*$', norm):
+        return _bc._reason(prompt)
+
+    if re.search(r'^\s*(help|commands|what can you do)\s*[!.,?]?\s*$', norm):
+        return _bc._reason(prompt)
+
+    if re.search(r'^\s*(ok|okay|got it|understood|thanks|thank you|great|nice|cool|awesome|perfect|sure|alright)\s*[!.,?]?\s*$', norm):
+        return "Acknowledged. What would you like to work on?"
+
+    # ── Let HybridCore handle the rest ───────────────────────────────────────
+    return None
+
+
+
+
 async def _broadcast_to_ws(event: Event) -> None:
-    """Forward events from the bus to all connected WebSocket clients."""
+    """Forward EventBus events (health, alerts, training logs) to all connected WebSocket clients."""
     if not state.ws_clients:
         return
 
     message = {
-        "event_id": event.event_id,
-        "type": event.topic,
-        "source": event.source,
-        "payload": event.payload,
+        "event_id":  event.event_id,
+        "type":      event.topic,
+        "source":    event.source,
+        "payload":   event.payload,
         "timestamp": event.timestamp,
     }
 
@@ -858,3 +1086,17 @@ async def _broadcast_to_ws(event: Event) -> None:
             disconnected.add(ws)
 
     state.ws_clients -= disconnected
+
+
+async def _broadcast_event_to_others(origin: WebSocket, message: dict) -> None:
+    """Broadcast an event to all WebSocket clients except the originating socket."""
+    disconnected: set[WebSocket] = set()
+    for ws in state.ws_clients:
+        if ws is origin:
+            continue
+        try:
+            await ws.send_json(message)
+        except Exception:
+            disconnected.add(ws)
+    state.ws_clients -= disconnected
+
